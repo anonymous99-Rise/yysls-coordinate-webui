@@ -1,0 +1,61 @@
+name: CI
+
+# 三套测试跑在 Windows 上：数据层要读 GBK 编码的文件，
+# 输入/视觉那几个模块直接用 ctypes 调 GDI 和 SendInput —— 换到 Linux 跑不了。
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  test:
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+          cache: pip
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: npm
+          cache-dependency-path: web/package-lock.json
+
+      # numpy / Pillow 是视觉与画图核对用的；keyboard / pydirectinput 在这套代码里是
+      # **可选**依赖（injector 用 ctypes 自己实现了，不装也能跑）。装上是为了让 CI
+      # 跑到和本地一致的代码路径。
+      - name: 安装 Python 依赖
+        run: pip install numpy Pillow keyboard pydirectinput
+
+      - name: 数据对账（第二套实现独立复算 + 逐字比对）
+        run: python tools/verify.py --samples 100
+
+      - name: 前端核心逻辑测试
+        run: node tools/test_core.mjs
+
+      # 输入/热键类断言会先探测会话是否可交互；CI 上没有交互桌面，
+      # 那两条会自动记为「跳过」并给出原因，不会冒充失败。
+      - name: 采集链路测试
+        run: python tools/test_rpa.py
+
+      - name: ETL 幂等
+        shell: pwsh
+        run: |
+          python tools/etl.py | Out-Null
+          $a = (Get-FileHash data/points.min.json -Algorithm SHA256).Hash
+          python tools/etl.py | Out-Null
+          $b = (Get-FileHash data/points.min.json -Algorithm SHA256).Hash
+          if ($a -ne $b) { throw "ETL 不是幂等的：$a != $b" }
+          Write-Host "ETL 幂等 ✓"
+
+      - name: 前端安装依赖
+        working-directory: web
+        run: npm ci
+
+      - name: 前端类型检查与构建
+        working-directory: web
+        run: npm run build

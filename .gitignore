@@ -34,3 +34,8 @@ rpa/tasks/index.json
 *.swp
 Thumbs.db
 desktop.ini
+
+# ---- 发布产物（构建生成，不进仓库，由 CI 重新打包）----
+yysls-*.zip
+release-notes.md
+pack/
