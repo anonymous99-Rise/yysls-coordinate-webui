@@ -408,6 +408,26 @@ if HAVE_NAV:
     check("从数据里取到界碑/传送点锚点", len(anchors) >= 100, f"{len(anchors)} 个")
     check("锚点带世界坐标和名字", all("x" in a and "y" in a and "name" in a for a in anchors))
 
+    # 锚点分布质量：**这套指标必须能区分好坏** —— 上一版用设计矩阵条件数，
+    # 因被世界坐标的绝对值主导，把铺得最开的样本也判成「分布差」。
+    # 一个永远报警的警告比没有警告更糟：用户会学会无视它。
+    allp = np.array([[a["x"], a["y"]] for a in anchors], dtype=float)
+    picks = navmod.suggest_anchors(4)
+    check("推荐的锚点带具体地名（不是「开封」这种占位名）",
+          all(len(p["name"]) >= 4 and p["name"] not in ("清河", "开封", "江南") for p in picks),
+          str([p["name"] for p in picks]))
+    good = np.array([[p["x"], p["y"]] for p in picks], dtype=float)
+    mg, hg = navmod.spread_quality(good, allp)
+    check("铺得开的锚点被判为好", "良好" in hg, hg)
+    coll = np.column_stack([np.linspace(-3000, -1000, 4), np.linspace(-1000, -998, 4)])
+    _, hc = navmod.spread_quality(coll, allp)
+    check("接近共线的锚点被判为危险", "危险" in hc, hc)
+    corner = allp[(allp[:, 0] > -1500) & (allp[:, 1] > 500)][:4]
+    mk, _ = navmod.spread_quality(corner, allp)
+    check("挤在一角的锚点被判为偏差", mk["coverage"] < 0.35, f"覆盖 {mk['coverage'] * 100:.0f}%")
+    check("好样本的覆盖率明显高于挤角样本", mg["coverage"] > mk["coverage"] + 0.3,
+          f"{mg['coverage']:.2f} vs {mk['coverage']:.2f}")
+
     # 端到端：画到图上，再读回像素确认圈真画在该在的位置
     try:
         from PIL import Image

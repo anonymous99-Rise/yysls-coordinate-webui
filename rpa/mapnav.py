@@ -222,14 +222,20 @@ def load_pairs(path: str | Path) -> tuple[np.ndarray, np.ndarray, dict]:
 
 
 def suggest_anchors(n: int = 4, region: str = "") -> list[dict]:
-    """挑 n 个铺得最开的锚点给人去地图上找。
+    """挑 n 个"铺得最开、且名字真的能在地图上找到"的锚点。
 
-    为什么不能随便挑：变换的稳定性取决于锚点在空间上的分布。
-    三个几乎在一条直线上的点会让旋转/尺度误差被放大几十倍 ——
-    你量像素时手抖 2 个像素，投影到地图另一端可能就偏出半屏。
-    所以用**最远点采样**（farthest point sampling）挑一组凸包级别的分布。
+    为什么要筛名字：数据集里有 64 个界碑的名字**就叫「开封」**（占位名，来自界碑文件里
+    只有地区名的那批）。挑到它们等于告诉你"去地图上找开封"——没法用。
+    所以先把名字里带具体地名（长度 ≥ 4 且不等于纯区域名）的挑出来，再在最远点采样。
+
+    为什么要铺得开：变换的稳定性取决于锚点分布形状。
+    三个几乎共线的点会让旋转和尺度不可分辨 —— 你量像素手抖 2 个像素，
+    投影到地图另一端可能就偏出半屏。所以用**最远点采样**（farthest point sampling）。
     """
-    anchors = load_anchors(region)
+    anchors = [a for a in load_anchors(region)
+               if len(a["name"]) >= 4 and a["name"] not in ("清河", "开封", "江南")]
+    if len(anchors) < n:
+        anchors = load_anchors(region)
     if len(anchors) < n:
         return anchors
     pts = np.array([[a["x"], a["y"]] for a in anchors], dtype=float)
@@ -243,26 +249,53 @@ def suggest_anchors(n: int = 4, region: str = "") -> list[dict]:
     return [anchors[i] for i in chosen]
 
 
-def spread_quality(world: np.ndarray) -> tuple[float, str]:
-    """评价一组锚点的空间分布质量。
+def spread_quality(world: np.ndarray, reference: np.ndarray | None = None) -> tuple[dict, str]:
+    """评价一组锚点的空间分布质量。返回 (指标, 人话结论)。
 
-    返回 (条件数, 提示)。条件数就是设计矩阵的 2-范数条件数：
-      * < 30   → 分布很好，像素量到 ±1px 也没问题
-      * 30~100 → 还行
-      * > 100  → 挤在一起或接近共线，量像素的误差会被显著放大，建议换几个更散的点
+    **这里踩过一个坑**：一开始用设计矩阵 `[x, y, 1]` 的 2-范数条件数当指标，
+    结果**铺得最开的 6 个点也被判成「分布差」** —— 因为世界坐标量级在 ±4000，
+    常数列 `1` 相对太小，条件数被坐标绝对值主导，跟分布形状没关系。
+    一个永远报警的警告比没有警告更糟：用户会学会无视它。
+
+    换成两个各自可解释的指标：
+
+      coverage  锚点外接框对角线 / 全部锚点外接框对角线
+                衡量「这几点铺满了地图的多少比例」。太小 = 都在一角，
+                地图另一头的点会被外推，量像素的误差在那边被放大。
+
+      linearity 把锚点居中后做 SVD，取 奇异值之比 s2/s1
+                衡量「这几点像不像排在一条线上」。接近 0 = 接近共线，
+                此时旋转和尺度几乎不可分辨，是标定里最危险的几何。
     """
     if len(world) < 2:
-        return float("inf"), "点太少"
-    A = np.column_stack([world[:, 0], world[:, 1], np.ones(len(world))])
+        return {"coverage": 0.0, "linearity": 0.0}, "点太少（至少 2 个）"
+
+    ref = reference if reference is not None and len(reference) >= 2 else world
+    def diag(p: np.ndarray) -> float:
+        return float(np.hypot(p[:, 0].max() - p[:, 0].min(), p[:, 1].max() - p[:, 1].min()))
+
+    ref_diag = diag(ref)
+    coverage = diag(world) / ref_diag if ref_diag > 1e-9 else 0.0
+
+    centered = world - world.mean(axis=0)
     try:
-        cn = float(np.linalg.cond(A))
+        sv = np.linalg.svd(centered, compute_uv=False)
+        linearity = float(sv[1] / sv[0]) if sv[0] > 1e-9 and len(sv) > 1 else 0.0
     except np.linalg.LinAlgError:
-        return float("inf"), "无法计算"
-    if cn < 30:
-        return cn, "分布很好"
-    if cn < 100:
-        return cn, "分布还行（量像素时尽量准一点）"
-    return cn, "分布差（挤在一起或接近共线）—— 建议换几个更散的点，否则误差会被放大"
+        linearity = 0.0
+
+    metrics = {"coverage": coverage, "linearity": linearity}
+
+    if linearity < 0.05:
+        return metrics, ("危险：这几点几乎在一条直线上 —— 旋转和尺度不可分辨，"
+                         "请换一组不在同一条线上的点")
+    if coverage < 0.35:
+        return metrics, (f"偏差：只铺开了全图的 {coverage * 100:.0f}% —— "
+                         f"地图其余部分的落点靠外推，误差会被放大。建议 python rpa/mapnav.py --suggest 4")
+    if linearity < 0.25:
+        return metrics, (f"尚可但偏瘦长（长短轴比 {linearity:.2f}）—— "
+                         f"尽量再挑一个偏离这条线的点")
+    return metrics, f"分布良好（覆盖 {coverage * 100:.0f}%，长短轴比 {linearity:.2f}）"
 
 
 # ---------------------------------------------------------------------------
@@ -327,8 +360,11 @@ def main() -> int:
         print(f"{'名字':<20}{'世界 X':>12}{'世界 Y':>12}   区域")
         for a in picks:
             print(f"{a['name'][:18]:<20}{a['x']:>12.2f}{a['y']:>12.2f}   {a['region']}")
-        cn, hint = spread_quality(np.array([[a["x"], a["y"]] for a in picks], dtype=float))
-        print(f"\n分布条件数 {cn:.1f} —— {hint}")
+        allp = np.array([[a["x"], a["y"]] for a in load_anchors(args.region)], dtype=float)
+        m, hint = spread_quality(np.array([[a["x"], a["y"]] for a in picks], dtype=float),
+                                 allp if len(allp) >= 2 else None)
+        print(f"\n分布评估 —— {hint}")
+        print(f"  覆盖全图 {m['coverage'] * 100:.0f}%   长短轴比 {m['linearity']:.2f}")
         print("""
 接下来这么用：
   1. 游戏里打开地图，截一张整屏图存好（比如 map.png）
@@ -354,15 +390,17 @@ def main() -> int:
                   f"  →  像素 ({p['screen'][0]:>6.0f},{p['screen'][1]:>6.0f})"
                   f"   {p.get('label', '')}")
         print()
-        cn, hint = spread_quality(world)
-        print(f"  锚点分布条件数 {cn:.1f} —— {hint}")
+        allp = np.array([[a["x"], a["y"]] for a in load_anchors(args.region)], dtype=float)
+        m, hint = spread_quality(world, allp if len(allp) >= 2 else None)
+        print(f"  锚点分布评估 —— {hint}")
+        print(f"    覆盖全图 {m['coverage'] * 100:.0f}%   长短轴比 {m['linearity']:.2f}")
         for name, t in allm.items():
             print(f"  [{name:10}] RMS={t.rms:7.2f} px  最大误差={t.max_err:7.2f} px"
                   f"  缩放={t.scale:.5f}  旋转={t.rotation_deg:+.2f}°")
         print(f"\n  采用：{best.model}（理由见代码注释：残差改善不足 1.5px 时优先用参数更少的 similarity）")
-        if cn > 100:
-            print("  [!] 锚点分布不佳。就算 RMS 看着很小，把变换用到远处时误差也可能很大 ——")
-            print("      建议 python rpa/mapnav.py --suggest 4 重新挑一组更散的锚点。")
+        if m["coverage"] < 0.35 or m["linearity"] < 0.25:
+            print("  [!] 锚点分布不佳 —— 就算 RMS 看着很小，把变换用到远处时误差也可能很大。")
+            print("      建议先用 python rpa/mapnav.py --suggest 4 挑一组更好的锚点。")
 
         # 用一个没参与拟合的锚点做留出验证（如果锚点够多）
         anchors = load_anchors(args.region)
