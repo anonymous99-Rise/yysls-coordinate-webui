@@ -132,7 +132,11 @@ def fit_affine(world: np.ndarray, screen: np.ndarray) -> Transform:
     cx, *_ = np.linalg.lstsq(A, screen[:, 0], rcond=None)
     cy, *_ = np.linalg.lstsq(A, screen[:, 1], rcond=None)
     params = [cx[0], cx[1], cx[2], cy[0], cy[1], cy[2]]
-    return Transform("affine", params, *_err(params, world, screen, "affine"), n)
+    rms, mx = _err(params, world, screen, "affine")
+    # 注意参数顺序：Transform(model, params, rms, n, max_err)。
+    # 早先写成 Transform(model, params, *_err(...), n)，于是 n 和 max_err 互换了 ——
+    # 打印出来的「最大误差」一直是点的个数（3 个点就显示 3.00，看着还挺合理，所以骗过去了）。
+    return Transform("affine", params, rms, n, max_err=mx)
 
 
 def fit_similarity(world: np.ndarray, screen: np.ndarray) -> Transform:
@@ -153,7 +157,8 @@ def fit_similarity(world: np.ndarray, screen: np.ndarray) -> Transform:
     bvec[1::2] = screen[:, 1]
     sol, *_ = np.linalg.lstsq(A, bvec, rcond=None)
     params = list(sol)
-    return Transform("similarity", params, *_err(params, world, screen, "similarity"), n)
+    rms, mx = _err(params, world, screen, "similarity")
+    return Transform("similarity", params, rms, n, max_err=mx)
 
 
 def _err(params: list[float], world: np.ndarray, screen: np.ndarray, model: str) -> tuple[float, float]:

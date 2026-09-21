@@ -10,7 +10,7 @@
   "crossFilePoints": 4986,
   "coLocatedPoints": 693,
   "regionUnknown": 0,
-  "regionFilledByNearest": 697
+  "regionFilledByNearest": 690
  },
  "points": [
   {
@@ -10298,9 +10298,9 @@
    "category": "设施与NPC",
    "categorySource": "dict",
    "material": "",
-   "place": "",
+   "place": "不伏马场",
    "region": "清河",
-   "regionSource": "path",
+   "regionSource": "place",
    "layer": "地表",
    "repeat": 1,
    "totalRows": 2,
@@ -10974,9 +10974,9 @@
    "category": "玩法收集",
    "categorySource": "dict",
    "material": "",
-   "place": "",
+   "place": "勾栏瓦肆",
    "region": "开封",
-   "regionSource": "path",
+   "regionSource": "place",
    "layer": "地表",
    "repeat": 1,
    "totalRows": 2,
@@ -11014,9 +11014,9 @@
    "category": "设施与NPC",
    "categorySource": "dict",
    "material": "",
-   "place": "",
+   "place": "不羡仙",
    "region": "清河",
-   "regionSource": "path",
+   "regionSource": "place",
    "layer": "地表",
    "repeat": 1,
    "totalRows": 2,
@@ -22984,9 +22984,9 @@
    "category": "玩法收集",
    "categorySource": "dict",
    "material": "",
-   "place": "",
+   "place": "南门大街",
    "region": "开封",
-   "regionSource": "path",
+   "regionSource": "place",
    "layer": "地表",
    "repeat": 1,
    "totalRows": 1,
@@ -31881,9 +31881,9 @@
    "category": "材料",
    "categorySource": "dict",
    "material": "唐宫羽衣",
-   "place": "",
+   "place": "春秋别馆",
    "region": "清河",
-   "regionSource": "nearest",
+   "regionSource": "place",
    "layer": "地表",
    "repeat": 2,
    "totalRows": 12,
@@ -31970,8 +31970,7 @@
    ],
    "flags": [
     "cross_file",
-    "duplicated",
-    "region_nearest"
+    "duplicated"
    ]
   },
   {
@@ -31986,9 +31985,9 @@
    "category": "材料",
    "categorySource": "dict",
    "material": "唐宫羽衣",
-   "place": "",
+   "place": "春秋别馆",
    "region": "清河",
-   "regionSource": "nearest",
+   "regionSource": "place",
    "layer": "地表",
    "repeat": 2,
    "totalRows": 12,
@@ -32075,8 +32074,7 @@
    ],
    "flags": [
     "cross_file",
-    "duplicated",
-    "region_nearest"
+    "duplicated"
    ]
   },
   {
@@ -32091,9 +32089,9 @@
    "category": "材料",
    "categorySource": "dict",
    "material": "唐宫羽衣",
-   "place": "",
+   "place": "春秋别馆",
    "region": "清河",
-   "regionSource": "nearest",
+   "regionSource": "place",
    "layer": "地表",
    "repeat": 2,
    "totalRows": 12,
@@ -32180,8 +32178,7 @@
    ],
    "flags": [
     "cross_file",
-    "duplicated",
-    "region_nearest"
+    "duplicated"
    ]
   },
   {
@@ -32196,9 +32193,9 @@
    "category": "材料",
    "categorySource": "dict",
    "material": "唐宫羽衣",
-   "place": "",
+   "place": "春秋别馆",
    "region": "清河",
-   "regionSource": "nearest",
+   "regionSource": "place",
    "layer": "地表",
    "repeat": 2,
    "totalRows": 12,
@@ -32285,8 +32282,7 @@
    ],
    "flags": [
     "cross_file",
-    "duplicated",
-    "region_nearest"
+    "duplicated"
    ]
   },
   {
@@ -32301,9 +32297,9 @@
    "category": "材料",
    "categorySource": "dict",
    "material": "唐宫羽衣",
-   "place": "",
+   "place": "春秋别馆",
    "region": "清河",
-   "regionSource": "nearest",
+   "regionSource": "place",
    "layer": "地表",
    "repeat": 2,
    "totalRows": 12,
@@ -32390,8 +32386,7 @@
    ],
    "flags": [
     "cross_file",
-    "duplicated",
-    "region_nearest"
+    "duplicated"
    ]
   },
   {
@@ -32406,9 +32401,9 @@
    "category": "材料",
    "categorySource": "dict",
    "material": "唐宫羽衣",
-   "place": "",
+   "place": "春秋别馆",
    "region": "清河",
-   "regionSource": "nearest",
+   "regionSource": "place",
    "layer": "地表",
    "repeat": 2,
    "totalRows": 12,
@@ -32495,8 +32490,7 @@
    ],
    "flags": [
     "cross_file",
-    "duplicated",
-    "region_nearest"
+    "duplicated"
    ]
   },
   {
@@ -32511,9 +32505,9 @@
    "category": "材料",
    "categorySource": "dict",
    "material": "唐宫羽衣",
-   "place": "",
+   "place": "春秋别馆",
    "region": "清河",
-   "regionSource": "nearest",
+   "regionSource": "place",
    "layer": "地表",
    "repeat": 2,
    "totalRows": 12,
@@ -32600,8 +32594,7 @@
    ],
    "flags": [
     "cross_file",
-    "duplicated",
-    "region_nearest"
+    "duplicated"
    ]
   },
   {
@@ -54370,9 +54363,9 @@
    "category": "设施与NPC",
    "categorySource": "dict",
    "material": "",
-   "place": "",
+   "place": "将军祠",
    "region": "清河",
-   "regionSource": "path",
+   "regionSource": "place",
    "layer": "地表",
    "repeat": 1,
    "totalRows": 2,
@@ -54410,9 +54403,9 @@
    "category": "设施与NPC",
    "categorySource": "dict",
    "material": "",
-   "place": "",
+   "place": "将军祠",
    "region": "清河",
-   "regionSource": "path",
+   "regionSource": "place",
    "layer": "地表",
    "repeat": 1,
    "totalRows": 2,
@@ -83639,7 +83632,7 @@
    "category": "玩法收集",
    "categorySource": "dict",
    "material": "",
-   "place": "",
+   "place": "开封东郊",
    "region": "开封",
    "regionSource": "name",
    "layer": "地表",
@@ -89837,9 +89830,9 @@
    "category": "设施与NPC",
    "categorySource": "dict",
    "material": "",
-   "place": "",
+   "place": "慈心镇",
    "region": "清河",
-   "regionSource": "path",
+   "regionSource": "place",
    "layer": "地表",
    "repeat": 1,
    "totalRows": 2,
@@ -90274,9 +90267,9 @@
    "category": "设施与NPC",
    "categorySource": "dict",
    "material": "",
-   "place": "",
+   "place": "抱山湖",
    "region": "清河",
-   "regionSource": "path",
+   "regionSource": "place",
    "layer": "地表",
    "repeat": 1,
    "totalRows": 2,
@@ -91594,9 +91587,9 @@
    "category": "设施与NPC",
    "categorySource": "dict",
    "material": "",
-   "place": "",
+   "place": "望川坪",
    "region": "清河",
-   "regionSource": "path",
+   "regionSource": "place",
    "layer": "地表",
    "repeat": 1,
    "totalRows": 2,
@@ -111008,9 +111001,9 @@
    "category": "设施与NPC",
    "categorySource": "dict",
    "material": "",
-   "place": "",
+   "place": "浣石浦",
    "region": "清河",
-   "regionSource": "path",
+   "regionSource": "place",
    "layer": "地表",
    "repeat": 1,
    "totalRows": 2,
@@ -171498,9 +171491,9 @@
    "category": "材料",
    "categorySource": "dict",
    "material": "玉楼春",
-   "place": "",
+   "place": "勾栏瓦肆",
    "region": "开封",
-   "regionSource": "coord",
+   "regionSource": "place",
    "layer": "地表",
    "repeat": 1,
    "totalRows": 5,
@@ -171544,8 +171537,7 @@
    ],
    "flags": [
     "cross_file",
-    "duplicated",
-    "region_inferred"
+    "duplicated"
    ]
   },
   {
@@ -171560,9 +171552,9 @@
    "category": "材料",
    "categorySource": "dict",
    "material": "玉楼春",
-   "place": "",
+   "place": "勾栏瓦肆",
    "region": "开封",
-   "regionSource": "coord",
+   "regionSource": "place",
    "layer": "地表",
    "repeat": 1,
    "totalRows": 5,
@@ -171606,8 +171598,7 @@
    ],
    "flags": [
     "cross_file",
-    "duplicated",
-    "region_inferred"
+    "duplicated"
    ]
   },
   {
@@ -171622,9 +171613,9 @@
    "category": "材料",
    "categorySource": "dict",
    "material": "玉楼春",
-   "place": "",
+   "place": "勾栏瓦肆",
    "region": "开封",
-   "regionSource": "coord",
+   "regionSource": "place",
    "layer": "地表",
    "repeat": 1,
    "totalRows": 5,
@@ -171668,8 +171659,7 @@
    ],
    "flags": [
     "cross_file",
-    "duplicated",
-    "region_inferred"
+    "duplicated"
    ]
   },
   {
@@ -171684,9 +171674,9 @@
    "category": "材料",
    "categorySource": "dict",
    "material": "玉楼春",
-   "place": "",
+   "place": "勾栏瓦肆",
    "region": "开封",
-   "regionSource": "coord",
+   "regionSource": "place",
    "layer": "地表",
    "repeat": 1,
    "totalRows": 5,
@@ -171730,8 +171720,7 @@
    ],
    "flags": [
     "cross_file",
-    "duplicated",
-    "region_inferred"
+    "duplicated"
    ]
   },
   {
@@ -171746,9 +171735,9 @@
    "category": "材料",
    "categorySource": "dict",
    "material": "玉楼春",
-   "place": "",
+   "place": "勾栏瓦肆",
    "region": "开封",
-   "regionSource": "coord",
+   "regionSource": "place",
    "layer": "地表",
    "repeat": 1,
    "totalRows": 5,
@@ -171792,8 +171781,7 @@
    ],
    "flags": [
     "cross_file",
-    "duplicated",
-    "region_inferred"
+    "duplicated"
    ]
   },
   {
@@ -171808,9 +171796,9 @@
    "category": "材料",
    "categorySource": "dict",
    "material": "玉楼春",
-   "place": "",
+   "place": "勾栏瓦肆",
    "region": "开封",
-   "regionSource": "coord",
+   "regionSource": "place",
    "layer": "地表",
    "repeat": 1,
    "totalRows": 5,
@@ -171854,8 +171842,7 @@
    ],
    "flags": [
     "cross_file",
-    "duplicated",
-    "region_inferred"
+    "duplicated"
    ]
   },
   {
@@ -171870,9 +171857,9 @@
    "category": "材料",
    "categorySource": "dict",
    "material": "玉楼春",
-   "place": "",
+   "place": "勾栏瓦肆",
    "region": "开封",
-   "regionSource": "coord",
+   "regionSource": "place",
    "layer": "地表",
    "repeat": 1,
    "totalRows": 5,
@@ -171916,8 +171903,7 @@
    ],
    "flags": [
     "cross_file",
-    "duplicated",
-    "region_inferred"
+    "duplicated"
    ]
   },
   {
@@ -171932,9 +171918,9 @@
    "category": "材料",
    "categorySource": "dict",
    "material": "玉楼春",
-   "place": "",
+   "place": "勾栏瓦肆",
    "region": "开封",
-   "regionSource": "coord",
+   "regionSource": "place",
    "layer": "地表",
    "repeat": 1,
    "totalRows": 5,
@@ -171978,8 +171964,7 @@
    ],
    "flags": [
     "cross_file",
-    "duplicated",
-    "region_inferred"
+    "duplicated"
    ]
   },
   {
@@ -171994,9 +171979,9 @@
    "category": "材料",
    "categorySource": "dict",
    "material": "玉楼春",
-   "place": "",
+   "place": "勾栏瓦肆",
    "region": "开封",
-   "regionSource": "coord",
+   "regionSource": "place",
    "layer": "地表",
    "repeat": 1,
    "totalRows": 5,
@@ -172040,8 +172025,7 @@
    ],
    "flags": [
     "cross_file",
-    "duplicated",
-    "region_inferred"
+    "duplicated"
    ]
   },
   {
@@ -172056,9 +172040,9 @@
    "category": "材料",
    "categorySource": "dict",
    "material": "玉楼春",
-   "place": "",
+   "place": "勾栏瓦肆",
    "region": "开封",
-   "regionSource": "coord",
+   "regionSource": "place",
    "layer": "地表",
    "repeat": 1,
    "totalRows": 5,
@@ -172102,8 +172086,7 @@
    ],
    "flags": [
     "cross_file",
-    "duplicated",
-    "region_inferred"
+    "duplicated"
    ]
   },
   {
@@ -172118,9 +172101,9 @@
    "category": "材料",
    "categorySource": "dict",
    "material": "玉楼春",
-   "place": "",
+   "place": "勾栏瓦肆",
    "region": "开封",
-   "regionSource": "coord",
+   "regionSource": "place",
    "layer": "地表",
    "repeat": 1,
    "totalRows": 5,
@@ -172164,8 +172147,7 @@
    ],
    "flags": [
     "cross_file",
-    "duplicated",
-    "region_inferred"
+    "duplicated"
    ]
   },
   {
@@ -172180,9 +172162,9 @@
    "category": "材料",
    "categorySource": "dict",
    "material": "玉楼春",
-   "place": "",
+   "place": "勾栏瓦肆",
    "region": "开封",
-   "regionSource": "coord",
+   "regionSource": "place",
    "layer": "地表",
    "repeat": 1,
    "totalRows": 5,
@@ -172226,8 +172208,7 @@
    ],
    "flags": [
     "cross_file",
-    "duplicated",
-    "region_inferred"
+    "duplicated"
    ]
   },
   {
@@ -172242,9 +172223,9 @@
    "category": "材料",
    "categorySource": "dict",
    "material": "玉楼春",
-   "place": "",
+   "place": "勾栏瓦肆",
    "region": "开封",
-   "regionSource": "coord",
+   "regionSource": "place",
    "layer": "地表",
    "repeat": 1,
    "totalRows": 5,
@@ -172288,8 +172269,7 @@
    ],
    "flags": [
     "cross_file",
-    "duplicated",
-    "region_inferred"
+    "duplicated"
    ]
   },
   {
@@ -172304,9 +172284,9 @@
    "category": "材料",
    "categorySource": "dict",
    "material": "玉楼春",
-   "place": "",
+   "place": "南门大街",
    "region": "开封",
-   "regionSource": "coord",
+   "regionSource": "place",
    "layer": "地表",
    "repeat": 1,
    "totalRows": 5,
@@ -172350,8 +172330,7 @@
    ],
    "flags": [
     "cross_file",
-    "duplicated",
-    "region_inferred"
+    "duplicated"
    ]
   },
   {
@@ -172366,9 +172345,9 @@
    "category": "材料",
    "categorySource": "dict",
    "material": "玉楼春",
-   "place": "",
+   "place": "南门大街",
    "region": "开封",
-   "regionSource": "coord",
+   "regionSource": "place",
    "layer": "地表",
    "repeat": 1,
    "totalRows": 5,
@@ -172412,8 +172391,7 @@
    ],
    "flags": [
     "cross_file",
-    "duplicated",
-    "region_inferred"
+    "duplicated"
    ]
   },
   {
@@ -172428,9 +172406,9 @@
    "category": "材料",
    "categorySource": "dict",
    "material": "玉楼春",
-   "place": "",
+   "place": "南门大街",
    "region": "开封",
-   "regionSource": "coord",
+   "regionSource": "place",
    "layer": "地表",
    "repeat": 1,
    "totalRows": 5,
@@ -172474,8 +172452,7 @@
    ],
    "flags": [
     "cross_file",
-    "duplicated",
-    "region_inferred"
+    "duplicated"
    ]
   },
   {
@@ -172490,9 +172467,9 @@
    "category": "材料",
    "categorySource": "dict",
    "material": "玉楼春",
-   "place": "",
+   "place": "南门大街",
    "region": "开封",
-   "regionSource": "coord",
+   "regionSource": "place",
    "layer": "地表",
    "repeat": 1,
    "totalRows": 5,
@@ -172536,8 +172513,7 @@
    ],
    "flags": [
     "cross_file",
-    "duplicated",
-    "region_inferred"
+    "duplicated"
    ]
   },
   {
@@ -172552,9 +172528,9 @@
    "category": "材料",
    "categorySource": "dict",
    "material": "玉楼春",
-   "place": "",
+   "place": "南门大街",
    "region": "开封",
-   "regionSource": "coord",
+   "regionSource": "place",
    "layer": "地表",
    "repeat": 1,
    "totalRows": 5,
@@ -172598,8 +172574,7 @@
    ],
    "flags": [
     "cross_file",
-    "duplicated",
-    "region_inferred"
+    "duplicated"
    ]
   },
   {
@@ -172614,9 +172589,9 @@
    "category": "材料",
    "categorySource": "dict",
    "material": "玉楼春",
-   "place": "",
+   "place": "南门大街",
    "region": "开封",
-   "regionSource": "coord",
+   "regionSource": "place",
    "layer": "地表",
    "repeat": 1,
    "totalRows": 5,
@@ -172660,8 +172635,7 @@
    ],
    "flags": [
     "cross_file",
-    "duplicated",
-    "region_inferred"
+    "duplicated"
    ]
   },
   {
@@ -172676,9 +172650,9 @@
    "category": "材料",
    "categorySource": "dict",
    "material": "玉楼春",
-   "place": "",
+   "place": "南门大街",
    "region": "开封",
-   "regionSource": "coord",
+   "regionSource": "place",
    "layer": "地表",
    "repeat": 1,
    "totalRows": 5,
@@ -172722,8 +172696,7 @@
    ],
    "flags": [
     "cross_file",
-    "duplicated",
-    "region_inferred"
+    "duplicated"
    ]
   },
   {
@@ -172738,9 +172711,9 @@
    "category": "材料",
    "categorySource": "dict",
    "material": "玉楼春",
-   "place": "",
+   "place": "南门大街",
    "region": "开封",
-   "regionSource": "coord",
+   "regionSource": "place",
    "layer": "地表",
    "repeat": 1,
    "totalRows": 5,
@@ -172784,8 +172757,7 @@
    ],
    "flags": [
     "cross_file",
-    "duplicated",
-    "region_inferred"
+    "duplicated"
    ]
   },
   {
@@ -172800,9 +172772,9 @@
    "category": "材料",
    "categorySource": "dict",
    "material": "玉楼春",
-   "place": "",
+   "place": "南门大街",
    "region": "开封",
-   "regionSource": "coord",
+   "regionSource": "place",
    "layer": "地表",
    "repeat": 1,
    "totalRows": 5,
@@ -172846,8 +172818,7 @@
    ],
    "flags": [
     "cross_file",
-    "duplicated",
-    "region_inferred"
+    "duplicated"
    ]
   },
   {
@@ -172862,9 +172833,9 @@
    "category": "材料",
    "categorySource": "dict",
    "material": "玉楼春",
-   "place": "",
+   "place": "南门大街",
    "region": "开封",
-   "regionSource": "coord",
+   "regionSource": "place",
    "layer": "地表",
    "repeat": 1,
    "totalRows": 5,
@@ -172908,8 +172879,7 @@
    ],
    "flags": [
     "cross_file",
-    "duplicated",
-    "region_inferred"
+    "duplicated"
    ]
   },
   {
@@ -172924,9 +172894,9 @@
    "category": "材料",
    "categorySource": "dict",
    "material": "玉楼春",
-   "place": "",
+   "place": "南门大街",
    "region": "开封",
-   "regionSource": "coord",
+   "regionSource": "place",
    "layer": "地表",
    "repeat": 1,
    "totalRows": 5,
@@ -172970,8 +172940,7 @@
    ],
    "flags": [
     "cross_file",
-    "duplicated",
-    "region_inferred"
+    "duplicated"
    ]
   },
   {
@@ -172986,9 +172955,9 @@
    "category": "材料",
    "categorySource": "dict",
    "material": "玉楼春",
-   "place": "",
+   "place": "南门大街",
    "region": "开封",
-   "regionSource": "coord",
+   "regionSource": "place",
    "layer": "地表",
    "repeat": 1,
    "totalRows": 5,
@@ -173032,8 +173001,7 @@
    ],
    "flags": [
     "cross_file",
-    "duplicated",
-    "region_inferred"
+    "duplicated"
    ]
   },
   {
@@ -173048,9 +173016,9 @@
    "category": "材料",
    "categorySource": "dict",
    "material": "玉楼春",
-   "place": "",
+   "place": "南门大街",
    "region": "开封",
-   "regionSource": "coord",
+   "regionSource": "place",
    "layer": "地表",
    "repeat": 1,
    "totalRows": 5,
@@ -173094,8 +173062,7 @@
    ],
    "flags": [
     "cross_file",
-    "duplicated",
-    "region_inferred"
+    "duplicated"
    ]
   },
   {
@@ -173110,9 +173077,9 @@
    "category": "材料",
    "categorySource": "dict",
    "material": "玉楼春",
-   "place": "",
+   "place": "南门大街",
    "region": "开封",
-   "regionSource": "coord",
+   "regionSource": "place",
    "layer": "地表",
    "repeat": 1,
    "totalRows": 5,
@@ -173156,8 +173123,7 @@
    ],
    "flags": [
     "cross_file",
-    "duplicated",
-    "region_inferred"
+    "duplicated"
    ]
   },
   {
@@ -173172,9 +173138,9 @@
    "category": "材料",
    "categorySource": "dict",
    "material": "玉楼春",
-   "place": "",
+   "place": "南门大街",
    "region": "开封",
-   "regionSource": "coord",
+   "regionSource": "place",
    "layer": "地表",
    "repeat": 1,
    "totalRows": 5,
@@ -173218,8 +173184,7 @@
    ],
    "flags": [
     "cross_file",
-    "duplicated",
-    "region_inferred"
+    "duplicated"
    ]
   },
   {
@@ -173234,7 +173199,7 @@
    "category": "材料",
    "categorySource": "dict",
    "material": "玉楼春",
-   "place": "",
+   "place": "开封东郊",
    "region": "开封",
    "regionSource": "name",
    "layer": "地表",
@@ -173295,7 +173260,7 @@
    "category": "材料",
    "categorySource": "dict",
    "material": "玉楼春",
-   "place": "",
+   "place": "开封东郊",
    "region": "开封",
    "regionSource": "name",
    "layer": "地表",
@@ -173356,7 +173321,7 @@
    "category": "材料",
    "categorySource": "dict",
    "material": "玉楼春",
-   "place": "",
+   "place": "开封东郊",
    "region": "开封",
    "regionSource": "name",
    "layer": "地表",
@@ -173417,7 +173382,7 @@
    "category": "材料",
    "categorySource": "dict",
    "material": "玉楼春",
-   "place": "",
+   "place": "开封东郊",
    "region": "开封",
    "regionSource": "name",
    "layer": "地表",
@@ -173478,7 +173443,7 @@
    "category": "材料",
    "categorySource": "dict",
    "material": "玉楼春",
-   "place": "",
+   "place": "开封东郊",
    "region": "开封",
    "regionSource": "name",
    "layer": "地表",
@@ -173525,7 +173490,7 @@
    "category": "材料",
    "categorySource": "dict",
    "material": "玉楼春",
-   "place": "",
+   "place": "开封东郊",
    "region": "开封",
    "regionSource": "name",
    "layer": "地表",
@@ -174240,9 +174205,9 @@
    "category": "材料",
    "categorySource": "dict",
    "material": "玉楼春",
-   "place": "",
+   "place": "清心圃",
    "region": "开封",
-   "regionSource": "coord",
+   "regionSource": "place",
    "layer": "地表",
    "repeat": 1,
    "totalRows": 5,
@@ -174286,8 +174251,7 @@
    ],
    "flags": [
     "cross_file",
-    "duplicated",
-    "region_inferred"
+    "duplicated"
    ]
   },
   {
@@ -174302,9 +174266,9 @@
    "category": "材料",
    "categorySource": "dict",
    "material": "玉楼春",
-   "place": "",
+   "place": "清心圃",
    "region": "开封",
-   "regionSource": "coord",
+   "regionSource": "place",
    "layer": "地表",
    "repeat": 1,
    "totalRows": 5,
@@ -174348,8 +174312,7 @@
    ],
    "flags": [
     "cross_file",
-    "duplicated",
-    "region_inferred"
+    "duplicated"
    ]
   },
   {
@@ -174364,9 +174327,9 @@
    "category": "材料",
    "categorySource": "dict",
    "material": "玉楼春",
-   "place": "",
+   "place": "清心圃",
    "region": "开封",
-   "regionSource": "coord",
+   "regionSource": "place",
    "layer": "地表",
    "repeat": 1,
    "totalRows": 5,
@@ -174410,8 +174373,7 @@
    ],
    "flags": [
     "cross_file",
-    "duplicated",
-    "region_inferred"
+    "duplicated"
    ]
   },
   {
@@ -174426,9 +174388,9 @@
    "category": "材料",
    "categorySource": "dict",
    "material": "玉楼春",
-   "place": "",
+   "place": "清心圃",
    "region": "开封",
-   "regionSource": "coord",
+   "regionSource": "place",
    "layer": "地表",
    "repeat": 1,
    "totalRows": 5,
@@ -174472,8 +174434,7 @@
    ],
    "flags": [
     "cross_file",
-    "duplicated",
-    "region_inferred"
+    "duplicated"
    ]
   },
   {
@@ -174488,9 +174449,9 @@
    "category": "材料",
    "categorySource": "dict",
    "material": "玉楼春",
-   "place": "",
+   "place": "清心圃",
    "region": "开封",
-   "regionSource": "coord",
+   "regionSource": "place",
    "layer": "地表",
    "repeat": 1,
    "totalRows": 5,
@@ -174534,8 +174495,7 @@
    ],
    "flags": [
     "cross_file",
-    "duplicated",
-    "region_inferred"
+    "duplicated"
    ]
   },
   {
@@ -174550,9 +174510,9 @@
    "category": "材料",
    "categorySource": "dict",
    "material": "玉楼春",
-   "place": "",
+   "place": "清心圃",
    "region": "开封",
-   "regionSource": "coord",
+   "regionSource": "place",
    "layer": "地表",
    "repeat": 1,
    "totalRows": 5,
@@ -174596,8 +174556,7 @@
    ],
    "flags": [
     "cross_file",
-    "duplicated",
-    "region_inferred"
+    "duplicated"
    ]
   },
   {
@@ -188091,9 +188050,9 @@
    "category": "设施与NPC",
    "categorySource": "dict",
    "material": "",
-   "place": "",
+   "place": "竹林旧居",
    "region": "清河",
-   "regionSource": "path",
+   "regionSource": "place",
    "layer": "地表",
    "repeat": 1,
    "totalRows": 2,
@@ -297270,9 +297229,9 @@
    "category": "材料",
    "categorySource": "dict",
    "material": "魏紫",
-   "place": "",
+   "place": "勾栏瓦肆",
    "region": "开封",
-   "regionSource": "coord",
+   "regionSource": "place",
    "layer": "地表",
    "repeat": 1,
    "totalRows": 5,
@@ -297316,8 +297275,7 @@
    ],
    "flags": [
     "cross_file",
-    "duplicated",
-    "region_inferred"
+    "duplicated"
    ]
   },
   {
@@ -297332,9 +297290,9 @@
    "category": "材料",
    "categorySource": "dict",
    "material": "魏紫",
-   "place": "",
+   "place": "勾栏瓦肆",
    "region": "开封",
-   "regionSource": "coord",
+   "regionSource": "place",
    "layer": "地表",
    "repeat": 1,
    "totalRows": 5,
@@ -297378,8 +297336,7 @@
    ],
    "flags": [
     "cross_file",
-    "duplicated",
-    "region_inferred"
+    "duplicated"
    ]
   },
   {
@@ -297394,9 +297351,9 @@
    "category": "材料",
    "categorySource": "dict",
    "material": "魏紫",
-   "place": "",
+   "place": "勾栏瓦肆",
    "region": "开封",
-   "regionSource": "coord",
+   "regionSource": "place",
    "layer": "地表",
    "repeat": 1,
    "totalRows": 5,
@@ -297440,8 +297397,7 @@
    ],
    "flags": [
     "cross_file",
-    "duplicated",
-    "region_inferred"
+    "duplicated"
    ]
   },
   {
@@ -297456,9 +297412,9 @@
    "category": "材料",
    "categorySource": "dict",
    "material": "魏紫",
-   "place": "",
+   "place": "勾栏瓦肆",
    "region": "开封",
-   "regionSource": "coord",
+   "regionSource": "place",
    "layer": "地表",
    "repeat": 1,
    "totalRows": 5,
@@ -297502,8 +297458,7 @@
    ],
    "flags": [
     "cross_file",
-    "duplicated",
-    "region_inferred"
+    "duplicated"
    ]
   },
   {
@@ -297518,9 +297473,9 @@
    "category": "材料",
    "categorySource": "dict",
    "material": "魏紫",
-   "place": "",
+   "place": "勾栏瓦肆",
    "region": "开封",
-   "regionSource": "coord",
+   "regionSource": "place",
    "layer": "地表",
    "repeat": 1,
    "totalRows": 5,
@@ -297564,8 +297519,7 @@
    ],
    "flags": [
     "cross_file",
-    "duplicated",
-    "region_inferred"
+    "duplicated"
    ]
   },
   {
@@ -297580,9 +297534,9 @@
    "category": "材料",
    "categorySource": "dict",
    "material": "魏紫",
-   "place": "",
+   "place": "勾栏瓦肆",
    "region": "开封",
-   "regionSource": "coord",
+   "regionSource": "place",
    "layer": "地表",
    "repeat": 1,
    "totalRows": 5,
@@ -297626,8 +297580,7 @@
    ],
    "flags": [
     "cross_file",
-    "duplicated",
-    "region_inferred"
+    "duplicated"
    ]
   },
   {
@@ -297642,9 +297595,9 @@
    "category": "材料",
    "categorySource": "dict",
    "material": "魏紫",
-   "place": "",
+   "place": "勾栏瓦肆",
    "region": "开封",
-   "regionSource": "coord",
+   "regionSource": "place",
    "layer": "地表",
    "repeat": 1,
    "totalRows": 5,
@@ -297688,8 +297641,7 @@
    ],
    "flags": [
     "cross_file",
-    "duplicated",
-    "region_inferred"
+    "duplicated"
    ]
   },
   {
@@ -297704,9 +297656,9 @@
    "category": "材料",
    "categorySource": "dict",
    "material": "魏紫",
-   "place": "",
+   "place": "勾栏瓦肆",
    "region": "开封",
-   "regionSource": "coord",
+   "regionSource": "place",
    "layer": "地表",
    "repeat": 1,
    "totalRows": 5,
@@ -297750,8 +297702,7 @@
    ],
    "flags": [
     "cross_file",
-    "duplicated",
-    "region_inferred"
+    "duplicated"
    ]
   },
   {
@@ -297766,9 +297717,9 @@
    "category": "材料",
    "categorySource": "dict",
    "material": "魏紫",
-   "place": "",
+   "place": "勾栏瓦肆",
    "region": "开封",
-   "regionSource": "coord",
+   "regionSource": "place",
    "layer": "地表",
    "repeat": 1,
    "totalRows": 5,
@@ -297812,8 +297763,7 @@
    ],
    "flags": [
     "cross_file",
-    "duplicated",
-    "region_inferred"
+    "duplicated"
    ]
   },
   {
@@ -297828,9 +297778,9 @@
    "category": "材料",
    "categorySource": "dict",
    "material": "魏紫",
-   "place": "",
+   "place": "南门大街",
    "region": "开封",
-   "regionSource": "coord",
+   "regionSource": "place",
    "layer": "地表",
    "repeat": 1,
    "totalRows": 5,
@@ -297874,8 +297824,7 @@
    ],
    "flags": [
     "cross_file",
-    "duplicated",
-    "region_inferred"
+    "duplicated"
    ]
   },
   {
@@ -297890,9 +297839,9 @@
    "category": "材料",
    "categorySource": "dict",
    "material": "魏紫",
-   "place": "",
+   "place": "南门大街",
    "region": "开封",
-   "regionSource": "coord",
+   "regionSource": "place",
    "layer": "地表",
    "repeat": 1,
    "totalRows": 5,
@@ -297936,8 +297885,7 @@
    ],
    "flags": [
     "cross_file",
-    "duplicated",
-    "region_inferred"
+    "duplicated"
    ]
   },
   {
@@ -297952,9 +297900,9 @@
    "category": "材料",
    "categorySource": "dict",
    "material": "魏紫",
-   "place": "",
+   "place": "南门大街",
    "region": "开封",
-   "regionSource": "coord",
+   "regionSource": "place",
    "layer": "地表",
    "repeat": 1,
    "totalRows": 5,
@@ -297998,8 +297946,7 @@
    ],
    "flags": [
     "cross_file",
-    "duplicated",
-    "region_inferred"
+    "duplicated"
    ]
   },
   {
@@ -298014,9 +297961,9 @@
    "category": "材料",
    "categorySource": "dict",
    "material": "魏紫",
-   "place": "",
+   "place": "南门大街",
    "region": "开封",
-   "regionSource": "coord",
+   "regionSource": "place",
    "layer": "地表",
    "repeat": 1,
    "totalRows": 5,
@@ -298060,8 +298007,7 @@
    ],
    "flags": [
     "cross_file",
-    "duplicated",
-    "region_inferred"
+    "duplicated"
    ]
   },
   {
@@ -298076,9 +298022,9 @@
    "category": "材料",
    "categorySource": "dict",
    "material": "魏紫",
-   "place": "",
+   "place": "南门大街",
    "region": "开封",
-   "regionSource": "coord",
+   "regionSource": "place",
    "layer": "地表",
    "repeat": 1,
    "totalRows": 5,
@@ -298122,8 +298068,7 @@
    ],
    "flags": [
     "cross_file",
-    "duplicated",
-    "region_inferred"
+    "duplicated"
    ]
   },
   {
@@ -298138,9 +298083,9 @@
    "category": "材料",
    "categorySource": "dict",
    "material": "魏紫",
-   "place": "",
+   "place": "南门大街",
    "region": "开封",
-   "regionSource": "coord",
+   "regionSource": "place",
    "layer": "地表",
    "repeat": 1,
    "totalRows": 5,
@@ -298184,8 +298129,7 @@
    ],
    "flags": [
     "cross_file",
-    "duplicated",
-    "region_inferred"
+    "duplicated"
    ]
   },
   {
@@ -298200,9 +298144,9 @@
    "category": "材料",
    "categorySource": "dict",
    "material": "魏紫",
-   "place": "",
+   "place": "南门大街",
    "region": "开封",
-   "regionSource": "coord",
+   "regionSource": "place",
    "layer": "地表",
    "repeat": 1,
    "totalRows": 5,
@@ -298246,8 +298190,7 @@
    ],
    "flags": [
     "cross_file",
-    "duplicated",
-    "region_inferred"
+    "duplicated"
    ]
   },
   {
@@ -298262,9 +298205,9 @@
    "category": "材料",
    "categorySource": "dict",
    "material": "魏紫",
-   "place": "",
+   "place": "南门大街",
    "region": "开封",
-   "regionSource": "coord",
+   "regionSource": "place",
    "layer": "地表",
    "repeat": 1,
    "totalRows": 5,
@@ -298308,8 +298251,7 @@
    ],
    "flags": [
     "cross_file",
-    "duplicated",
-    "region_inferred"
+    "duplicated"
    ]
   },
   {
@@ -298324,9 +298266,9 @@
    "category": "材料",
    "categorySource": "dict",
    "material": "魏紫",
-   "place": "",
+   "place": "南门大街",
    "region": "开封",
-   "regionSource": "coord",
+   "regionSource": "place",
    "layer": "地表",
    "repeat": 1,
    "totalRows": 5,
@@ -298370,8 +298312,7 @@
    ],
    "flags": [
     "cross_file",
-    "duplicated",
-    "region_inferred"
+    "duplicated"
    ]
   },
   {
@@ -298386,9 +298327,9 @@
    "category": "材料",
    "categorySource": "dict",
    "material": "魏紫",
-   "place": "",
+   "place": "南门大街",
    "region": "开封",
-   "regionSource": "coord",
+   "regionSource": "place",
    "layer": "地表",
    "repeat": 1,
    "totalRows": 5,
@@ -298432,8 +298373,7 @@
    ],
    "flags": [
     "cross_file",
-    "duplicated",
-    "region_inferred"
+    "duplicated"
    ]
   },
   {
@@ -298448,7 +298388,7 @@
    "category": "材料",
    "categorySource": "dict",
    "material": "魏紫",
-   "place": "",
+   "place": "开封东郊",
    "region": "开封",
    "regionSource": "name",
    "layer": "地表",
@@ -298509,7 +298449,7 @@
    "category": "材料",
    "categorySource": "dict",
    "material": "魏紫",
-   "place": "",
+   "place": "开封东郊",
    "region": "开封",
    "regionSource": "name",
    "layer": "地表",
@@ -298570,7 +298510,7 @@
    "category": "材料",
    "categorySource": "dict",
    "material": "魏紫",
-   "place": "",
+   "place": "开封东郊",
    "region": "开封",
    "regionSource": "name",
    "layer": "地表",
@@ -298631,7 +298571,7 @@
    "category": "材料",
    "categorySource": "dict",
    "material": "魏紫",
-   "place": "",
+   "place": "开封东郊",
    "region": "开封",
    "regionSource": "name",
    "layer": "地表",
@@ -298692,7 +298632,7 @@
    "category": "材料",
    "categorySource": "dict",
    "material": "魏紫",
-   "place": "",
+   "place": "开封东郊",
    "region": "开封",
    "regionSource": "name",
    "layer": "地表",
@@ -298753,7 +298693,7 @@
    "category": "材料",
    "categorySource": "dict",
    "material": "魏紫",
-   "place": "",
+   "place": "开封东郊",
    "region": "开封",
    "regionSource": "name",
    "layer": "地表",
@@ -299123,9 +299063,9 @@
    "category": "材料",
    "categorySource": "dict",
    "material": "魏紫",
-   "place": "",
+   "place": "清心圃",
    "region": "开封",
-   "regionSource": "coord",
+   "regionSource": "place",
    "layer": "地表",
    "repeat": 1,
    "totalRows": 5,
@@ -299169,8 +299109,7 @@
    ],
    "flags": [
     "cross_file",
-    "duplicated",
-    "region_inferred"
+    "duplicated"
    ]
   },
   {
@@ -299185,9 +299124,9 @@
    "category": "材料",
    "categorySource": "dict",
    "material": "魏紫",
-   "place": "",
+   "place": "清心圃",
    "region": "开封",
-   "regionSource": "coord",
+   "regionSource": "place",
    "layer": "地表",
    "repeat": 1,
    "totalRows": 5,
@@ -299231,8 +299170,7 @@
    ],
    "flags": [
     "cross_file",
-    "duplicated",
-    "region_inferred"
+    "duplicated"
    ]
   },
   {

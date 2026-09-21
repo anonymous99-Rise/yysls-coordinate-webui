@@ -11,7 +11,7 @@
     "crossFilePoints": 4986,
     "coLocatedPoints": 693,
     "regionUnknown": 0,
-    "regionFilledByNearest": 697
+    "regionFilledByNearest": 690
   },
   "categoryMeta": {
     "材料": {
@@ -303,6 +303,14 @@
       "count": 28
     },
     {
+      "key": "南门大街",
+      "count": 26
+    },
+    {
+      "key": "勾栏瓦肆",
+      "count": 23
+    },
+    {
       "key": "醉花阴",
       "count": 22
     },
@@ -313,6 +321,10 @@
     {
       "key": "千佛村",
       "count": 14
+    },
+    {
+      "key": "开封东郊",
+      "count": 13
     },
     {
       "key": "慈心山院",
@@ -329,6 +341,14 @@
     {
       "key": "百工坊",
       "count": 10
+    },
+    {
+      "key": "清心圃",
+      "count": 8
+    },
+    {
+      "key": "春秋别馆",
+      "count": 7
     },
     {
       "key": "来生岸",
@@ -383,12 +403,24 @@
       "count": 2
     },
     {
+      "key": "将军祠",
+      "count": 2
+    },
+    {
       "key": "怜花禅院",
       "count": 2
     },
     {
       "key": "聆杏村",
       "count": 2
+    },
+    {
+      "key": "不伏马场",
+      "count": 1
+    },
+    {
+      "key": "不羡仙",
+      "count": 1
     },
     {
       "key": "大相国寺",
@@ -411,7 +443,19 @@
       "count": 1
     },
     {
+      "key": "慈心镇",
+      "count": 1
+    },
+    {
+      "key": "抱山湖",
+      "count": 1
+    },
+    {
       "key": "旧村遗址",
+      "count": 1
+    },
+    {
+      "key": "望川坪",
       "count": 1
     },
     {
@@ -420,6 +464,10 @@
     },
     {
       "key": "汴河渡口",
+      "count": 1
+    },
+    {
+      "key": "浣石浦",
       "count": 1
     },
     {
@@ -436,6 +484,10 @@
     },
     {
       "key": "秀金所",
+      "count": 1
+    },
+    {
+      "key": "竹林旧居",
       "count": 1
     },
     {
@@ -472,11 +524,11 @@
   "regionSources": [
     {
       "key": "coord",
-      "count": 2781
+      "count": 2726
     },
     {
       "key": "path",
-      "count": 1225
+      "count": 1214
     },
     {
       "key": "name",
@@ -484,11 +536,11 @@
     },
     {
       "key": "nearest",
-      "count": 697
+      "count": 690
     },
     {
       "key": "place",
-      "count": 350
+      "count": 423
     }
   ],
   "categorySources": [
@@ -528,15 +580,15 @@
     },
     {
       "key": "region_inferred",
-      "count": 2781
-    },
-    {
-      "key": "region_nearest",
-      "count": 697
+      "count": 2726
     },
     {
       "key": "co_located_with_other",
       "count": 693
+    },
+    {
+      "key": "region_nearest",
+      "count": 690
     },
     {
       "key": "placeholder_name",

@@ -40,6 +40,7 @@ from lib_parse import parse_line  # noqa: E402  (tools/lib_parse.py)
 
 passed = 0
 failed = 0
+skipped = 0
 
 
 def check(label: str, cond: bool, detail: str = "") -> None:
@@ -50,6 +51,46 @@ def check(label: str, cond: bool, detail: str = "") -> None:
     else:
         failed += 1
         print(f"  [FAIL] {label}  {detail}")
+
+
+def skip(label: str, why: str) -> None:
+    """环境不支持时明确记为「跳过」，而不是让它冒充失败。
+
+    「跳过」和「通过」要分开计数：把环境问题混进失败里，会让人以为代码坏了；
+    混进通过里，又会让真正的回归藏起来。
+    """
+    global skipped
+    skipped += 1
+    print(f"  [跳过] {label}  ——  {why}")
+
+
+def input_io_available() -> tuple[bool, str]:
+    """探测当前会话还能不能做键鼠输入。
+
+    锁屏 / 会话断开 / 切到别的桌面时，SendInput 会静默失败、低层键盘钩子也收不到键。
+    这不是代码问题，是环境问题 —— 而且**今天早些时候同样这两条测试是通过的**
+    （实测 2 秒按 4 次、回环收到探针 z/x/q），所以必须先探测再断言。
+    """
+    try:
+        import ctypes
+        from ctypes import wintypes
+        # 打不开输入桌面 = 锁屏或会话不活跃
+        u32 = ctypes.WinDLL("user32", use_last_error=True)
+        u32.OpenInputDesktop.argtypes = [wintypes.DWORD, wintypes.BOOL, wintypes.DWORD]
+        u32.OpenInputDesktop.restype = wintypes.HANDLE
+        u32.CloseDesktop.argtypes = [wintypes.HANDLE]
+        h = u32.OpenInputDesktop(0, False, 0x0001)
+        if not h:
+            return False, "打不开输入桌面（会话被锁屏/断开？）"
+        u32.CloseDesktop(h)
+    except Exception as e:
+        return False, f"桌面探测失败：{type(e).__name__}: {e}"
+    try:
+        if not injector.press_key("f9", 0.01):
+            return False, "SendInput 返回失败（注入被拦或会话不可交互）"
+    except Exception as e:
+        return False, f"试发键失败：{type(e).__name__}: {e}"
+    return True, ""
 
 
 def run_script(name: str, args: list[str]) -> tuple[int, str]:
@@ -233,18 +274,33 @@ pts = [h.jitter_point(1000, 500, 80, 60) for _ in range(40)]
 check("区域抖动也落在了合理范围", all(940 <= x <= 1060 and 440 <= y <= 560 for x, y in pts))
 
 # 全局热键：能不能注册 + 能不能被真实按键触发（回环）
-try:
-    w = inj.HotkeyWatcher(poll_interval=0.02)
-    fired: list[str] = []
-    w.add("F9", lambda: fired.append("f9"))
-    backend = w.start()
-    time.sleep(0.3)
-    inj.press_key("f9", 0.05)
-    time.sleep(0.6)
-    w.stop()
-    check("全局热键能被真实按键触发", len(fired) >= 1, f"后端={backend} 触发 {len(fired)} 次")
-except Exception as e:
-    check("全局热键能被真实按键触发", False, f"{type(e).__name__}: {e}")
+# ⚠️ 这条是**环境敏感**的：钩子能否捕获注入的按键，取决于会话有没有可交互桌面、
+# 钩子有没有被占用、机器负载。先探测，探不到就明确「跳过」而不是报失败。
+_io_ok, _io_why = input_io_available()
+if not _io_ok:
+    skip("全局热键能被真实按键触发", _io_why)
+else:
+    hot_ok, hot_detail = False, ""
+    for attempt in range(3):
+        try:
+            w = inj.HotkeyWatcher(poll_interval=0.02)
+            fired: list[str] = []
+            w.add("F9", lambda: fired.append("f9"))
+            backend = w.start()
+            time.sleep(0.6 + attempt * 0.3)
+            for _ in range(3):
+                inj.press_key("f9", 0.05)
+                time.sleep(0.4)
+            w.stop()
+            if fired:
+                hot_ok, hot_detail = True, f"后端={backend} 触发 {len(fired)} 次（第 {attempt + 1} 轮）"
+                break
+            hot_detail = f"后端={backend} 3 轮共 9 次按键都没触发"
+        except Exception as e:
+            hot_detail = f"{type(e).__name__}: {e}"
+        time.sleep(0.5)
+    check("全局热键能被真实按键触发", hot_ok,
+          hot_detail + ("" if hot_ok else "  ← 会话可交互，所以这说明热键链路真坏了"))
 
 # 窗口枚举
 try:
@@ -338,9 +394,14 @@ p = subprocess.run(
 )
 check("spam 模式退出码 0", p.returncode == 0, (p.stderr or "")[:200])
 m = re.search(r"发键 (\d+) 次", p.stdout or "")
-pressed = int(m.group(1)) if m else -1
-check("2 秒 / 0.25 秒间隔 至少按 4 次（--duration 不再冒充按键时长）",
-      pressed >= 4, f"实际按了 {pressed} 次")
+_pressed = int(m.group(1)) if m else -1
+if not _io_ok:
+    # 发键被环境拦掉时，这里必然数到 0 次。别让它冒充失败：
+    # 这条断言真正要盯的是「--duration 不冒充按键时长」，而那要靠真的发得出去才验得了。
+    skip("2 秒 / 0.25 秒间隔 至少按 4 次（--duration 不再冒充按键时长）", _io_why)
+else:
+    check("2 秒 / 0.25 秒间隔 至少按 4 次（--duration 不再冒充按键时长）",
+          _pressed >= 4, f"实际按了 {_pressed} 次")
 
 p = subprocess.run([sys.executable, str(gather_py), "--mode", "detect"],
                    capture_output=True, text=True, encoding="utf-8", errors="replace", cwd=str(PROJECT))
@@ -383,6 +444,20 @@ if HAVE_NAV:
           abs(t.scale - true_s) < 1e-6 and abs(t.rotation_deg - math.degrees(true_th)) < 1e-6
           and t.rms < 1e-6,
           f"scale={t.scale:.6f} rot={t.rotation_deg:+.3f}° RMS={t.rms:.2e}")
+
+    # 回归：Transform 的字段顺序是 (model, params, rms, n, max_err)，
+    # 早先用 `Transform(model, params, *_err(...), n)` 把 max_err 和 n 弄反了 ——
+    # 打印出来的「最大误差」一直是点的个数（3 个点显示 3.00，看着挺合理，就骗过去了）。
+    # 这里直接盯住 n 和 max_err 各自是不是对的。
+    check("Transform.n 是点的个数", t.n == len(world), f"n={t.n} 期望 {len(world)}")
+    check("完美线性关系下 max_err 接近 0（而不是等于点数）",
+          t.max_err < 1e-6, f"max_err={t.max_err:.2e}")
+    outl_w = np.vstack([world, [[9000.0, 9000.0]]])
+    outl_s = np.vstack([screen, [[9999.0, 9999.0]]])
+    t_out = navmod.fit_affine(outl_w, outl_s)
+    check("有离群点时 max_err 真的反映最大偏差（且 >= RMS）",
+          t_out.n == len(outl_w) and t_out.max_err > t_out.rms,
+          f"n={t_out.n} max_err={t_out.max_err:.1f} rms={t_out.rms:.1f}")
 
     noisy = screen + rng.normal(0, 1.0, screen.shape)
     t2, _ = navmod.fit_best(world, noisy)
@@ -531,5 +606,10 @@ for junk in (PROJECT / "raw" / "rpa").glob("_selftest*"):
         junk.unlink(missing_ok=True)
 
 print()
-print(f"结果：{passed} 项通过，{failed} 项失败")
+tail = f"结果：{passed} 项通过，{failed} 项失败"
+if skipped:
+    tail += f"，{skipped} 项因环境不支持跳过"
+print(tail)
+if skipped:
+    print("  （跳过不等于通过：环境恢复可交互桌面后再跑一次，这两条必须真过）")
 raise SystemExit(1 if failed else 0)

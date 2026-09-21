@@ -1,0 +1,1082 @@
+{
+ "maps": [
+  {
+   "id": 0,
+   "name": "清河",
+   "regions": [
+    {
+     "mapId": 0,
+     "id": 1,
+     "name": "竹林旧居",
+     "zoomLevel": 12,
+     "latitude": "176545.0",
+     "longitude": "-65065.0"
+    },
+    {
+     "mapId": 0,
+     "id": 2,
+     "name": "将军祠",
+     "zoomLevel": 12,
+     "latitude": "220474.0",
+     "longitude": "-130173.0"
+    },
+    {
+     "mapId": 0,
+     "id": 4,
+     "name": "浣石浦",
+     "zoomLevel": 12,
+     "latitude": "176271.0",
+     "longitude": "-147147.0"
+    },
+    {
+     "mapId": 0,
+     "id": 5,
+     "name": "神仙渡",
+     "zoomLevel": 12,
+     "latitude": "204133.0",
+     "longitude": "-205471.0"
+    },
+    {
+     "mapId": 0,
+     "id": 6,
+     "name": "不羡仙",
+     "zoomLevel": 12,
+     "latitude": "233406.0",
+     "longitude": "-271751.0"
+    },
+    {
+     "mapId": 0,
+     "id": 8,
+     "name": "烧瓷岭",
+     "zoomLevel": 12,
+     "latitude": "173015.0",
+     "longitude": "-251324.0"
+    },
+    {
+     "mapId": 0,
+     "id": 9,
+     "name": "七伐坡",
+     "zoomLevel": 12,
+     "latitude": "157533.0",
+     "longitude": "-120365.0"
+    },
+    {
+     "mapId": 0,
+     "id": 10,
+     "name": "丹崖",
+     "zoomLevel": 12,
+     "latitude": "135002.0",
+     "longitude": "-161350.0"
+    },
+    {
+     "mapId": 0,
+     "id": 12,
+     "name": "太平钟楼",
+     "zoomLevel": 12,
+     "latitude": "157734.0",
+     "longitude": "-230731.0"
+    },
+    {
+     "mapId": 0,
+     "id": 13,
+     "name": "荒蚀林",
+     "zoomLevel": 12,
+     "latitude": "164752.0",
+     "longitude": "-315174.0"
+    },
+    {
+     "mapId": 0,
+     "id": 14,
+     "name": "丰禾村",
+     "zoomLevel": 12,
+     "latitude": "215442.0",
+     "longitude": "-324526.0"
+    },
+    {
+     "mapId": 0,
+     "id": 15,
+     "name": "临江驿",
+     "zoomLevel": 12,
+     "latitude": "163145.0",
+     "longitude": "-353123.0"
+    },
+    {
+     "mapId": 0,
+     "id": 17,
+     "name": "望川坪",
+     "zoomLevel": 12,
+     "latitude": "137063.0",
+     "longitude": "-323777.0"
+    },
+    {
+     "mapId": 0,
+     "id": 18,
+     "name": "龙虎岭",
+     "zoomLevel": 11,
+     "latitude": "123715.0",
+     "longitude": "-276054.0"
+    },
+    {
+     "mapId": 0,
+     "id": 19,
+     "name": "藏贤岗",
+     "zoomLevel": 12,
+     "latitude": "125322.0",
+     "longitude": "-243146.0"
+    },
+    {
+     "mapId": 0,
+     "id": 20,
+     "name": "春秋别馆",
+     "zoomLevel": 12,
+     "latitude": "116433.0",
+     "longitude": "-223516.0"
+    },
+    {
+     "mapId": 0,
+     "id": 22,
+     "name": "抱山湖",
+     "zoomLevel": 12,
+     "latitude": "71314.0",
+     "longitude": "-255647.0"
+    },
+    {
+     "mapId": 0,
+     "id": 23,
+     "name": "花海",
+     "zoomLevel": 13,
+     "latitude": "251553.0",
+     "longitude": "-261013.0"
+    },
+    {
+     "mapId": 0,
+     "id": 24,
+     "name": "慈心镇",
+     "zoomLevel": 12,
+     "latitude": "300646.0",
+     "longitude": "-274444.0"
+    },
+    {
+     "mapId": 0,
+     "id": 25,
+     "name": "慈心山院",
+     "zoomLevel": 12,
+     "latitude": "330117.0",
+     "longitude": "-254237.0"
+    },
+    {
+     "mapId": 0,
+     "id": 26,
+     "name": "千佛村",
+     "zoomLevel": 12,
+     "latitude": "322234.0",
+     "longitude": "-203277.0"
+    },
+    {
+     "mapId": 0,
+     "id": 27,
+     "name": "佛光顶",
+     "zoomLevel": 12,
+     "latitude": "264773.0",
+     "longitude": "-226432.0"
+    },
+    {
+     "mapId": 0,
+     "id": 29,
+     "name": "璧泉山",
+     "zoomLevel": 12,
+     "latitude": "242443.0",
+     "longitude": "-220747.0"
+    },
+    {
+     "mapId": 0,
+     "id": 30,
+     "name": "菩提苦海",
+     "zoomLevel": 12,
+     "latitude": "246574.0",
+     "longitude": "-156360.0"
+    },
+    {
+     "mapId": 0,
+     "id": 31,
+     "name": "来生岸",
+     "zoomLevel": 12,
+     "latitude": "312015.0",
+     "longitude": "-136426.0"
+    },
+    {
+     "mapId": 0,
+     "id": 32,
+     "name": "伏马庄",
+     "zoomLevel": 12,
+     "latitude": "265300.0",
+     "longitude": "-112354.0"
+    },
+    {
+     "mapId": 0,
+     "id": 33,
+     "name": "不伏马场",
+     "zoomLevel": 12,
+     "latitude": "226716.0",
+     "longitude": "-72441.0"
+    },
+    {
+     "mapId": 0,
+     "id": 34,
+     "name": "佛爷寨",
+     "zoomLevel": 12,
+     "latitude": "265142.0",
+     "longitude": "-53303.0"
+    }
+   ]
+  },
+  {
+   "id": 1,
+   "name": "开封",
+   "regions": [
+    {
+     "mapId": 1,
+     "id": 35,
+     "name": "醉花阴",
+     "zoomLevel": 12,
+     "latitude": "323544.0",
+     "longitude": "-100167.0"
+    },
+    {
+     "mapId": 1,
+     "id": 36,
+     "name": "勾栏瓦肆",
+     "zoomLevel": 12,
+     "latitude": "207206.0",
+     "longitude": "-103416.0"
+    },
+    {
+     "mapId": 1,
+     "id": 37,
+     "name": "角门里",
+     "zoomLevel": 12,
+     "latitude": "135625.0",
+     "longitude": "-73540.0"
+    },
+    {
+     "mapId": 1,
+     "id": 38,
+     "name": "南门大街",
+     "zoomLevel": 12,
+     "latitude": "150475.0",
+     "longitude": "-144651.0"
+    },
+    {
+     "mapId": 1,
+     "id": 39,
+     "name": "百工坊",
+     "zoomLevel": 12,
+     "latitude": "155715.0",
+     "longitude": "-221321.0"
+    },
+    {
+     "mapId": 1,
+     "id": 40,
+     "name": "开封府",
+     "zoomLevel": 12,
+     "latitude": "224742.0",
+     "longitude": "-150063.0"
+    },
+    {
+     "mapId": 1,
+     "id": 41,
+     "name": "大宋皇宫",
+     "zoomLevel": 12,
+     "latitude": "306773.0",
+     "longitude": "-147163.0"
+    },
+    {
+     "mapId": 1,
+     "id": 42,
+     "name": "熔炉区",
+     "zoomLevel": 12,
+     "latitude": "225745.0",
+     "longitude": "-220303.0"
+    },
+    {
+     "mapId": 1,
+     "id": 43,
+     "name": "寿昌坊",
+     "zoomLevel": 12,
+     "latitude": "322763.0",
+     "longitude": "-175244.0"
+    },
+    {
+     "mapId": 1,
+     "id": 44,
+     "name": "金明池",
+     "zoomLevel": 12,
+     "latitude": "146636.0",
+     "longitude": "-311625.0"
+    },
+    {
+     "mapId": 1,
+     "id": 45,
+     "name": "白马津",
+     "zoomLevel": 12,
+     "latitude": "430461.0",
+     "longitude": "-100147.0"
+    },
+    {
+     "mapId": 1,
+     "id": 46,
+     "name": "清心圃",
+     "zoomLevel": 12,
+     "latitude": "340716.0",
+     "longitude": "-24537.0"
+    },
+    {
+     "mapId": 1,
+     "id": 47,
+     "name": "六疾馆遗址",
+     "zoomLevel": 12,
+     "latitude": "275171.0",
+     "longitude": "21674.0"
+    },
+    {
+     "mapId": 1,
+     "id": 48,
+     "name": "开封东郊",
+     "zoomLevel": 12,
+     "latitude": "236523.0",
+     "longitude": "-14731.0"
+    },
+    {
+     "mapId": 1,
+     "id": 49,
+     "name": "隐雾林",
+     "zoomLevel": 12,
+     "latitude": "164466.0",
+     "longitude": "5045.0"
+    },
+    {
+     "mapId": 1,
+     "id": 50,
+     "name": "达安村",
+     "zoomLevel": 12,
+     "latitude": "123262.0",
+     "longitude": "-6004.0"
+    }
+   ]
+  },
+  {
+   "id": 2,
+   "name": "河西",
+   "regions": [
+    {
+     "mapId": 2,
+     "id": 51,
+     "name": "迷津渡",
+     "zoomLevel": 0,
+     "latitude": "700135",
+     "longitude": "-717417"
+    },
+    {
+     "mapId": 2,
+     "id": 52,
+     "name": "金沙川",
+     "zoomLevel": 0,
+     "latitude": "614761",
+     "longitude": "-755402"
+    },
+    {
+     "mapId": 2,
+     "id": 53,
+     "name": "马迷途",
+     "zoomLevel": 0,
+     "latitude": "622626",
+     "longitude": "-652161"
+    },
+    {
+     "mapId": 2,
+     "id": 54,
+     "name": "阿依苏",
+     "zoomLevel": 0,
+     "latitude": "514367",
+     "longitude": "-741674"
+    },
+    {
+     "mapId": 2,
+     "id": 56,
+     "name": "饮马隘",
+     "zoomLevel": 0,
+     "latitude": "552360",
+     "longitude": "-544275"
+    },
+    {
+     "mapId": 2,
+     "id": 57,
+     "name": "玉露台",
+     "zoomLevel": 0,
+     "latitude": "414515",
+     "longitude": "-562557"
+    },
+    {
+     "mapId": 2,
+     "id": 58,
+     "name": "玉池",
+     "zoomLevel": 0,
+     "latitude": "554355",
+     "longitude": "-460127"
+    },
+    {
+     "mapId": 2,
+     "id": 59,
+     "name": "酒泉镇",
+     "zoomLevel": 0,
+     "latitude": "513236",
+     "longitude": "-465723"
+    },
+    {
+     "mapId": 2,
+     "id": 60,
+     "name": "武威山",
+     "zoomLevel": 0,
+     "latitude": "552162",
+     "longitude": "-400053"
+    },
+    {
+     "mapId": 2,
+     "id": 63,
+     "name": "萧关古道",
+     "zoomLevel": 12,
+     "latitude": "331152",
+     "longitude": "-353466"
+    },
+    {
+     "mapId": 2,
+     "id": 64,
+     "name": "扶风甸",
+     "zoomLevel": 12,
+     "latitude": "265467",
+     "longitude": "-311743"
+    },
+    {
+     "mapId": 2,
+     "id": 65,
+     "name": "狮子坟",
+     "zoomLevel": 12,
+     "latitude": "225120",
+     "longitude": "-233361"
+    },
+    {
+     "mapId": 2,
+     "id": 66,
+     "name": "华舆道",
+     "zoomLevel": 12,
+     "latitude": "216622",
+     "longitude": "-173645"
+    },
+    {
+     "mapId": 2,
+     "id": 67,
+     "name": "华阴北",
+     "zoomLevel": 12,
+     "latitude": "145325",
+     "longitude": "-214347"
+    },
+    {
+     "mapId": 2,
+     "id": 68,
+     "name": "望泾川",
+     "zoomLevel": 12,
+     "latitude": "262675",
+     "longitude": "-144067"
+    },
+    {
+     "mapId": 2,
+     "id": 69,
+     "name": "陷城湖",
+     "zoomLevel": 12,
+     "latitude": "152147",
+     "longitude": "-70256"
+    },
+    {
+     "mapId": 2,
+     "id": 70,
+     "name": "荡莽原",
+     "zoomLevel": 12,
+     "latitude": "306407",
+     "longitude": "-242042"
+    }
+   ]
+  },
+  {
+   "id": 3,
+   "name": "风催凉州",
+   "regions": [
+    {
+     "mapId": 3,
+     "id": 61,
+     "name": "风催凉州",
+     "zoomLevel": 0,
+     "latitude": "521142",
+     "longitude": "-463641"
+    },
+    {
+     "mapId": 3,
+     "id": 62,
+     "name": "大散关",
+     "zoomLevel": 0,
+     "latitude": "434711",
+     "longitude": "-425763"
+    }
+   ]
+  },
+  {
+   "id": 4,
+   "name": "不见山",
+   "regions": [
+    {
+     "mapId": 4,
+     "id": 71,
+     "name": "千年渡",
+     "zoomLevel": 12,
+     "latitude": "114264",
+     "longitude": "-333536"
+    },
+    {
+     "mapId": 4,
+     "id": 72,
+     "name": "曲岸",
+     "zoomLevel": 12,
+     "latitude": "175307",
+     "longitude": "-240743"
+    },
+    {
+     "mapId": 4,
+     "id": 73,
+     "name": "绝嶂岭",
+     "zoomLevel": 12,
+     "latitude": "240726",
+     "longitude": "-407154"
+    },
+    {
+     "mapId": 4,
+     "id": 74,
+     "name": "墨城",
+     "zoomLevel": 12,
+     "latitude": "422134",
+     "longitude": "-427624"
+    },
+    {
+     "mapId": 4,
+     "id": 75,
+     "name": "碧水云涛",
+     "zoomLevel": 12,
+     "latitude": "345660",
+     "longitude": "-241402"
+    },
+    {
+     "mapId": 4,
+     "id": 76,
+     "name": "墨城旧址",
+     "zoomLevel": 12,
+     "latitude": "337321",
+     "longitude": "-607217"
+    },
+    {
+     "mapId": 4,
+     "id": 77,
+     "name": "流金坡",
+     "zoomLevel": 0,
+     "latitude": "636244",
+     "longitude": "-163122"
+    },
+    {
+     "mapId": 4,
+     "id": 78,
+     "name": "卧星岩",
+     "zoomLevel": 0,
+     "latitude": "635665",
+     "longitude": "-527670"
+    },
+    {
+     "mapId": 4,
+     "id": 79,
+     "name": "扶摇峰",
+     "zoomLevel": 0,
+     "latitude": "667475",
+     "longitude": "-325676"
+    },
+    {
+     "mapId": 4,
+     "id": 80,
+     "name": "晦谷",
+     "zoomLevel": 0,
+     "latitude": "530141",
+     "longitude": "-557264"
+    }
+   ]
+  },
+  {
+   "id": 5,
+   "name": "滹沱",
+   "regions": [
+    {
+     "mapId": 5,
+     "id": 81,
+     "name": "耘丘",
+     "zoomLevel": 0,
+     "latitude": "221055",
+     "longitude": "-233473"
+    },
+    {
+     "mapId": 5,
+     "id": 82,
+     "name": "栾城",
+     "zoomLevel": 0,
+     "latitude": "411412",
+     "longitude": "-144166"
+    },
+    {
+     "mapId": 5,
+     "id": 83,
+     "name": "滹沱南岸",
+     "zoomLevel": 0,
+     "latitude": "555611",
+     "longitude": "-273564"
+    },
+    {
+     "mapId": 5,
+     "id": 84,
+     "name": "封龙山",
+     "zoomLevel": 0,
+     "latitude": "432734",
+     "longitude": "-543355"
+    }
+   ]
+  },
+  {
+   "id": 6,
+   "name": "开封皇宫",
+   "regions": [
+    {
+     "mapId": 6,
+     "id": 85,
+     "name": "内省",
+     "zoomLevel": 0,
+     "latitude": "476422",
+     "longitude": "-326673"
+    },
+    {
+     "mapId": 6,
+     "id": 86,
+     "name": "演武场",
+     "zoomLevel": 0,
+     "latitude": "406506",
+     "longitude": "-372220"
+    },
+    {
+     "mapId": 6,
+     "id": 87,
+     "name": "武德司",
+     "zoomLevel": 0,
+     "latitude": "375023",
+     "longitude": "-271036"
+    },
+    {
+     "mapId": 6,
+     "id": 88,
+     "name": "禁中诸库",
+     "zoomLevel": 0,
+     "latitude": "637050",
+     "longitude": "-271712"
+    },
+    {
+     "mapId": 6,
+     "id": 89,
+     "name": "福宁殿",
+     "zoomLevel": 0,
+     "latitude": "446773",
+     "longitude": "-515237"
+    },
+    {
+     "mapId": 6,
+     "id": 90,
+     "name": "坤宁殿",
+     "zoomLevel": 0,
+     "latitude": "556205",
+     "longitude": "-515056"
+    },
+    {
+     "mapId": 6,
+     "id": 91,
+     "name": "庆寿殿",
+     "zoomLevel": 0,
+     "latitude": "466240",
+     "longitude": "-440271"
+    },
+    {
+     "mapId": 6,
+     "id": 92,
+     "name": "升平楼",
+     "zoomLevel": 0,
+     "latitude": "374227",
+     "longitude": "-567061"
+    },
+    {
+     "mapId": 6,
+     "id": 93,
+     "name": "后苑",
+     "zoomLevel": 0,
+     "latitude": "665552",
+     "longitude": "-513653"
+    },
+    {
+     "mapId": 6,
+     "id": 94,
+     "name": "宝慈宫",
+     "zoomLevel": 0,
+     "latitude": "470340",
+     "longitude": "-567163"
+    },
+    {
+     "mapId": 6,
+     "id": 95,
+     "name": "崇元殿",
+     "zoomLevel": 0,
+     "latitude": "200272",
+     "longitude": "-422302"
+    },
+    {
+     "mapId": 6,
+     "id": 96,
+     "name": "文明殿",
+     "zoomLevel": 0,
+     "latitude": "253203",
+     "longitude": "-516071"
+    },
+    {
+     "mapId": 6,
+     "id": 97,
+     "name": "崇德殿",
+     "zoomLevel": 0,
+     "latitude": "374777",
+     "longitude": "-434550"
+    },
+    {
+     "mapId": 6,
+     "id": 98,
+     "name": "长春殿",
+     "zoomLevel": 0,
+     "latitude": "374204",
+     "longitude": "-515317"
+    },
+    {
+     "mapId": 6,
+     "id": 99,
+     "name": "官署",
+     "zoomLevel": 0,
+     "latitude": "250741",
+     "longitude": "-564607"
+    },
+    {
+     "mapId": 6,
+     "id": 100,
+     "name": "内库三馆",
+     "zoomLevel": 0,
+     "latitude": "200456",
+     "longitude": "-276003"
+    },
+    {
+     "mapId": 6,
+     "id": 101,
+     "name": "封桩库",
+     "zoomLevel": 0,
+     "latitude": "306213",
+     "longitude": "-301562"
+    }
+   ]
+  },
+  {
+   "id": 7,
+   "name": "青州",
+   "regions": [
+    {
+     "mapId": 7,
+     "id": 102,
+     "name": "岱岳",
+     "zoomLevel": 0,
+     "latitude": "334247",
+     "longitude": "-711373"
+    },
+    {
+     "mapId": 7,
+     "id": 103,
+     "name": "历城台",
+     "zoomLevel": 0,
+     "latitude": "431267",
+     "longitude": "-711661"
+    },
+    {
+     "mapId": 7,
+     "id": 104,
+     "name": "入海口",
+     "zoomLevel": 0,
+     "latitude": "536356",
+     "longitude": "-613120"
+    },
+    {
+     "mapId": 7,
+     "id": 105,
+     "name": "乐安浦",
+     "zoomLevel": 0,
+     "latitude": "467134",
+     "longitude": "-604032"
+    },
+    {
+     "mapId": 7,
+     "id": 106,
+     "name": "青葱里",
+     "zoomLevel": 0,
+     "latitude": "415002",
+     "longitude": "-572117"
+    },
+    {
+     "mapId": 7,
+     "id": 107,
+     "name": "早悟寺",
+     "zoomLevel": 0,
+     "latitude": "312700",
+     "longitude": "-563525"
+    },
+    {
+     "mapId": 7,
+     "id": 108,
+     "name": "沿海径",
+     "zoomLevel": 0,
+     "latitude": "362321",
+     "longitude": "-436603"
+    },
+    {
+     "mapId": 7,
+     "id": 109,
+     "name": "涌泉镇",
+     "zoomLevel": 0,
+     "latitude": "356425",
+     "longitude": "-515533"
+    },
+    {
+     "mapId": 7,
+     "id": 110,
+     "name": "仰止坪",
+     "zoomLevel": 0,
+     "latitude": "444532",
+     "longitude": "-271701"
+    },
+    {
+     "mapId": 7,
+     "id": 111,
+     "name": "息游居",
+     "zoomLevel": 0,
+     "latitude": "410545",
+     "longitude": "-236220"
+    },
+    {
+     "mapId": 7,
+     "id": 112,
+     "name": "藏修斋",
+     "zoomLevel": 0,
+     "latitude": "450642",
+     "longitude": "-242661"
+    },
+    {
+     "mapId": 7,
+     "id": 113,
+     "name": "天一楼",
+     "zoomLevel": 0,
+     "latitude": "433530",
+     "longitude": "-225263"
+    },
+    {
+     "mapId": 7,
+     "id": 114,
+     "name": "金声岭",
+     "zoomLevel": 0,
+     "latitude": "444532",
+     "longitude": "-167714"
+    }
+   ]
+  },
+  {
+   "id": 8,
+   "name": "江南",
+   "regions": [
+    {
+     "mapId": 8,
+     "id": 115,
+     "name": "孤山",
+     "zoomLevel": 0,
+     "latitude": "655567",
+     "longitude": "-436144"
+    },
+    {
+     "mapId": 8,
+     "id": 116,
+     "name": "登云阙",
+     "zoomLevel": 0,
+     "latitude": "636005",
+     "longitude": "-301416"
+    },
+    {
+     "mapId": 8,
+     "id": 117,
+     "name": "陈宅",
+     "zoomLevel": 0,
+     "latitude": "515613",
+     "longitude": "-315724"
+    },
+    {
+     "mapId": 8,
+     "id": 118,
+     "name": "西湖",
+     "zoomLevel": 0,
+     "latitude": "604520",
+     "longitude": "-410043"
+    },
+    {
+     "mapId": 8,
+     "id": 119,
+     "name": "百家集",
+     "zoomLevel": 0,
+     "latitude": "623014",
+     "longitude": "-251217"
+    },
+    {
+     "mapId": 8,
+     "id": 120,
+     "name": "凤凰山",
+     "zoomLevel": 0,
+     "latitude": "422452",
+     "longitude": "-312340"
+    },
+    {
+     "mapId": 8,
+     "id": 121,
+     "name": "西府官廨",
+     "zoomLevel": 0,
+     "latitude": "422453",
+     "longitude": "-157627"
+    },
+    {
+     "mapId": 8,
+     "id": 122,
+     "name": "春风里",
+     "zoomLevel": 0,
+     "latitude": "567526",
+     "longitude": "-221726"
+    },
+    {
+     "mapId": 8,
+     "id": 123,
+     "name": "莽滩口",
+     "zoomLevel": 0,
+     "latitude": "640361",
+     "longitude": "-123500"
+    },
+    {
+     "mapId": 8,
+     "id": 124,
+     "name": "海客巷",
+     "zoomLevel": 0,
+     "latitude": "532164",
+     "longitude": "-134625"
+    },
+    {
+     "mapId": 8,
+     "id": 125,
+     "name": "浙江渡",
+     "zoomLevel": 0,
+     "latitude": "347232",
+     "longitude": "-103505"
+    },
+    {
+     "mapId": 8,
+     "id": 126,
+     "name": "钱塘官衙",
+     "zoomLevel": 0,
+     "latitude": "740476",
+     "longitude": "-255042"
+    },
+    {
+     "mapId": 8,
+     "id": 127,
+     "name": "镇远镖局",
+     "zoomLevel": 0,
+     "latitude": "702433",
+     "longitude": "-244503"
+    },
+    {
+     "mapId": 8,
+     "id": 128,
+     "name": "钱江市井",
+     "zoomLevel": 0,
+     "latitude": "663660",
+     "longitude": "-155735"
+    },
+    {
+     "mapId": 8,
+     "id": 129,
+     "name": "南山",
+     "zoomLevel": 0,
+     "latitude": "352476",
+     "longitude": "-415776"
+    },
+    {
+     "mapId": 8,
+     "id": 130,
+     "name": "花港",
+     "zoomLevel": 0,
+     "latitude": "411100",
+     "longitude": "-464024"
+    },
+    {
+     "mapId": 8,
+     "id": 131,
+     "name": "曲院",
+     "zoomLevel": 0,
+     "latitude": "546626",
+     "longitude": "-525113"
+    },
+    {
+     "mapId": 8,
+     "id": 132,
+     "name": "灵隐新寺",
+     "zoomLevel": 0,
+     "latitude": "604271",
+     "longitude": "-675164"
+    },
+    {
+     "mapId": 8,
+     "id": 133,
+     "name": "云家岙",
+     "zoomLevel": 0,
+     "latitude": "436737",
+     "longitude": "-665312"
+    },
+    {
+     "mapId": 8,
+     "id": 134,
+     "name": "千翠村",
+     "zoomLevel": 0,
+     "latitude": "223101",
+     "longitude": "-407420"
+    },
+    {
+     "mapId": 8,
+     "id": 135,
+     "name": "云栖竹径",
+     "zoomLevel": 0,
+     "latitude": "230622",
+     "longitude": "-574701"
+    }
+   ]
+  }
+ ]
+}
