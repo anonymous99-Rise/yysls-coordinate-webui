@@ -17,7 +17,11 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: '3.12'
+          # 必须显式指定依赖文件：setup-python 的 pip 缓存默认只找
+          # requirements.txt / pyproject.toml，这个仓库两个都没有
+          # （零依赖项目），不指定就会直接报 "No file ... matched"。
           cache: pip
+          cache-dependency-path: requirements-dev.txt
 
       - uses: actions/setup-node@v4
         with:
@@ -25,11 +29,12 @@ jobs:
           cache: npm
           cache-dependency-path: web/package-lock.json
 
-      # numpy / Pillow 是视觉与画图核对用的；keyboard / pydirectinput 在这套代码里是
-      # **可选**依赖（injector 用 ctypes 自己实现了，不装也能跑）。装上是为了让 CI
-      # 跑到和本地一致的代码路径。
+      # numpy 是视觉与标定模块的运行时依赖；Pillow 用于读模板与画标定核对图；
+      # keyboard / pydirectinput 在这套代码里是**可选**依赖（injector.py 用 ctypes
+      # 自己实现了扫描码发键与 GetAsyncKeyState 轮询）。装上是为了让 CI 跑
+      # 和本地一致的代码路径。
       - name: 安装 Python 依赖
-        run: pip install numpy Pillow keyboard pydirectinput
+        run: pip install -r requirements-dev.txt
 
       - name: 数据对账（第二套实现独立复算 + 逐字比对）
         run: python tools/verify.py --samples 100

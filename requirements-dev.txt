@@ -1,0 +1,20 @@
+# 开发 / 测试 / 视觉功能所需的依赖
+#
+# 注意区分两类：
+#
+#   运行时必需（只有这一行）：
+#       numpy       —— rpa/vision.py 与 rpa/mapnav.py 用来做矩阵与 FFT
+#
+#   以下都是**可选**的，装着是为了让 CI 跑到和本地一致的代码路径：
+#       Pillow          —— 读模板 PNG、把标定结果画到地图截图上核对
+#       keyboard        —— 全局热键走事件钩子（不装会退回 GetAsyncKeyState 轮询）
+#       pydirectinput   —— 仅作为对照后端（injector.py 用 ctypes 自己实现了扫描码发键）
+#
+# 核心管线（tools/ 与 rpa/collector.py）**不依赖任何第三方包**，只用标准库。
+# 这样设计的理由：数据整编部分要能在任何 Python 3.10+ 环境里跑起来，
+# 不该因为装不上 numpy 就卡住。
+
+numpy>=1.24
+Pillow>=10.0
+keyboard>=0.13
+pydirectinput>=1.0.4
