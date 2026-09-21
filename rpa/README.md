@@ -1,8 +1,109 @@
-# 用影刀 RPA 自动采集燕云十六声坐标
+# 自动采集物品（纯 Python）
 
-目标：把「手动抄坐标」变成「按个键 / 挂着跑」，采到的数据自动并回主数据集。
+目标：把「手动抄坐标、手动按 F」变成「挂机跑」。
 
-本目录给三样东西：
+---
+
+## 结论先行：用 Python，别用影刀
+
+这个目录里两条路都有，但**推荐纯 Python**。理由不是偏好，是实测：
+
+| 问题 | 说明 |
+|---|---|
+| **影刀发键游戏可能不认** | 它走 SendInput + 虚拟键码，正是 DirectX 游戏会静默忽略的组合。我们实测过：**扫描码才行** |
+| **UIA 看不见游戏画面** | 影刀的 Win 自动化指令库（85 个指令）建在 pywinauto/UIA 控件树上；DirectX 表面不是控件，它只能退化成截图+图像点击 |
+| **Python 片段是二等公民** | 变量靠同名绑定、不能 import 本项目模块、必须点亮那个 Python 图标、报错藏在指令日志里 |
+| **不可测、不可版本化** | `.flow` 没法 diff、没法 CI。本仓库的价值恰恰在「可复现 + 可测试」 |
+
+**你机器上就有现成的反例**：`lvjiang`（律匠）是纯 Python 写的视觉 RPA 引擎，397 个源文件、还有 Android 端，它证明这条路走得通。
+
+---
+
+## 三个模块，各管一件事
+
+| 模块 | 干什么 | 依赖 |
+|---|---|---|
+| `injector.py` | **动手**：往游戏里发键（DirectInput 扫描码）、鼠标点击（前台/后台）、全局热键、拟人化抖动 | 纯标准库 |
+| `vision.py` | **看见**：截图（GDI DIB 段）+ 模板匹配（FFT 归一化互相关） | numpy |
+| `gather.py` | **循环**：把上面两个接起来，做采集 | 同上 |
+
+```
+python rpa/gather.py --check                  # 先自检：发键通不通、屏幕能不能截
+python rpa/gather.py --mode spam --key f      # 零准备：连点器
+python rpa/gather.py --mode spot --key f \    # 有判断：只在看到提示时按，按完确认
+    --template prompt.png --region 700,380,320,220
+python rpa/gather.py --mode spot ... --hotkey # 挂机：F10 开始 / F12 暂停
+```
+
+### 三种模式
+
+| 模式 | 行为 | 需要准备 |
+|---|---|---|
+| `spam` | 固定/随机间隔一直按键 | 无 |
+| `detect` | 只在屏幕上**看得见采集提示**时才按 | 一张提示图标模板 PNG |
+| `spot` | `detect` + 按完确认提示消失（= 采集成功），失败重试后判定枯竭 | 同上 |
+
+**为什么值得做 detect/spot 而不是只做连点器**：连点器会在没东西的地方空按几百次，你还不知道它到底采到没有。
+`spot` 能回答「这个地方还有没有」—— 这正是我们那 **693 个「同坐标多名」可疑点**和 **412 个无名点**
+需要的能力：让机器去判断，而不是人跑几百趟。
+
+模板怎么弄：游戏里出现采集提示时按 `Win+Shift+S` 截图，裁下那块提示图标存成 PNG，
+再用 `--region` 指定「提示会出现在屏幕哪一块」。
+
+### 为什么发键要用扫描码
+
+普通模拟按键（`pyautogui`、`keyboard.press()`）发的是**虚拟键码**，走 Windows 消息队列。
+DirectX / DirectInput 类游戏从设备层直接读状态，**不经过消息队列**，于是按键被静默忽略 ——
+脚本看着在跑，游戏毫无反应。`pydirectinput` 作者的原话（[README](https://github.com/learncodebygaming/pydirectinput)）：
+
+> PyAutoGUI uses Virtual Key Codes (VKs) and the deprecated `mouse_event()` and `keybd_event()`
+> win32 functions. You may find that PyAutoGUI does not work in some applications, particularly
+> in video games and other software that rely on DirectX.
+
+`injector.py` 做的事和 pydirectinput 一致——发 **DirectInput 扫描码（`KEYEVENTF_SCANCODE`）**——
+但用 ctypes 直接调 `SendInput`，所以**不装 pydirectinput 也能用**。
+
+> 顺带一个容易混淆的点：`keyboard` 库**适合监听热键、不适合往游戏里发键**。
+> 参考项目 `yysls_auto` 正是这么分工的：`keyboard` 装钩子听 F10/F12，`pydirectinput` 负责发。这是两件事。
+
+**UIPI 提醒**：游戏若以管理员运行，脚本也必须是管理员，否则 `SendInput` 会被静默拦掉。
+`injector.py --check` 会告诉你当前权限。
+
+### 视觉链路的关键取舍
+
+| 决定 | 为什么 |
+|---|---|
+| 截图用 **GDI `CreateDIBSection`**，不用 mss/pyautogui | 直接 BitBlt 进 DIB 段内存、拿指针给 numpy 当 view，**零拷贝、不调 `GetDIBits`**。实测「CompatibleBitmap + GetDIBits」那条常见路线无论区域大小恒定 16~18 ms，DIB 段路线没有这个转换开销 |
+| 匹配用 **FFT + 积分图的 NCC**，不逐像素比 | 游戏 UI 有抗锯齿、渐变、半透明，逐像素相等会全军覆没；NCC 对整体亮度变化免疫 |
+| cv2 只是**可选**快路径 | 没装照样跑（自研实现），装了更快。`vision.cv2_available()` 显式判断——自检里那行假的「cv2 对照」就是没做这件事的后果 |
+| **纯色模板直接报错** | 模板方差为 0 时 NCC 分母是 0（0/0）。早期版本静默返回全 0，`argmax` 落在 (0,0)，看起来像「在左上角匹配到 0 分」——排查了半天才发现是模板选在了空白处 |
+
+---
+
+## borrowed：从 `yysls_auto` 和 `lvjiang` 学到的东西
+
+两个参考项目都不是照抄，而是**只取走得通的部分**：
+
+**来自 [`nowyouseetinker/yysls_auto`](https://github.com/nowyouseetinker/yysls_auto)**
+- 扫描码发键（上面已展开）—— 这是本项目最值钱的一条知识
+- 全局热键 F10/F12 启停 + `threading.Event` + 可中断的等待
+- UAC 提权
+
+**来自 [`wanda1416/lvjiang`](https://github.com/wanda1416/lvjiang)**（PolyForm Noncommercial 1.0.0，**非商用**，只借鉴设计不抄代码）
+- **输入后端抽象**：前台 SendInput / 后台 PostMessage / ADB 三种可换 → `injector.py` 实现了前两种
+- **拟人化参数成组**：前后延迟都是**区间**、点击带随机像素偏移、区域中心抖动 → `injector.Humanize`
+- **识别器三件套**：OCR / 模板匹配 / 颜色特征 → 我们目前只实现模板匹配（够用，且不引入 ONNX 那套重依赖）
+- **场景 YAML + 分辨率自适应**：他们踩过 DPI 缩放的坑，`docs` 里有专门一篇
+
+**没借的**：SQLite 存方案（我们 JSON + git 更好 diff）、`.wf` DSL（CSV + Python 够用）、PyQt6 UI（我们有 WebUI）。
+
+---
+
+## 剩下的老路：影刀 RPA（保留但不推荐）
+
+下面是影刀方案，**如果你已经装了影刀并且只想用它编排窗口/日志**可以看；否则直接用上面的 Python 三件套。
+
+本目录给这些影刀资产：
 
 | 文件 | 作用 |
 |---|---|

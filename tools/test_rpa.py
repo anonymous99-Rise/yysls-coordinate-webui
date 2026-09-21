@@ -18,10 +18,11 @@ test_rpa.py —— RPA 采集链路的自动测试（不需要影刀、不需要
 from __future__ import annotations
 
 import json
+import re
+import shutil
 import subprocess
 import sys
-import shutil
-import tempfile
+import time
 from pathlib import Path
 
 HERE = Path(__file__).resolve().parent
@@ -199,6 +200,164 @@ if idx.exists():
     for item in doc["lists"]:
         f = PROJECT / item["file"]
         check(f"清单 {item['name']} 存在且非空", f.exists() and f.stat().st_size > 0, f"{item['rows']} 条")
+
+# ---------------------------------------------------------------------------
+print("== 5. 输入模块（injector）==")
+sys.path.insert(0, str(PROJECT / "rpa"))
+import injector as inj  # noqa: E402
+
+check("按键名归一化：大写/别名", inj.normalize_key("F") == "f" and inj.normalize_key("Space") == "space"
+      and inj.normalize_key("Return") == "enter")
+check("扫描码表：F=0x21 Space=0x39 F10=0x44 F12=0x58",
+      inj.SCANCODES["f"][0] == 0x21 and inj.SCANCODES["space"][0] == 0x39
+      and inj.SCANCODES["f10"][0] == 0x44 and inj.SCANCODES["f12"][0] == 0x58)
+check("方向键标了扩展位", inj.SCANCODES["up"][1] is True and inj.SCANCODES["f"][1] is False)
+
+try:
+    inj.press_key("这个键不存在zzz")
+    check("不认识的键名会报错", False, "居然没报错")
+except ValueError:
+    check("不认识的键名会报错", True)
+
+check("dry-run 不发键也不报错", inj.press_key("f", 0.01, dry_run=True) is True)
+
+# 拟人化：区间必须落在配置范围内，且真的在抖（不是每次一样）
+h = inj.Humanize(click_offset_px=3, jitter_ratio=0.2)
+offs = [h.offset() for _ in range(40)]
+check("随机偏移落在 ±click_offset_px 内", all(abs(dx) <= 3 and abs(dy) <= 3 for dx, dy in offs))
+check("随机偏移确实在变（不是固定值）", len({o for o in offs}) > 3)
+off_off = inj.Humanize(enabled=False).offset()
+check("关掉拟人化后偏移恒为 0", off_off == (0, 0))
+pts = [h.jitter_point(1000, 500, 80, 60) for _ in range(40)]
+check("区域抖动也落在了合理范围", all(940 <= x <= 1060 and 440 <= y <= 560 for x, y in pts))
+
+# 全局热键：能不能注册 + 能不能被真实按键触发（回环）
+try:
+    w = inj.HotkeyWatcher(poll_interval=0.02)
+    fired: list[str] = []
+    w.add("F9", lambda: fired.append("f9"))
+    backend = w.start()
+    time.sleep(0.3)
+    inj.press_key("f9", 0.05)
+    time.sleep(0.6)
+    w.stop()
+    check("全局热键能被真实按键触发", len(fired) >= 1, f"后端={backend} 触发 {len(fired)} 次")
+except Exception as e:
+    check("全局热键能被真实按键触发", False, f"{type(e).__name__}: {e}")
+
+# 窗口枚举
+try:
+    rows = inj._enum_visible_windows()
+    check("能枚举到可见窗口", len(rows) > 0, f"{len(rows)} 个")
+    check("窗口枚举带 pid 和标题", all(isinstance(r[1], int) and isinstance(r[2], str) for r in rows))
+except Exception as e:
+    check("能枚举到可见窗口", False, f"{type(e).__name__}: {e}")
+
+# ---------------------------------------------------------------------------
+print("== 6. 视觉模块（vision）==")
+try:
+    import numpy as np  # noqa: E402
+    import vision as vis  # noqa: E402
+    HAVE_VIS = True
+except ImportError as e:
+    HAVE_VIS = False
+    print(f"  [跳过] 缺依赖：{e}（pip install numpy）")
+
+if HAVE_VIS:
+    # 灰度：必须和手算 BT.601 一致
+    px = np.array([[[120, 200, 30]]], dtype=np.uint8)  # BGR
+    want = 0.114 * 120 + 0.587 * 200 + 0.299 * 30
+    got = float(vis.to_gray(px)[0, 0])
+    check("灰度转换与手算 BT.601 一致", abs(got - want) < 1e-6, f"{got:.4f} vs {want:.4f}")
+
+    # 积分图：和朴素求和对比
+    a = np.arange(1, 1 + 20 * 25, dtype=float).reshape(20, 25)
+    ii = vis._integral(a)
+    naive = float(a[5:9, 7:13].sum())
+    from_integral = float(ii[9, 13] - ii[5, 13] - ii[9, 7] + ii[5, 7])
+    check("积分图窗口求和 == 朴素求和", abs(naive - from_integral) < 1e-9,
+          f"{from_integral} vs {naive}")
+
+    # NCC：从图里裁模板再找回去，位置和分数都要对
+    rng = np.random.default_rng(3)
+    big = rng.integers(0, 256, size=(160, 200)).astype(float)
+    for tx, ty in ((0, 0), (37, 53), (152, 120)):
+        tpl = big[ty:ty + 32, tx:tx + 40]
+        hit = vis.find_best(big, tpl, use_cv2=False)
+        check(f"自研 NCC 找回 ({tx},{ty})", abs(hit.x - tx) <= 1 and abs(hit.y - ty) <= 1 and hit.score > 0.999,
+              f"@({hit.x},{hit.y}) score={hit.score:.5f}")
+
+    # 反面：噪声不该匹配上
+    noise = rng.integers(0, 256, size=(32, 40)).astype(float)
+    hit = vis.find_best(big, noise, use_cv2=False)
+    check("随机噪声匹配分数低", hit.score < 0.5, f"score={hit.score:.4f}")
+
+    # 纯色模板必须明确报错（这是踩过的坑：早先静默返回 0，看起来像"在左上角匹配到 0 分"）
+    try:
+        vis.find_best(big, np.full((32, 40), 128.0), use_cv2=False)
+        check("纯色模板被明确拒绝", False, "没报错")
+    except ValueError:
+        check("纯色模板被明确拒绝", True)
+
+    # 模板比搜索区域还大
+    try:
+        vis.find_best(big[:10, :10], big[:50, :50], use_cv2=False)
+        check("超大模板被拒绝", False, "没报错")
+    except ValueError:
+        check("超大模板被拒绝", True)
+
+    # find_all + 非极大值抑制：同一个图案放两处，应找到 2 个
+    canvas = rng.integers(0, 256, size=(120, 200)).astype(float)
+    patch = rng.integers(0, 256, size=(24, 24)).astype(float)
+    canvas[10:34, 10:34] = patch
+    canvas[70:94, 140:164] = patch
+    hits = vis.find_all(canvas, patch, threshold=0.99, use_cv2=False)
+    check("find_all 找到两处（非极大值抑制生效）", len(hits) == 2,
+          str([(h.x, h.y) for h in hits]))
+
+    # cv2 是否可用的判断必须诚实（早先自检里那行"cv2 对照"其实跑的是自研代码）
+    avail = vis.cv2_available()
+    try:
+        import cv2  # noqa: F401
+        real = True
+    except ImportError:
+        real = False
+    check("cv2_available() 与真实情况一致", avail == real, f"报告={avail} 实际={real}")
+
+# ---------------------------------------------------------------------------
+print("== 7. 采集循环（gather）==")
+gather_py = PROJECT / "rpa" / "gather.py"
+
+# 回归：--duration 曾经和按键时长共用一个名字，导致 `--duration 2` 把 F 键按住 2 秒、
+# 循环只跑 1 轮。现在必须分成 --duration（总时长）和 --key-duration（按一下多长）。
+p = subprocess.run(
+    [sys.executable, str(gather_py), "--mode", "spam", "--key", "f",
+     "--interval", "0.25", "--jitter", "0", "--duration", "2", "--key-duration", "0.02"],
+    capture_output=True, text=True, encoding="utf-8", errors="replace", cwd=str(PROJECT),
+)
+check("spam 模式退出码 0", p.returncode == 0, (p.stderr or "")[:200])
+m = re.search(r"发键 (\d+) 次", p.stdout or "")
+pressed = int(m.group(1)) if m else -1
+check("2 秒 / 0.25 秒间隔 至少按 4 次（--duration 不再冒充按键时长）",
+      pressed >= 4, f"实际按了 {pressed} 次")
+
+p = subprocess.run([sys.executable, str(gather_py), "--mode", "detect"],
+                   capture_output=True, text=True, encoding="utf-8", errors="replace", cwd=str(PROJECT))
+check("detect 缺 --template 时给出人话提示", "需要 --template" in (p.stdout or ""), (p.stdout or "")[:80])
+
+p = subprocess.run([sys.executable, str(gather_py), "--mode", "detect", "--template", "x.png"],
+                   capture_output=True, text=True, encoding="utf-8", errors="replace", cwd=str(PROJECT))
+check("detect 缺 --region 时给出人话提示", "需要 --region" in (p.stdout or ""))
+
+p = subprocess.run([sys.executable, str(gather_py), "--mode", "spam", "--duration", "1", "--dry-run"],
+                   capture_output=True, text=True, encoding="utf-8", errors="replace", cwd=str(PROJECT))
+check("dry-run 会明说不会真发键", "--dry-run" in (p.stdout or "") or "不会真的发键" in (p.stdout or ""))
+check("采集会话目录与日志已生成",
+      any((PROJECT / "raw" / "rpa").glob("gather_*/gather_log.csv")), "")
+for d in (PROJECT / "raw" / "rpa").glob("gather_*"):
+    shutil.rmtree(d, ignore_errors=True)
+for f in (PROJECT / "raw" / "rpa").glob("_tpl.png"):
+    f.unlink(missing_ok=True)
 
 # ---------------------------------------------------------------------------
 # 收尾：清掉自测产生的所有临时产物（含手工跑出来的 stdout 重定向文件）
