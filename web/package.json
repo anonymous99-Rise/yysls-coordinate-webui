@@ -1,6 +1,6 @@
 {
   "name": "yysls-coordinate-webui",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "private": true,
   "description": "燕云十六声坐标库 WebUI —— 搜索 / 筛选 / 地图散点 / 附近查询 / 批量导出",
   "type": "module",
