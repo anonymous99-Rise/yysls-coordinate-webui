@@ -1,0 +1,1989 @@
+{
+ "source": "tools/fit_official_transform.py",
+ "fittedAt": "2026-09-21T18:49:19",
+ "model": "reflected",
+ "inputOrder": "(lng, lat) -> (x, y)",
+ "anchorCategories": [
+  "传送点"
+ ],
+ "officialApi": "https://s3.game.163.com/ac59075b964b0715/category/points?mapId=<n>",
+ "officialFetchedAt": "2026-09-21T18:41:15",
+ "note": "官方经纬度是每张图各自的画布坐标，不是全球地理坐标；变换为镜像相似变换（含一次坐标轴镜像），逐图独立解算。",
+ "maps": {
+  "0": {
+   "mapId": 0,
+   "mapName": "清河",
+   "status": "ok",
+   "kind": "reflected",
+   "params": [
+    4.561156685518948e-05,
+    -0.0076175837897407145,
+    -1442.3049037393064,
+    -2844.2922802584308
+   ],
+   "scale": 0.0076177203419889004,
+   "rotation": -89.65693596300937,
+   "nAnchor": 46,
+   "nInlier": 46,
+   "rms": 58.562691361650984,
+   "relativeError": 1.9582031428795645,
+   "looRms": 61.127660135212416,
+   "looRelativeError": 2.043969862218987,
+   "span": 2990.634121623038,
+   "anchors": [
+    {
+     "official": {
+      "id": 1058,
+      "name": "佛爷寨",
+      "lng": -70103.0,
+      "lat": 252164.0,
+      "category": "传送点"
+     },
+     "ours": {
+      "name": "佛爷寨界碑",
+      "x": -3398.77,
+      "y": -2282.57,
+      "category": "设施与NPC",
+      "region": "清河"
+     },
+     "residual": 50.85497632199531
+    },
+    {
+     "official": {
+      "id": 1059,
+      "name": "伏马庄",
+      "lng": -112054.0,
+      "lat": 253357.0,
+      "category": "传送点"
+     },
+     "ours": {
+      "name": "伏马庄传送点",
+      "x": -3417.51,
+      "y": -2069.98,
+      "category": "设施与NPC",
+      "region": "清河"
+     },
+     "residual": 78.7087533736965
+    },
+    {
+     "official": {
+      "id": 1060,
+      "name": "不伏马场",
+      "lng": -113437.0,
+      "lat": 243061.0,
+      "category": "传送点"
+     },
+     "ours": {
+      "name": "不伏马场界碑",
+      "x": -3311.64,
+      "y": -2050.63,
+      "category": "设施与NPC",
+      "region": "清河"
+     },
+     "residual": 60.69444201791588
+    },
+    {
+     "official": {
+      "id": 1061,
+      "name": "怜花禅院",
+      "lng": -134240.0,
+      "lat": 253215.0,
+      "category": "传送点"
+     },
+     "ours": {
+      "name": "怜花禅院界碑",
+      "x": -3418.05,
+      "y": -1847.74,
+      "category": "设施与NPC",
+      "region": "开封"
+     },
+     "residual": 43.23361667500341
+    },
+    {
+     "official": {
+      "id": 1062,
+      "name": "来生岸",
+      "lng": -147300.0,
+      "lat": 304061.0,
+      "category": "传送点"
+     },
+     "ours": {
+      "name": "来生岸传送点",
+      "x": -3706.38,
+      "y": -1713.96,
+      "category": "设施与NPC",
+      "region": "清河"
+     },
+     "residual": 62.87707190159354
+    },
+    {
+     "official": {
+      "id": 1063,
+      "name": "千佛谷",
+      "lng": -217315.0,
+      "lat": 322302.0,
+      "category": "传送点"
+     },
+     "ours": {
+      "name": "千佛谷传送点",
+      "x": -3896.65,
+      "y": -1232.62,
+      "category": "设施与NPC",
+      "region": "清河"
+     },
+     "residual": 30.96083618569942
+    },
+    {
+     "official": {
+      "id": 1064,
+      "name": "缘尽去路",
+      "lng": -227431.0,
+      "lat": 301172.0,
+      "category": "传送点"
+     },
+     "ours": {
+      "name": "缘尽去路传送点",
+      "x": -3681.64,
+      "y": -1141.17,
+      "category": "设施与NPC",
+      "region": "清河"
+     },
+     "residual": 67.08409000973747
+    },
+    {
+     "official": {
+      "id": 1065,
+      "name": "佛光顶",
+      "lng": -210673.0,
+      "lat": 267166.0,
+      "category": "传送点"
+     },
+     "ours": {
+      "name": "佛光顶传送点",
+      "x": -3563.99,
+      "y": -1319.98,
+      "category": "设施与NPC",
+      "region": "清河"
+     },
+     "residual": 102.87823649105492
+    },
+    {
+     "official": {
+      "id": 1066,
+      "name": "酒肉山林",
+      "lng": -211476.0,
+      "lat": 244556.0,
+      "category": "传送点"
+     },
+     "ours": {
+      "name": "酒肉山林传送点",
+      "x": -3335.7,
+      "y": -1307.21,
+      "category": "设施与NPC",
+      "region": "开封"
+     },
+     "residual": 66.06678213023372
+    },
+    {
+     "official": {
+      "id": 1067,
+      "name": "缘生来路",
+      "lng": -175736.0,
+      "lat": 237315.0,
+      "category": "传送点"
+     },
+     "ours": {
+      "name": "缘生来路界碑",
+      "x": -3277.16,
+      "y": -1446.61,
+      "category": "设施与NPC",
+      "region": "清河"
+     },
+     "residual": 72.38093284322667
+    },
+    {
+     "official": {
+      "id": 1068,
+      "name": "慈心镇",
+      "lng": -267755.0,
+      "lat": 263541.0,
+      "category": "传送点"
+     },
+     "ours": {
+      "name": "慈心镇界碑",
+      "x": -3521.45,
+      "y": -751.237,
+      "category": "设施与NPC",
+      "region": "清河"
+     },
+     "residual": 88.36188025617253
+    },
+    {
+     "official": {
+      "id": 1069,
+      "name": "慈心山院",
+      "lng": -275365.0,
+      "lat": 315305.0,
+      "category": "传送点"
+     },
+     "ours": {
+      "name": "慈心山院传送点",
+      "x": -3824.28,
+      "y": -694.32,
+      "category": "设施与NPC",
+      "region": "清河"
+     },
+     "residual": 74.20748688223843
+    },
+    {
+     "official": {
+      "id": 1070,
+      "name": "抱山湖",
+      "lng": -247576.0,
+      "lat": 56172.0,
+      "category": "传送点"
+     },
+     "ours": {
+      "name": "抱山湖界碑",
+      "x": -1920.2,
+      "y": -938.078,
+      "category": "设施与NPC",
+      "region": "清河"
+     },
+     "residual": 44.94677087718172
+    },
+    {
+     "official": {
+      "id": 1071,
+      "name": "别馆后山",
+      "lng": -243401.0,
+      "lat": 106132.0,
+      "category": "传送点"
+     },
+     "ours": {
+      "name": "别馆后山界碑",
+      "x": -2207.24,
+      "y": -1000.02,
+      "category": "设施与NPC",
+      "region": "清河"
+     },
+     "residual": 54.865829309695116
+    },
+    {
+     "official": {
+      "id": 1073,
+      "name": "鹿潭",
+      "lng": -245517.0,
+      "lat": 120637.0,
+      "category": "传送点"
+     },
+     "ours": {
+      "name": "鹿潭传送点",
+      "x": -2330.73,
+      "y": -967.94,
+      "category": "设施与NPC",
+      "region": "清河"
+     },
+     "residual": 43.320086577545545
+    },
+    {
+     "official": {
+      "id": 1074,
+      "name": "鹿食林",
+      "lng": -256774.0,
+      "lat": 130720.0,
+      "category": "传送点"
+     },
+     "ours": {
+      "name": "鹿食林界碑",
+      "x": -2428.75,
+      "y": -866.498,
+      "category": "设施与NPC",
+      "region": "清河"
+     },
+     "residual": 34.830160540220525
+    },
+    {
+     "official": {
+      "id": 1075,
+      "name": "龙虎寨",
+      "lng": -277307.0,
+      "lat": 131347.0,
+      "category": "传送点"
+     },
+     "ours": {
+      "name": "龙虎寨界碑",
+      "x": -2441.79,
+      "y": -670.96,
+      "category": "设施与NPC",
+      "region": "清河"
+     },
+     "residual": 68.30401536334655
+    },
+    {
+     "official": {
+      "id": 1076,
+      "name": "望川坪",
+      "lng": -320237.0,
+      "lat": 133306.0,
+      "category": "传送点"
+     },
+     "ours": {
+      "name": "望川坪界碑",
+      "x": -2461.56,
+      "y": -465.032,
+      "category": "设施与NPC",
+      "region": "清河"
+     },
+     "residual": 55.16336243782216
+    },
+    {
+     "official": {
+      "id": 1077,
+      "name": "临江驿",
+      "lng": -350710.0,
+      "lat": 152616.0,
+      "category": "传送点"
+     },
+     "ours": {
+      "name": "临江驿传送点",
+      "x": -2645.77,
+      "y": -170.614,
+      "category": "设施与NPC",
+      "region": "开封"
+     },
+     "residual": 26.505988098859728
+    },
+    {
+     "official": {
+      "id": 1078,
+      "name": "荒魂村",
+      "lng": -310273.0,
+      "lat": 173550.0,
+      "category": "传送点"
+     },
+     "ours": {
+      "name": "荒魂村传送点",
+      "x": -2848.55,
+      "y": -553.635,
+      "category": "设施与NPC",
+      "region": "清河"
+     },
+     "residual": 95.54089920394158
+    },
+    {
+     "official": {
+      "id": 1079,
+      "name": "丰禾村",
+      "lng": -314731.0,
+      "lat": 220337.0,
+      "category": "传送点"
+     },
+     "ours": {
+      "name": "丰禾村界碑",
+      "x": -3094.88,
+      "y": -505.013,
+      "category": "设施与NPC",
+      "region": "清河"
+     },
+     "residual": 62.743556201863356
+    },
+    {
+     "official": {
+      "id": 1080,
+      "name": "活人医馆",
+      "lng": -272774.0,
+      "lat": 215230.0,
+      "category": "传送点"
+     },
+     "ours": {
+      "name": "活人医馆界碑",
+      "x": -3050.1,
+      "y": -715.518,
+      "category": "设施与NPC",
+      "region": "清河"
+     },
+     "residual": 75.0852609912964
+    },
+    {
+     "official": {
+      "id": 1081,
+      "name": "瓷窑",
+      "lng": -263115.0,
+      "lat": 172674.0,
+      "category": "传送点"
+     },
+     "ours": {
+      "name": "瓷窑界碑",
+      "x": -2838.8,
+      "y": -809.53,
+      "category": "设施与NPC",
+      "region": "清河"
+     },
+     "residual": 79.05359984899148
+    },
+    {
+     "official": {
+      "id": 1082,
+      "name": "柴王庙",
+      "lng": -243074.0,
+      "lat": 212440.0,
+      "category": "传送点"
+     },
+     "ours": {
+      "name": "柴王庙界碑",
+      "x": -3025.4,
+      "y": -1003.3,
+      "category": "设施与NPC",
+      "region": "清河"
+     },
+     "residual": 46.281235091047115
+    },
+    {
+     "official": {
+      "id": 1083,
+      "name": "不羡仙",
+      "lng": -253546.0,
+      "lat": 230624.0,
+      "category": "传送点"
+     },
+     "ours": {
+      "name": "不羡仙界碑",
+      "x": -3196.73,
+      "y": -894.176,
+      "category": "设施与NPC",
+      "region": "清河"
+     },
+     "residual": 32.380423784750015
+    },
+    {
+     "official": {
+      "id": 1084,
+      "name": "弱水之源",
+      "lng": -262556.0,
+      "lat": 231713.0,
+      "category": "传送点"
+     },
+     "ours": {
+      "name": "弱水之源界碑",
+      "x": -3208.16,
+      "y": -813.464,
+      "category": "设施与NPC",
+      "region": "清河"
+     },
+     "residual": 42.848122547378715
+    },
+    {
+     "official": {
+      "id": 1092,
+      "name": "定风坡",
+      "lng": -172716.0,
+      "lat": 116310.0,
+      "category": "传送点"
+     },
+     "ours": {
+      "name": "定风坡界碑",
+      "x": -2298.89,
+      "y": -1484.52,
+      "category": "设施与NPC",
+      "region": "清河"
+     },
+     "residual": 61.89567079370764
+    },
+    {
+     "official": {
+      "id": 1093,
+      "name": "别馆前山",
+      "lng": -217124.0,
+      "lat": 141407.0,
+      "category": "传送点"
+     },
+     "ours": {
+      "name": "别馆前山传送点",
+      "x": -2534.62,
+      "y": -1248.13,
+      "category": "设施与NPC",
+      "region": "清河"
+     },
+     "residual": 51.61405645087477
+    },
+    {
+     "official": {
+      "id": 1094,
+      "name": "丹崖",
+      "lng": -165265.0,
+      "lat": 151636.0,
+      "category": "传送点"
+     },
+     "ours": {
+      "name": "丹崖界碑",
+      "x": -2640.61,
+      "y": -1550.96,
+      "category": "设施与NPC",
+      "region": "开封"
+     },
+     "residual": 54.59124512923674
+    },
+    {
+     "official": {
+      "id": 1095,
+      "name": "落星泉",
+      "lng": -136155.0,
+      "lat": 145772.0,
+      "category": "传送点"
+     },
+     "ours": {
+      "name": "落星泉界碑",
+      "x": -2587.2,
+      "y": -1824.41,
+      "category": "设施与NPC",
+      "region": "清河"
+     },
+     "residual": 30.191763991642084
+    },
+    {
+     "official": {
+      "id": 1096,
+      "name": "北盟遗址",
+      "lng": -113462.0,
+      "lat": 171612.0,
+      "category": "传送点"
+     },
+     "ours": {
+      "name": "北盟遗址界碑",
+      "x": -2825.21,
+      "y": -2051.02,
+      "category": "设施与NPC",
+      "region": "清河"
+     },
+     "residual": 94.65640269233147
+    },
+    {
+     "official": {
+      "id": 1097,
+      "name": "北竹林",
+      "lng": -73403.0,
+      "lat": 210356.0,
+      "category": "传送点"
+     },
+     "ours": {
+      "name": "北竹林界碑",
+      "x": -3007.44,
+      "y": -2250.45,
+      "category": "设施与NPC",
+      "region": "清河"
+     },
+     "residual": 60.089894376335415
+    },
+    {
+     "official": {
+      "id": 1098,
+      "name": "竹隐居",
+      "lng": -57344.0,
+      "lat": 166477.0,
+      "category": "传送点"
+     },
+     "ours": {
+      "name": "竹隐居",
+      "x": -2713.07,
+      "y": -2415.06,
+      "category": "设施与NPC",
+      "region": "清河"
+     },
+     "residual": 0.004089500873580603
+    },
+    {
+     "official": {
+      "id": 1099,
+      "name": "浣石浦",
+      "lng": -145272.0,
+      "lat": 207725.0,
+      "category": "传送点"
+     },
+     "ours": {
+      "name": "浣石浦界碑",
+      "x": -2995.79,
+      "y": -1745.13,
+      "category": "设施与NPC",
+      "region": "清河"
+     },
+     "residual": 35.5607321380539
+    },
+    {
+     "official": {
+      "id": 1100,
+      "name": "曲坊后院",
+      "lng": -205120.0,
+      "lat": 174064.0,
+      "category": "传送点"
+     },
+     "ours": {
+      "name": "曲坊后院界碑",
+      "x": -2850.61,
+      "y": -1357.75,
+      "category": "设施与NPC",
+      "region": "清河"
+     },
+     "residual": 99.79163603051867
+    },
+    {
+     "official": {
+      "id": 1101,
+      "name": "神仙渡",
+      "lng": -177125.0,
+      "lat": 204067.0,
+      "category": "传送点"
+     },
+     "ours": {
+      "name": "神仙渡界碑",
+      "x": -2941.28,
+      "y": -1435.1,
+      "category": "设施与NPC",
+      "region": "清河"
+     },
+     "residual": 94.0143187765908
+    },
+    {
+     "official": {
+      "id": 1163,
+      "name": "百草野",
+      "lng": -101012.0,
+      "lat": 206675.0,
+      "category": "传送点"
+     },
+     "ours": {
+      "name": "百草野",
+      "x": -3021.28,
+      "y": -2084.25,
+      "category": "设施与NPC",
+      "region": "清河"
+     },
+     "residual": 0.004017687459454746
+    },
+    {
+     "official": {
+      "id": 1199,
+      "name": "神仙渡西",
+      "lng": -220213.0,
+      "lat": 213511.0,
+      "category": "传送点"
+     },
+     "ours": {
+      "name": "神仙渡西界碑",
+      "x": -3026.36,
+      "y": -1227.63,
+      "category": "设施与NPC",
+      "region": "清河"
+     },
+     "residual": 73.20383566902213
+    },
+    {
+     "official": {
+      "id": 1204,
+      "name": "善妙洲",
+      "lng": -172404.0,
+      "lat": 267447.0,
+      "category": "传送点"
+     },
+     "ours": {
+      "name": "善妙洲",
+      "x": -3487.47,
+      "y": -1543.19,
+      "category": "设施与NPC",
+      "region": "清河"
+     },
+     "residual": 0.0018207232140338202
+    },
+    {
+     "official": {
+      "id": 1211,
+      "name": "隐月山涧",
+      "lng": -242753.0,
+      "lat": 207751.0,
+      "category": "传送点"
+     },
+     "ours": {
+      "name": "隐月山涧",
+      "x": -3035.94,
+      "y": -1004.58,
+      "category": "设施与NPC",
+      "region": "清河"
+     },
+     "residual": 0.0038191138641194126
+    },
+    {
+     "official": {
+      "id": 1212,
+      "name": "隐月山",
+      "lng": -170665.0,
+      "lat": 200201.0,
+      "category": "传送点"
+     },
+     "ours": {
+      "name": "隐月山",
+      "x": -2975.14,
+      "y": -1553.37,
+      "category": "设施与NPC",
+      "region": "清河"
+     },
+     "residual": 0.003134824545590796
+    },
+    {
+     "official": {
+      "id": 1247,
+      "name": "春秋堂",
+      "lng": -223567.0,
+      "lat": 123133.0,
+      "category": "传送点"
+     },
+     "ours": {
+      "name": "春秋堂",
+      "x": -2390.48,
+      "y": -1146.87,
+      "category": "设施与NPC",
+      "region": "清河"
+     },
+     "residual": 0.002615028646050739
+    },
+    {
+     "official": {
+      "id": 1274,
+      "name": "将军祠",
+      "lng": -122630.0,
+      "lat": 210753.0,
+      "category": "传送点"
+     },
+     "ours": {
+      "name": "将军祠界碑",
+      "x": -3002.71,
+      "y": -1967.47,
+      "category": "设施与NPC",
+      "region": "清河"
+     },
+     "residual": 69.55746761544685
+    },
+    {
+     "official": {
+      "id": 1283,
+      "name": "隐月山顶",
+      "lng": -247533.0,
+      "lat": 156342.0,
+      "category": "传送点"
+     },
+     "ours": {
+      "name": "隐月山顶界碑",
+      "x": -2672.13,
+      "y": -960.795,
+      "category": "设施与NPC",
+      "region": "清河"
+     },
+     "residual": 28.040357306922317
+    },
+    {
+     "official": {
+      "id": 1312,
+      "name": "隐龙渊底",
+      "lng": -216416.0,
+      "lat": 131315.0,
+      "category": "传送点"
+     },
+     "ours": {
+      "name": "隐龙渊底",
+      "x": -2452.48,
+      "y": -1201.71,
+      "category": "设施与NPC",
+      "region": "清河"
+     },
+     "residual": 0.0048555140738631986
+    },
+    {
+     "official": {
+      "id": 1581,
+      "name": "菩提苦海",
+      "lng": -155775.0,
+      "lat": 261636.0,
+      "category": "传送点"
+     },
+     "ours": {
+      "name": "菩提苦海",
+      "x": -3442.44,
+      "y": -1669.6,
+      "category": "设施与NPC",
+      "region": "清河"
+     },
+     "residual": 0.0052825978234979105
+    }
+   ],
+   "rejected": []
+  },
+  "1": {
+   "mapId": 1,
+   "mapName": "开封",
+   "status": "ok",
+   "kind": "reflected",
+   "params": [
+    -0.00010305755090004832,
+    -0.005084225801205697,
+    -340.6957676415267,
+    -589.4853954338736
+   ],
+   "scale": 0.005085270185195986,
+   "rotation": -91.16122974012997,
+   "nAnchor": 64,
+   "nInlier": 64,
+   "rms": 43.55186194893521,
+   "relativeError": 1.1453132729710314,
+   "looRms": 44.56036972329892,
+   "looRelativeError": 1.1718346956653707,
+   "span": 3802.615666537969,
+   "anchors": [
+    {
+     "official": {
+      "id": 4709,
+      "name": "太一宫",
+      "lng": -215564.0,
+      "lat": 350502.0,
+      "category": "传送点"
+     },
+     "ours": {
+      "name": "太一宫",
+      "x": -2135.1,
+      "y": 474.86,
+      "category": "地点标记",
+      "region": "开封"
+     },
+     "residual": 76.07078549240563
+    },
+    {
+     "official": {
+      "id": 4710,
+      "name": "杂卖场",
+      "lng": -147564.0,
+      "lat": 351674.0,
+      "category": "传送点"
+     },
+     "ours": {
+      "name": "杂卖场",
+      "x": -2107.46,
+      "y": 198.97,
+      "category": "设施与NPC",
+      "region": "开封"
+     },
+     "residual": 6.330582021797784
+    },
+    {
+     "official": {
+      "id": 4711,
+      "name": "艳湖",
+      "lng": -101153.0,
+      "lat": 345146.0,
+      "category": "传送点"
+     },
+     "ours": {
+      "name": "艳湖",
+      "x": -2079.65,
+      "y": -37.39,
+      "category": "设施与NPC",
+      "region": "开封"
+     },
+     "residual": 5.866226466626754
+    },
+    {
+     "official": {
+      "id": 4712,
+      "name": "春水阁",
+      "lng": -65165.0,
+      "lat": 321431.0,
+      "category": "传送点"
+     },
+     "ours": {
+      "name": "春水阁",
+      "x": -1963.4,
+      "y": -222.8,
+      "category": "设施与NPC",
+      "region": "开封"
+     },
+     "residual": 5.3065239238851065
+    },
+    {
+     "official": {
+      "id": 4713,
+      "name": "醉花阴",
+      "lng": -104475.0,
+      "lat": 276555.0,
+      "category": "传送点"
+     },
+     "ours": {
+      "name": "醉花阴",
+      "x": -1731.07,
+      "y": -28.41,
+      "category": "设施与NPC",
+      "region": "开封"
+     },
+     "residual": 5.121895705047962
+    },
+    {
+     "official": {
+      "id": 4714,
+      "name": "金水门街",
+      "lng": -216076.0,
+      "lat": 313225.0,
+      "category": "传送点"
+     },
+     "ours": {
+      "name": "金水门街",
+      "x": -1904.4,
+      "y": 542.34,
+      "category": "设施与NPC",
+      "region": "开封"
+     },
+     "residual": 6.605154075239056
+    },
+    {
+     "official": {
+      "id": 4715,
+      "name": "寿昌坊",
+      "lng": -215446.0,
+      "lat": 250011.0,
+      "category": "传送点"
+     },
+     "ours": {
+      "name": "寿昌坊",
+      "x": -1583.57,
+      "y": 531.88,
+      "category": "设施与NPC",
+      "region": "开封"
+     },
+     "residual": 6.038954281775799
+    },
+    {
+     "official": {
+      "id": 4716,
+      "name": "开封府",
+      "lng": -167145.0,
+      "lat": 210105.0,
+      "category": "传送点"
+     },
+     "ours": {
+      "name": "开封府",
+      "x": -1386.54,
+      "y": 282.09,
+      "category": "设施与NPC",
+      "region": "开封"
+     },
+     "residual": 5.1528626651817735
+    },
+    {
+     "official": {
+      "id": 4717,
+      "name": "大相国寺",
+      "lng": -116307.0,
+      "lat": 211544.0,
+      "category": "传送点"
+     },
+     "ours": {
+      "name": "大相国寺传送点",
+      "x": -1375.03,
+      "y": 30.8856,
+      "category": "设施与NPC",
+      "region": "开封"
+     },
+     "residual": 30.10029094639328
+    },
+    {
+     "official": {
+      "id": 4718,
+      "name": "东十字街",
+      "lng": -74204.0,
+      "lat": 165271.0,
+      "category": "传送点"
+     },
+     "ours": {
+      "name": "东十字街",
+      "x": -1169.63,
+      "y": -194.87,
+      "category": "设施与NPC",
+      "region": "开封"
+     },
+     "residual": 3.7068126326582886
+    },
+    {
+     "official": {
+      "id": 4719,
+      "name": "角门里",
+      "lng": -111202.0,
+      "lat": 137115.0,
+      "category": "传送点"
+     },
+     "ours": {
+      "name": "角门里",
+      "x": -1022.44,
+      "y": -10.29,
+      "category": "设施与NPC",
+      "region": "开封"
+     },
+     "residual": 3.9315357735974117
+    },
+    {
+     "official": {
+      "id": 4720,
+      "name": "升平桥",
+      "lng": -144675.0,
+      "lat": 172177.0,
+      "category": "传送点"
+     },
+     "ours": {
+      "name": "升平桥",
+      "x": -1196.58,
+      "y": 163.67,
+      "category": "设施与NPC",
+      "region": "开封"
+     },
+     "residual": 4.595082253993304
+    },
+    {
+     "official": {
+      "id": 4721,
+      "name": "朱雀门",
+      "lng": -147635.0,
+      "lat": 130101.0,
+      "category": "传送点"
+     },
+     "ours": {
+      "name": "朱雀门",
+      "x": -982.65,
+      "y": 173.85,
+      "category": "设施与NPC",
+      "region": "开封"
+     },
+     "residual": 4.347579751933256
+    },
+    {
+     "official": {
+      "id": 4722,
+      "name": "来苏蒙学",
+      "lng": -175024.0,
+      "lat": 147551.0,
+      "category": "传送点"
+     },
+     "ours": {
+      "name": "来苏蒙学",
+      "x": -1068.08,
+      "y": 314.9,
+      "category": "设施与NPC",
+      "region": "开封"
+     },
+     "residual": 4.809479816311035
+    },
+    {
+     "official": {
+      "id": 4723,
+      "name": "修造案",
+      "lng": -216176.0,
+      "lat": 144330.0,
+      "category": "传送点"
+     },
+     "ours": {
+      "name": "修造案",
+      "x": -1047.0,
+      "y": 523.44,
+      "category": "设施与NPC",
+      "region": "开封"
+     },
+     "residual": 5.325351399545241
+    },
+    {
+     "official": {
+      "id": 4727,
+      "name": "白马驿",
+      "lng": -100746.0,
+      "lat": 416726.0,
+      "category": "传送点"
+     },
+     "ours": {
+      "name": "白马驿",
+      "x": -2443.07,
+      "y": -31.22,
+      "category": "设施与NPC",
+      "region": "开封"
+     },
+     "residual": 6.730327820030994
+    },
+    {
+     "official": {
+      "id": 4728,
+      "name": "封丘村",
+      "lng": -145225.0,
+      "lat": 412774.0,
+      "category": "传送点"
+     },
+     "ours": {
+      "name": "封丘村",
+      "x": -2417.9,
+      "y": 194.12,
+      "category": "设施与NPC",
+      "region": "开封"
+     },
+     "residual": 7.010137111540507
+    },
+    {
+     "official": {
+      "id": 4729,
+      "name": "天上来渡",
+      "lng": -174332.0,
+      "lat": 433705.0,
+      "category": "传送点"
+     },
+     "ours": {
+      "name": "天上来渡",
+      "x": -2520.81,
+      "y": 344.28,
+      "category": "设施与NPC",
+      "region": "开封"
+     },
+     "residual": 7.487394066626176
+    },
+    {
+     "official": {
+      "id": 4730,
+      "name": "赤龙堂",
+      "lng": -200413.0,
+      "lat": 464236.0,
+      "category": "传送点"
+     },
+     "ours": {
+      "name": "赤龙堂",
+      "x": -2672.8,
+      "y": 480.19,
+      "category": "设施与NPC",
+      "region": "开封"
+     },
+     "residual": 8.057473361956111
+    },
+    {
+     "official": {
+      "id": 4731,
+      "name": "河市乐",
+      "lng": -231344.0,
+      "lat": 413305.0,
+      "category": "传送点"
+     },
+     "ours": {
+      "name": "河市乐",
+      "x": -2410.69,
+      "y": 631.36,
+      "category": "设施与NPC",
+      "region": "开封"
+     },
+     "residual": 7.7740503794264475
+    },
+    {
+     "official": {
+      "id": 4732,
+      "name": "破虏舟冢",
+      "lng": -260541.0,
+      "lat": 417744.0,
+      "category": "传送点"
+     },
+     "ours": {
+      "name": "破虏舟冢",
+      "x": -2431.93,
+      "y": 766.566,
+      "category": "地点标记",
+      "region": "开封"
+     },
+     "residual": 13.022403825786009
+    },
+    {
+     "official": {
+      "id": 4733,
+      "name": "鱼柏川",
+      "lng": -274764.0,
+      "lat": 372741.0,
+      "category": "传送点"
+     },
+     "ours": {
+      "name": "鱼柏川",
+      "x": -2199.78,
+      "y": 847.11,
+      "category": "设施与NPC",
+      "region": "开封"
+     },
+     "residual": 7.794645291195032
+    },
+    {
+     "official": {
+      "id": 4734,
+      "name": "河渎禹灵碑",
+      "lng": -327674.0,
+      "lat": 404300.0,
+      "category": "传送点"
+     },
+     "ours": {
+      "name": "河渎禹灵碑",
+      "x": -2353.91,
+      "y": 1119.33,
+      "category": "设施与NPC",
+      "region": "开封"
+     },
+     "residual": 8.64992905882186
+    },
+    {
+     "official": {
+      "id": 4735,
+      "name": "万古一人殿",
+      "lng": -324215.0,
+      "lat": 413677.0,
+      "category": "传送点"
+     },
+     "ours": {
+      "name": "万古一人殿",
+      "x": -2401.91,
+      "y": 1102.85,
+      "category": "设施与NPC",
+      "region": "开封"
+     },
+     "residual": 8.701039718826426
+    },
+    {
+     "official": {
+      "id": 4736,
+      "name": "阻冰渡",
+      "lng": -273247.0,
+      "lat": 450246.0,
+      "category": "传送点"
+     },
+     "ours": {
+      "name": "阻冰渡",
+      "x": -2593.41,
+      "y": 848.32,
+      "category": "设施与NPC",
+      "region": "开封"
+     },
+     "residual": 8.553763297051427
+    },
+    {
+     "official": {
+      "id": 4737,
+      "name": "浮戏山",
+      "lng": -343417.0,
+      "lat": 346565.0,
+      "category": "传送点"
+     },
+     "ours": {
+      "name": "浮戏山",
+      "x": -2059.01,
+      "y": 1192.62,
+      "category": "设施与NPC",
+      "region": "开封"
+     },
+     "residual": 8.317438094317593
+    },
+    {
+     "official": {
+      "id": 4738,
+      "name": "太岳台",
+      "lng": -405725.0,
+      "lat": 332110.0,
+      "category": "传送点"
+     },
+     "ours": {
+      "name": "太岳台",
+      "x": -1978.47,
+      "y": 1507.26,
+      "category": "设施与NPC",
+      "region": "开封"
+     },
+     "residual": 8.939314861378744
+    },
+    {
+     "official": {
+      "id": 4739,
+      "name": "旷虚幽间",
+      "lng": -401036.0,
+      "lat": 316265.0,
+      "category": "传送点"
+     },
+     "ours": {
+      "name": "旷虚幽间",
+      "x": -1898.57,
+      "y": 1481.63,
+      "category": "设施与NPC",
+      "region": "开封"
+     },
+     "residual": 8.76948192212661
+    },
+    {
+     "official": {
+      "id": 4740,
+      "name": "张家旧宅",
+      "lng": -346512.0,
+      "lat": 246577.0,
+      "category": "传送点"
+     },
+     "ours": {
+      "name": "张家旧宅",
+      "x": -1570.67,
+      "y": 1259.86,
+      "category": "地点标记",
+      "region": "开封"
+     },
+     "residual": 63.34173780407895
+    },
+    {
+     "official": {
+      "id": 4741,
+      "name": "万胜镇南",
+      "lng": -276373.0,
+      "lat": 232640.0,
+      "category": "传送点"
+     },
+     "ours": {
+      "name": "万胜镇南",
+      "x": -1488.38,
+      "y": 839.17,
+      "category": "设施与NPC",
+      "region": "开封"
+     },
+     "residual": 6.643861613923923
+    },
+    {
+     "official": {
+      "id": 4742,
+      "name": "柳圃",
+      "lng": -261050.0,
+      "lat": 251003.0,
+      "category": "传送点"
+     },
+     "ours": {
+      "name": "柳圃",
+      "x": -1905.03,
+      "y": 769.4,
+      "category": "设施与NPC",
+      "region": "开封"
+     },
+     "residual": 315.1344973649553
+    },
+    {
+     "official": {
+      "id": 4743,
+      "name": "聆杏村",
+      "lng": -32173.0,
+      "lat": 332357.0,
+      "category": "传送点"
+     },
+     "ours": {
+      "name": "聆杏村传送点",
+      "x": -1988.74,
+      "y": -360.666,
+      "category": "设施与NPC",
+      "region": "开封"
+     },
+     "residual": 49.3609188724421
+    },
+    {
+     "official": {
+      "id": 4744,
+      "name": "六疾馆",
+      "lng": 1221.0,
+      "lat": 264577.0,
+      "category": "传送点"
+     },
+     "ours": {
+      "name": "六疾馆",
+      "x": -1682.42,
+      "y": -566.35,
+      "category": "设施与NPC",
+      "region": "开封"
+     },
+     "residual": 4.1307218809881165
+    },
+    {
+     "official": {
+      "id": 4745,
+      "name": "长兴集",
+      "lng": -24231.0,
+      "lat": 247116.0,
+      "category": "传送点"
+     },
+     "ours": {
+      "name": "长兴集传送点",
+      "x": -1600.16,
+      "y": -410.52,
+      "category": "设施与NPC",
+      "region": "开封"
+     },
+     "residual": 30.809636242214676
+    },
+    {
+     "official": {
+      "id": 4746,
+      "name": "柳圃",
+      "lng": -260777.0,
+      "lat": 314361.0,
+      "category": "传送点"
+     },
+     "ours": {
+      "name": "柳圃",
+      "x": -1905.03,
+      "y": 769.4,
+      "category": "设施与NPC",
+      "region": "开封"
+     },
+     "residual": 7.1018389495403955
+    },
+    {
+     "official": {
+      "id": 4747,
+      "name": "隐雾林北",
+      "lng": 13244.0,
+      "lat": 222016.0,
+      "category": "传送点"
+     },
+     "ours": {
+      "name": "隐雾林北",
+      "x": -1467.74,
+      "y": -632.27,
+      "category": "设施与NPC",
+      "region": "开封"
+     },
+     "residual": 3.5215447049581163
+    },
+    {
+     "official": {
+      "id": 4748,
+      "name": "隐雾林中",
+      "lng": 5012.0,
+      "lat": 160512.0,
+      "category": "传送点"
+     },
+     "ours": {
+      "name": "隐雾林中",
+      "x": -1154.57,
+      "y": -597.55,
+      "category": "设施与NPC",
+      "region": "开封"
+     },
+     "residual": 2.858917479272033
+    },
+    {
+     "official": {
+      "id": 4749,
+      "name": "隐雾林东",
+      "lng": 25222.0,
+      "lat": 153554.0,
+      "category": "传送点"
+     },
+     "ours": {
+      "name": "隐雾林东",
+      "x": -1121.58,
+      "y": -700.95,
+      "category": "设施与NPC",
+      "region": "开封"
+     },
+     "residual": 2.596317924805563
+    },
+    {
+     "official": {
+      "id": 4750,
+      "name": "眠茔冢",
+      "lng": -26637.0,
+      "lat": 150771.0,
+      "category": "传送点"
+     },
+     "ours": {
+      "name": "眠茔冢",
+      "x": -1101.49,
+      "y": -438.01,
+      "category": "设施与NPC",
+      "region": "开封"
+     },
+     "residual": 3.0570671841912733
+    },
+    {
+     "official": {
+      "id": 4751,
+      "name": "达安村",
+      "lng": -2671.0,
+      "lat": 70205.0,
+      "category": "传送点"
+     },
+     "ours": {
+      "name": "达安村",
+      "x": -695.25,
+      "y": -568.93,
+      "category": "设施与NPC",
+      "region": "开封"
+     },
+     "residual": 2.1245092336877542
+    },
+    {
+     "official": {
+      "id": 4752,
+      "name": "临津渡",
+      "lng": 14346.0,
+      "lat": 40041.0,
+      "category": "传送点"
+     },
+     "ours": {
+      "name": "临津渡",
+      "x": -544.08,
+      "y": -658.79,
+      "category": "设施与NPC",
+      "region": "开封"
+     },
+     "residual": 1.7428471953018532
+    },
+    {
+     "official": {
+      "id": 4753,
+      "name": "常平仓",
+      "lng": -34565.0,
+      "lat": 14613.0,
+      "category": "传送点"
+     },
+     "ours": {
+      "name": "常平仓",
+      "x": -409.38,
+      "y": -413.41,
+      "category": "设施与NPC",
+      "region": "开封"
+     },
+     "residual": 2.3582780732165753
+    },
+    {
+     "official": {
+      "id": 4754,
+      "name": "秋瞑居",
+      "lng": 25126.0,
+      "lat": -35740.0,
+      "category": "传送点"
+     },
+     "ours": {
+      "name": "秋瞑居",
+      "x": -160.62,
+      "y": -722.22,
+      "category": "设施与NPC",
+      "region": "开封"
+     },
+     "residual": 1.617145569447623
+    },
+    {
+     "official": {
+      "id": 4755,
+      "name": "鹰愁岭",
+      "lng": 45360.0,
+      "lat": -73602.0,
+      "category": "传送点"
+     },
+     "ours": {
+      "name": "鹰愁岭",
+      "x": 29.25,
+      "y": -829.29,
+      "category": "设施与NPC",
+      "region": "开封"
+     },
+     "residual": 1.6509276258040653
+    },
+    {
+     "official": {
+      "id": 4756,
+      "name": "承恩镇北",
+      "lng": -50221.0,
+      "lat": -47212.0,
+      "category": "传送点"
+     },
+     "ours": {
+      "name": "承恩镇北",
+      "x": -93.73,
+      "y": -341.05,
+      "category": "设施与NPC",
+      "region": "开封"
+     },
+     "residual": 2.685562973520486
+    },
+    {
+     "official": {
+      "id": 4757,
+      "name": "承恩镇南",
+      "lng": -50533.0,
+      "lat": -130136.0,
+      "category": "传送点"
+     },
+     "ours": {
+      "name": "承恩镇南",
+      "x": 327.27,
+      "y": -348.99,
+      "category": "设施与NPC",
+      "region": "开封"
+     },
+     "residual": 3.2146491250906237
+    },
+    {
+     "official": {
+      "id": 4758,
+      "name": "东南行营",
+      "lng": -124125.0,
+      "lat": 2254.0,
+      "category": "传送点"
+     },
+     "ours": {
+      "name": "东南行营",
+      "x": -356.995,
+      "y": 24.7666,
+      "category": "地点标记",
+      "region": "开封"
+     },
+     "residual": 24.53373319422084
+    },
+    {
+     "official": {
+      "id": 4759,
+      "name": "望淮南崖",
+      "lng": -160073.0,
+      "lat": -3035.0,
+      "category": "传送点"
+     },
+     "ours": {
+      "name": "望淮南崖",
+      "x": -305.36,
+      "y": 221.69,
+      "category": "设施与NPC",
+      "region": "开封"
+     },
+     "residual": 4.145193085739282
+    },
+    {
+     "official": {
+      "id": 4760,
+      "name": "武成王庙",
+      "lng": -206572.0,
+      "lat": -12170.0,
+      "category": "传送点"
+     },
+     "ours": {
+      "name": "武成王庙",
+      "x": -253.64,
+      "y": 456.69,
+      "category": "设施与NPC",
+      "region": "开封"
+     },
+     "residual": 4.811537136909825
+    },
+    {
+     "official": {
+      "id": 4761,
+      "name": "密诏室",
+      "lng": -211027.0,
+      "lat": -31730.0,
+      "category": "传送点"
+     },
+     "ours": {
+      "name": "密诏室",
+      "x": -153.83,
+      "y": 477.06,
+      "category": "设施与NPC",
+      "region": "开封"
+     },
+     "residual": 4.8963781861122255
+    },
+    {
+     "official": {
+      "id": 4762,
+      "name": "镜潭",
+      "lng": -252022.0,
+      "lat": -27346.0,
+      "category": "传送点"
+     },
+     "ours": {
+      "name": "镜潭传送点",
+      "x": -168.621,
+      "y": 712.193,
+      "category": "设施与NPC",
+      "region": "开封"
+     },
+     "residual": 24.21458468892404
+    },
+    {
+     "official": {
+      "id": 4763,
+      "name": "造像处",
+      "lng": -214605.0,
+      "lat": 15657.0,
+      "category": "传送点"
+     },
+     "ours": {
+      "name": "造像处",
+      "x": -393.98,
+      "y": 500.67,
+      "category": "设施与NPC",
+      "region": "开封"
+     },
+     "residual": 4.920308018576238
+    },
+    {
+     "official": {
+      "id": 4764,
+      "name": "鸿沟古渠",
+      "lng": -146774.0,
+      "lat": 51370.0,
+      "category": "传送点"
+     },
+     "ours": {
+      "name": "鸿沟古渠",
+      "x": -583.07,
+      "y": 160.43,
+      "category": "设施与NPC",
+      "region": "开封"
+     },
+     "residual": 4.013700235710604
+    },
+    {
+     "official": {
+      "id": 4765,
+      "name": "梓匠居",
+      "lng": -172543.0,
+      "lat": 67270.0,
+      "category": "传送点"
+     },
+     "ours": {
+      "name": "梓匠居",
+      "x": -660.83,
+      "y": 293.08,
+      "category": "设施与NPC",
+      "region": "开封"
+     },
+     "residual": 4.406353337256596
+    },
+    {
+     "official": {
+      "id": 4766,
+      "name": "麦香集",
+      "lng": -133732.0,
+      "lat": 102132.0,
+      "category": "传送点"
+     },
+     "ours": {
+      "name": "麦香集",
+      "x": -842.26,
+      "y": 100.06,
+      "category": "设施与NPC",
+      "region": "开封"
+     },
+     "residual": 4.018764932111768
+    },
+    {
+     "official": {
+      "id": 4767,
+      "name": "御苑北",
+      "lng": -257106.0,
+      "lat": 77124.0,
+      "category": "传送点"
+     },
+     "ours": {
+      "name": "御苑北",
+      "x": -701.13,
+      "y": 723.49,
+      "category": "设施与NPC",
+      "region": "开封"
+     },
+     "residual": 5.615960022605202
+    },
+    {
+     "official": {
+      "id": 4768,
+      "name": "御苑南",
+      "lng": -262434.0,
+      "lat": 53226.0,
+      "category": "传送点"
+     },
+     "ours": {
+      "name": "御苑南",
+      "x": -579.2,
+      "y": 747.79,
+      "category": "设施与NPC",
+      "region": "开封"
+     },
+     "residual": 5.639342003342119
+    },
+    {
+     "official": {
+      "id": 4769,
+      "name": "回龙驿",
+      "lng": -344456.0,
+      "lat": 72227.0,
+      "category": "传送点"
+     },
+     "ours": {
+      "name": "回龙驿",
+      "x": -666.23,
+      "y": 1166.35,
+      "category": "设施与NPC",
+      "region": "开封"
+     },
+     "residual": 6.831536722230726
+    },
+    {
+     "official": {
+      "id": 4770,
+      "name": "飞花渡",
+      "lng": -311474.0,
+      "lat": 4135.0,
+      "category": "传送点"
+     },
+     "ours": {
+      "name": "飞花渡",
+      "x": -324.35,
+      "y": 991.09,
+      "category": "设施与NPC",
+      "region": "开封"
+     },
+     "residual": 6.3009327883745145
+    },
+    {
+     "official": {
+      "id": 4771,
+      "name": "西南行营",
+      "lng": -317343.0,
+      "lat": -27412.0,
+      "category": "传送点"
+     },
+     "ours": {
+      "name": "西南行营",
+      "x": -131.84,
+      "y": 961.746,
+      "category": "地点标记",
+      "region": "开封"
+     },
+     "residual": 69.85532283142197
+    },
+    {
+     "official": {
+      "id": 4772,
+      "name": "汴河水门",
+      "lng": -304565.0,
+      "lat": 176462.0,
+      "category": "传送点"
+     },
+     "ours": {
+      "name": "汴河水门",
+      "x": -1199.96,
+      "y": 975.83,
+      "category": "设施与NPC",
+      "region": "开封"
+     },
+     "residual": 6.658488316653257
+    },
+    {
+     "official": {
+      "id": 5640,
+      "name": "曹门大街",
+      "lng": -70346.0,
+      "lat": 246441.0,
+      "category": "传送点"
+     },
+     "ours": {
+      "name": "曹门大街",
+      "x": -1582.13,
+      "y": -205.12,
+      "category": "设施与NPC",
+      "region": "开封"
+     },
+     "residual": 4.47469376116213
+    },
+    {
+     "official": {
+      "id": 5852,
+      "name": "天涯客",
+      "lng": -34412.0,
+      "lat": 55314.0,
+      "category": "传送点"
+     },
+     "ours": {
+      "name": "天涯客",
+      "x": -616.01,
+      "y": -409.51,
+      "category": "玩法收集",
+      "region": "开封"
+     },
+     "residual": 2.464880529371965
+    },
+    {
+     "official": {
+      "id": 6494,
+      "name": "地下传送点",
+      "lng": -317073.0,
+      "lat": 370653.0,
+      "category": "传送点"
+     },
+     "ours": {
+      "name": "地下传送点",
+      "x": -2184.32,
+      "y": 1061.65,
+      "category": "设施与NPC",
+      "region": "开封"
+     },
+     "residual": 8.228253813315826
+    }
+   ],
+   "rejected": []
+  }
+ },
+ "unsolved": [
+  {
+   "mapId": 2,
+   "name": "河西",
+   "anchors": 0,
+   "status": "insufficient-anchors",
+   "need": 3
+  },
+  {
+   "mapId": 3,
+   "name": "风催凉州",
+   "anchors": 0,
+   "status": "insufficient-anchors",
+   "need": 3
+  },
+  {
+   "mapId": 4,
+   "name": "不见山",
+   "anchors": 0,
+   "status": "insufficient-anchors",
+   "need": 3
+  },
+  {
+   "mapId": 5,
+   "name": "滹沱",
+   "anchors": 0,
+   "status": "insufficient-anchors",
+   "need": 3
+  },
+  {
+   "mapId": 6,
+   "name": "开封皇宫",
+   "anchors": 0,
+   "status": "insufficient-anchors",
+   "need": 3
+  },
+  {
+   "mapId": 7,
+   "name": "青州",
+   "anchors": 0,
+   "status": "insufficient-anchors",
+   "need": 3
+  },
+  {
+   "mapId": 8,
+   "name": "江南",
+   "anchors": 0,
+   "status": "insufficient-anchors",
+   "need": 3
+  }
+ ],
+ "coverage": {
+  "solvedMaps": 2,
+  "totalMaps": 9,
+  "officialPointsUsable": 3323,
+  "officialPointsTotal": 8192
+ }
+}

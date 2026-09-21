@@ -154,17 +154,20 @@ def main() -> int:
         print(f"[!] {RAW} 非空；如需重建请加 --force")
         return 1
 
-    # --force 重建时先清空 raw/，但 **保留 raw/rpa/**（那是影刀 RPA 的采集落地区，
-    # 由本导入脚本之外的流程写入，不能被清掉）。
+    # --force 重建时先清空 raw/，但**保留那些由本脚本之外的流程写入**的目录：
+    #   raw/rpa/       —— 影刀 RPA / Python 采集的落地区
+    #   raw/official/  —— tools/import_official.py 从官方大地图换算写入的数据
+    # 它们不是「原始手工坐标库」的副本，清掉就得重新采集/换算。
+    KEEP_ON_FORCE = {"rpa", "official"}
     if args.force and RAW.exists():
         for child in RAW.iterdir():
-            if child.name == "rpa":
+            if child.name in KEEP_ON_FORCE:
                 continue
             if child.is_dir():
                 shutil.rmtree(child)
             else:
                 child.unlink()
-        print(f"  [force] 已清空 {RAW}（保留 raw/rpa/）")
+        print(f"  [force] 已清空 {RAW}（保留 {'、'.join('raw/' + k + '/' for k in sorted(KEEP_ON_FORCE))}）")
 
     files = sorted(
         (p for p in source.rglob("*") if p.is_file() and p.suffix.lower() in ALL_EXT),

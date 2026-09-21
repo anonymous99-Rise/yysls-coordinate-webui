@@ -2,6 +2,7 @@
  "stats": {
   "glued_lines_split": 3,
   "stray_prefix_fixed": 1,
+  "name_contains_comma": 1,
   "missing_name": 1
  },
  "issues": [
@@ -32,6 +33,13 @@
    "file": "24小时合版.ini",
    "line": 982,
    "raw": "-2870.8 ,-562.675 ,27.7539 ,荒魂村传送点2-183.437 ,986.765 ,-27.3766 ,未备注地点"
+  },
+  {
+   "kind": "name_contains_comma",
+   "detail": "名称内含 ASCII 逗号：清河野祀游火6（找不到的按V,用听风辩位找跟着指引走）",
+   "file": "official/清河/野祀游火.ini",
+   "line": 6,
+   "raw": "-3185.52 ,-1051.96 ,0 ,清河野祀游火6（找不到的按V,用听风辩位找跟着指引走）"
   },
   {
    "kind": "missing_name",

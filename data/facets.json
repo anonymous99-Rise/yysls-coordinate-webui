@@ -2,14 +2,14 @@
   "version": 1,
   "generatedBy": "tools/etl.py",
   "stats": {
-    "rawFiles": 111,
-    "rawRows": 27099,
-    "points": 6071,
+    "rawFiles": 149,
+    "rawRows": 30346,
+    "points": 9318,
     "redundantRows": 21028,
-    "issues": 5,
-    "noteFiles": 6,
+    "issues": 6,
+    "noteFiles": 7,
     "crossFilePoints": 4986,
-    "coLocatedPoints": 693,
+    "coLocatedPoints": 697,
     "regionUnknown": 0,
     "regionFilledByNearest": 690
   },
@@ -90,35 +90,35 @@
   "categories": [
     {
       "key": "材料",
-      "count": 3173
+      "count": 3174
     },
     {
       "key": "宝箱",
-      "count": 1284
+      "count": 2714
     },
     {
       "key": "蹊跷",
-      "count": 58
+      "count": 441
     },
     {
       "key": "玩法收集",
-      "count": 364
+      "count": 1547
     },
     {
       "key": "动物",
-      "count": 626
+      "count": 667
     },
     {
       "key": "战斗",
-      "count": 53
+      "count": 71
     },
     {
       "key": "交互",
-      "count": 52
+      "count": 91
     },
     {
       "key": "设施与NPC",
-      "count": 106
+      "count": 174
     },
     {
       "key": "地点标记",
@@ -126,7 +126,7 @@
     },
     {
       "key": "NPC",
-      "count": 33
+      "count": 48
     },
     {
       "key": "未标注",
@@ -134,17 +134,21 @@
     },
     {
       "key": "其他",
-      "count": 15
+      "count": 84
     }
   ],
   "regions": [
     {
       "key": "开封",
-      "count": 3941
+      "count": 6033
     },
     {
       "key": "清河",
-      "count": 2130
+      "count": 3284
+    },
+    {
+      "key": "江南",
+      "count": 1
     }
   ],
   "materials": [
@@ -190,7 +194,7 @@
     },
     {
       "key": "枯茱萸",
-      "count": 125
+      "count": 126
     },
     {
       "key": "佛泪参",
@@ -209,11 +213,11 @@
       "count": 100
     },
     {
-      "key": "恶相花",
-      "count": 87
+      "key": "魏紫",
+      "count": 88
     },
     {
-      "key": "魏紫",
+      "key": "恶相花",
       "count": 87
     },
     {
@@ -253,24 +257,24 @@
       "count": 39
     },
     {
+      "key": "蜂窝",
+      "count": 37
+    },
+    {
       "key": "龙骨",
       "count": 34
+    },
+    {
+      "key": "百目莲",
+      "count": 33
     },
     {
       "key": "菌子",
       "count": 32
     },
     {
-      "key": "蜂窝",
-      "count": 31
-    },
-    {
       "key": "蓝色花",
       "count": 30
-    },
-    {
-      "key": "百目莲",
-      "count": 28
     },
     {
       "key": "野山参",
@@ -291,64 +295,144 @@
       "count": 100
     },
     {
-      "key": "佛光顶",
-      "count": 37
-    },
-    {
-      "key": "荒蚀林",
-      "count": 35
-    },
-    {
-      "key": "丹崖",
-      "count": 28
-    },
-    {
-      "key": "南门大街",
-      "count": 26
-    },
-    {
-      "key": "勾栏瓦肆",
-      "count": 23
+      "key": "寿昌坊",
+      "count": 94
     },
     {
       "key": "醉花阴",
-      "count": 22
+      "count": 74
     },
     {
-      "key": "太平钟楼",
-      "count": 15
+      "key": "荒蚀林",
+      "count": 50
     },
     {
-      "key": "千佛村",
-      "count": 14
+      "key": "清心圃",
+      "count": 47
+    },
+    {
+      "key": "勾栏瓦肆",
+      "count": 44
+    },
+    {
+      "key": "白马津",
+      "count": 41
+    },
+    {
+      "key": "佛光顶",
+      "count": 39
+    },
+    {
+      "key": "南门大街",
+      "count": 39
+    },
+    {
+      "key": "金明池",
+      "count": 37
+    },
+    {
+      "key": "神仙渡",
+      "count": 34
+    },
+    {
+      "key": "丹崖",
+      "count": 31
     },
     {
       "key": "开封东郊",
-      "count": 13
+      "count": 30
     },
     {
-      "key": "慈心山院",
-      "count": 13
+      "key": "百工坊",
+      "count": 29
+    },
+    {
+      "key": "开封府",
+      "count": 26
+    },
+    {
+      "key": "太平钟楼",
+      "count": 24
+    },
+    {
+      "key": "春秋别馆",
+      "count": 24
+    },
+    {
+      "key": "达安村",
+      "count": 24
+    },
+    {
+      "key": "不羡仙",
+      "count": 23
+    },
+    {
+      "key": "丰禾村",
+      "count": 21
+    },
+    {
+      "key": "熔炉区",
+      "count": 21
     },
     {
       "key": "百草野",
+      "count": 19
+    },
+    {
+      "key": "千佛村",
+      "count": 17
+    },
+    {
+      "key": "角门里",
+      "count": 17
+    },
+    {
+      "key": "慈心山院",
+      "count": 15
+    },
+    {
+      "key": "抱山湖",
+      "count": 13
+    },
+    {
+      "key": "藏贤岗",
       "count": 13
     },
     {
       "key": "璧泉山",
+      "count": 12
+    },
+    {
+      "key": "天工地窟",
       "count": 11
     },
     {
-      "key": "百工坊",
-      "count": 10
+      "key": "龙虎岭",
+      "count": 9
     },
     {
-      "key": "清心圃",
+      "key": "将军祠",
       "count": 8
     },
     {
-      "key": "春秋别馆",
+      "key": "伏马庄",
       "count": 7
+    },
+    {
+      "key": "慈心镇",
+      "count": 7
+    },
+    {
+      "key": "菩提苦海",
+      "count": 7
+    },
+    {
+      "key": "临江驿",
+      "count": 6
+    },
+    {
+      "key": "佛爷寨",
+      "count": 6
     },
     {
       "key": "来生岸",
@@ -359,27 +443,15 @@
       "count": 6
     },
     {
-      "key": "天工地窟",
-      "count": 5
-    },
-    {
-      "key": "神仙渡",
-      "count": 5
-    },
-    {
-      "key": "菩提苦海",
-      "count": 5
-    },
-    {
-      "key": "伏马庄",
-      "count": 4
-    },
-    {
       "key": "荒魂村",
-      "count": 4
+      "count": 5
     },
     {
-      "key": "藏贤岗",
+      "key": "龙虎寨",
+      "count": 5
+    },
+    {
+      "key": "浣石浦",
       "count": 4
     },
     {
@@ -387,23 +459,11 @@
       "count": 3
     },
     {
-      "key": "龙虎寨",
+      "key": "隐雾林",
       "count": 3
     },
     {
-      "key": "丰禾村",
-      "count": 2
-    },
-    {
-      "key": "临江驿",
-      "count": 2
-    },
-    {
-      "key": "佛爷寨",
-      "count": 2
-    },
-    {
-      "key": "将军祠",
+      "key": "大相国寺",
       "count": 2
     },
     {
@@ -411,19 +471,27 @@
       "count": 2
     },
     {
+      "key": "烧瓷岭",
+      "count": 2
+    },
+    {
+      "key": "神秘驻地",
+      "count": 2
+    },
+    {
+      "key": "竹林旧居",
+      "count": 2
+    },
+    {
       "key": "聆杏村",
       "count": 2
     },
     {
+      "key": "七伐坡",
+      "count": 1
+    },
+    {
       "key": "不伏马场",
-      "count": 1
-    },
-    {
-      "key": "不羡仙",
-      "count": 1
-    },
-    {
-      "key": "大相国寺",
       "count": 1
     },
     {
@@ -431,23 +499,7 @@
       "count": 1
     },
     {
-      "key": "寿昌坊",
-      "count": 1
-    },
-    {
-      "key": "开封府",
-      "count": 1
-    },
-    {
       "key": "张家旧宅",
-      "count": 1
-    },
-    {
-      "key": "慈心镇",
-      "count": 1
-    },
-    {
-      "key": "抱山湖",
       "count": 1
     },
     {
@@ -467,10 +519,6 @@
       "count": 1
     },
     {
-      "key": "浣石浦",
-      "count": 1
-    },
-    {
       "key": "石面",
       "count": 1
     },
@@ -479,19 +527,11 @@
       "count": 1
     },
     {
-      "key": "神秘驻地",
-      "count": 1
-    },
-    {
       "key": "秀金所",
       "count": 1
     },
     {
-      "key": "竹林旧居",
-      "count": 1
-    },
-    {
-      "key": "角门里",
+      "key": "花海",
       "count": 1
     },
     {
@@ -506,7 +546,7 @@
   "layers": [
     {
       "key": "地表",
-      "count": 5905
+      "count": 9152
     },
     {
       "key": "高台",
@@ -523,50 +563,50 @@
   ],
   "regionSources": [
     {
+      "key": "name",
+      "count": 2956
+    },
+    {
       "key": "coord",
       "count": 2726
     },
     {
       "key": "path",
-      "count": 1214
+      "count": 2192
     },
     {
-      "key": "name",
-      "count": 1018
+      "key": "place",
+      "count": 754
     },
     {
       "key": "nearest",
       "count": 690
-    },
-    {
-      "key": "place",
-      "count": 423
     }
   ],
   "categorySources": [
     {
       "key": "dict",
-      "count": 5413
+      "count": 8113
+    },
+    {
+      "key": "path",
+      "count": 601
+    },
+    {
+      "key": "pattern",
+      "count": 248
     },
     {
       "key": "placeholder",
       "count": 224
     },
     {
-      "key": "path",
-      "count": 210
-    },
-    {
-      "key": "pattern",
-      "count": 176
+      "key": "fallback",
+      "count": 84
     },
     {
       "key": "person",
-      "count": 33
-    },
-    {
-      "key": "fallback",
-      "count": 15
+      "count": 48
     }
   ],
   "flags": [
@@ -584,7 +624,7 @@
     },
     {
       "key": "co_located_with_other",
-      "count": 693
+      "count": 697
     },
     {
       "key": "region_nearest",
@@ -609,6 +649,10 @@
     {
       "key": "stray_prefix",
       "count": 1
+    },
+    {
+      "key": "name_contains_comma",
+      "count": 1
     }
   ],
   "sourceFiles": [
@@ -627,6 +671,310 @@
       "rows": 0,
       "isRpa": false,
       "points": 0
+    },
+    {
+      "file": "official/README.md",
+      "codec": "utf-8",
+      "bytes": 2134,
+      "rows": 0,
+      "isRpa": false,
+      "points": 0
+    },
+    {
+      "file": "official/开封/万事知.ini",
+      "codec": "utf-8",
+      "bytes": 11073,
+      "rows": 157,
+      "isRpa": false,
+      "points": 157
+    },
+    {
+      "file": "official/开封/不平事.ini",
+      "codec": "utf-8",
+      "bytes": 4505,
+      "rows": 62,
+      "isRpa": false,
+      "points": 62
+    },
+    {
+      "file": "official/开封/传送点.ini",
+      "codec": "utf-8",
+      "bytes": 1816,
+      "rows": 55,
+      "isRpa": false,
+      "points": 55
+    },
+    {
+      "file": "official/开封/其他.ini",
+      "codec": "utf-8",
+      "bytes": 4754,
+      "rows": 81,
+      "isRpa": false,
+      "points": 81
+    },
+    {
+      "file": "official/开封/前尘旧物.ini",
+      "codec": "utf-8",
+      "bytes": 783,
+      "rows": 8,
+      "isRpa": false,
+      "points": 8
+    },
+    {
+      "file": "official/开封/天地万籁.ini",
+      "codec": "utf-8",
+      "bytes": 2590,
+      "rows": 20,
+      "isRpa": false,
+      "points": 20
+    },
+    {
+      "file": "official/开封/奇术.ini",
+      "codec": "utf-8",
+      "bytes": 455,
+      "rows": 5,
+      "isRpa": false,
+      "points": 5
+    },
+    {
+      "file": "official/开封/奇遇.ini",
+      "codec": "utf-8",
+      "bytes": 965,
+      "rows": 8,
+      "isRpa": false,
+      "points": 8
+    },
+    {
+      "file": "official/开封/妙妙喵.ini",
+      "codec": "utf-8",
+      "bytes": 3264,
+      "rows": 57,
+      "isRpa": false,
+      "points": 57
+    },
+    {
+      "file": "official/开封/宝箱收集（地上）.ini",
+      "codec": "utf-8",
+      "bytes": 35930,
+      "rows": 826,
+      "isRpa": false,
+      "points": 826
+    },
+    {
+      "file": "official/开封/宝箱收集（地下）.ini",
+      "codec": "utf-8",
+      "bytes": 6430,
+      "rows": 139,
+      "isRpa": false,
+      "points": 139
+    },
+    {
+      "file": "official/开封/心法.ini",
+      "codec": "utf-8",
+      "bytes": 457,
+      "rows": 5,
+      "isRpa": false,
+      "points": 5
+    },
+    {
+      "file": "official/开封/曲径寻幽.ini",
+      "codec": "utf-8",
+      "bytes": 2891,
+      "rows": 28,
+      "isRpa": false,
+      "points": 28
+    },
+    {
+      "file": "official/开封/武学.ini",
+      "codec": "utf-8",
+      "bytes": 158,
+      "rows": 2,
+      "isRpa": false,
+      "points": 2
+    },
+    {
+      "file": "official/开封/猫戏.ini",
+      "codec": "utf-8",
+      "bytes": 5259,
+      "rows": 64,
+      "isRpa": false,
+      "points": 64
+    },
+    {
+      "file": "official/开封/见闻.ini",
+      "codec": "utf-8",
+      "bytes": 26518,
+      "rows": 331,
+      "isRpa": false,
+      "points": 331
+    },
+    {
+      "file": "official/开封/蹊跷采集.ini",
+      "codec": "utf-8",
+      "bytes": 9315,
+      "rows": 252,
+      "isRpa": false,
+      "points": 252
+    },
+    {
+      "file": "official/开封/野外首领.ini",
+      "codec": "utf-8",
+      "bytes": 118,
+      "rows": 3,
+      "isRpa": false,
+      "points": 3
+    },
+    {
+      "file": "official/清河/万事知.ini",
+      "codec": "utf-8",
+      "bytes": 7328,
+      "rows": 151,
+      "isRpa": false,
+      "points": 151
+    },
+    {
+      "file": "official/清河/不平事.ini",
+      "codec": "utf-8",
+      "bytes": 1316,
+      "rows": 30,
+      "isRpa": false,
+      "points": 30
+    },
+    {
+      "file": "official/清河/传送点.ini",
+      "codec": "utf-8",
+      "bytes": 281,
+      "rows": 8,
+      "isRpa": false,
+      "points": 8
+    },
+    {
+      "file": "official/清河/其他.ini",
+      "codec": "utf-8",
+      "bytes": 1008,
+      "rows": 23,
+      "isRpa": false,
+      "points": 23
+    },
+    {
+      "file": "official/清河/前尘旧物.ini",
+      "codec": "utf-8",
+      "bytes": 519,
+      "rows": 11,
+      "isRpa": false,
+      "points": 11
+    },
+    {
+      "file": "official/清河/天地万籁.ini",
+      "codec": "utf-8",
+      "bytes": 1965,
+      "rows": 15,
+      "isRpa": false,
+      "points": 15
+    },
+    {
+      "file": "official/清河/奇术.ini",
+      "codec": "utf-8",
+      "bytes": 2124,
+      "rows": 21,
+      "isRpa": false,
+      "points": 21
+    },
+    {
+      "file": "official/清河/奇遇.ini",
+      "codec": "utf-8",
+      "bytes": 6067,
+      "rows": 45,
+      "isRpa": false,
+      "points": 45
+    },
+    {
+      "file": "official/清河/妙妙喵.ini",
+      "codec": "utf-8",
+      "bytes": 2639,
+      "rows": 49,
+      "isRpa": false,
+      "points": 49
+    },
+    {
+      "file": "official/清河/宝箱收集（地上）.ini",
+      "codec": "utf-8",
+      "bytes": 17956,
+      "rows": 359,
+      "isRpa": false,
+      "points": 359
+    },
+    {
+      "file": "official/清河/宝箱收集（地下）.ini",
+      "codec": "utf-8",
+      "bytes": 4894,
+      "rows": 91,
+      "isRpa": false,
+      "points": 91
+    },
+    {
+      "file": "official/清河/心法.ini",
+      "codec": "utf-8",
+      "bytes": 2673,
+      "rows": 25,
+      "isRpa": false,
+      "points": 25
+    },
+    {
+      "file": "official/清河/曲径寻幽.ini",
+      "codec": "utf-8",
+      "bytes": 1665,
+      "rows": 16,
+      "isRpa": false,
+      "points": 16
+    },
+    {
+      "file": "official/清河/武学.ini",
+      "codec": "utf-8",
+      "bytes": 626,
+      "rows": 6,
+      "isRpa": false,
+      "points": 6
+    },
+    {
+      "file": "official/清河/猫戏.ini",
+      "codec": "utf-8",
+      "bytes": 4110,
+      "rows": 47,
+      "isRpa": false,
+      "points": 47
+    },
+    {
+      "file": "official/清河/见闻.ini",
+      "codec": "utf-8",
+      "bytes": 4889,
+      "rows": 82,
+      "isRpa": false,
+      "points": 82
+    },
+    {
+      "file": "official/清河/蹊跷采集.ini",
+      "codec": "utf-8",
+      "bytes": 7786,
+      "rows": 146,
+      "isRpa": false,
+      "points": 146
+    },
+    {
+      "file": "official/清河/野外首领.ini",
+      "codec": "utf-8",
+      "bytes": 587,
+      "rows": 7,
+      "isRpa": false,
+      "points": 7
+    },
+    {
+      "file": "official/清河/野祀游火.ini",
+      "codec": "utf-8",
+      "bytes": 624,
+      "rows": 12,
+      "isRpa": false,
+      "points": 12
     },
     {
       "file": "分区域/71级金装材料坐标/寒菌幼株.txt",
