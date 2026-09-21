@@ -31,6 +31,21 @@ import {
   trimNum,
 } from '../web/src/lib/core.ts'
 
+// 直接 import .ts 依赖 **Node 的原生类型擦除**（Node 23.6+ 默认开启）。
+// Node 20/22 会抛 `ERR_UNKNOWN_FILE_EXTENSION: Unknown file extension ".ts"`，
+// 这个报错完全看不出是版本问题，所以先自己检查并说清楚。
+//
+// 这条踩过：本地 Node 24 跑得好好的，CI 配的是 Node 20，一上来就挂，
+// 而报错信息把人往「是不是 ts 文件没编译」的方向带。
+const _nodeMajor = Number(process.versions.node.split('.')[0])
+if (_nodeMajor < 23) {
+  console.error(`[x] 本测试需要 Node 23.6+，当前是 v${process.versions.node}。`)
+  console.error('    原因：它直接 import web/src/lib/core.ts，用的是 Node 原生类型擦除。')
+  console.error('    Node 20/22 不支持，只会抛 ERR_UNKNOWN_FILE_EXTENSION。')
+  console.error('    解决：升级 Node，或改用 `npx tsx tools/test_core.mjs`。')
+  process.exit(2)
+}
+
 const here = path.dirname(fileURLToPath(import.meta.url))
 const project = path.resolve(here, '..')
 const readJSON = (p) => JSON.parse(readFileSync(path.join(project, p), 'utf8'))
