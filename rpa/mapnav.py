@@ -49,19 +49,22 @@ pairs.json 的样子（世界坐标 → 地图上该点的像素坐标，屏幕�
 像素坐标怎么量：把地图截图丢进画图 / Snipaste，鼠标指到图标上，读左下角/右下角的坐标即可。
 """
 
-# Windows 控制台默认用 ANSI 代码页（cp1252 / cp936），直接 print 中文会
-# UnicodeEncodeError 崩掉。不指望调用方设 PYTHONIOENCODING —— 脚本自己保证输出编码。
-# 这个缺陷在 CI 上才暴露：本地一直设着 PYTHONIOENCODING=utf-8，正好把它盖住了，
-# 而任何非 UTF-8 控制台的 Windows 用户都会撞上。
-if hasattr(sys.stdout, "reconfigure"):
-    try:
-        sys.stdout.reconfigure(encoding="utf-8", errors="replace")
-        sys.stderr.reconfigure(encoding="utf-8", errors="replace")
-    except (AttributeError, ValueError):
-        pass
-
-
 from __future__ import annotations
+
+# >>> utf8-guard >>>
+# Windows 上往管道/重定向的 stdout 打中文会 UnicodeEncodeError 崩掉
+# （Python 默认用系统 ANSI 代码页而不是 UTF-8）。不指望调用方设
+# PYTHONIOENCODING —— 脚本自己保证输出编码。
+# 自带 import 是刻意的：位置无关，也不依赖文件里其他 import 的先后。
+import sys as _sys
+
+for _stream in (_sys.stdout, _sys.stderr):
+    if hasattr(_stream, "reconfigure"):
+        try:
+            _stream.reconfigure(encoding="utf-8", errors="replace")
+        except Exception:
+            pass
+# <<< utf8-guard <<<
 
 import argparse
 import csv

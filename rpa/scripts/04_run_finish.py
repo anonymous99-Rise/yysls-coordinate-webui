@@ -21,6 +21,21 @@
     python 04_run_finish.py --run-dir raw/rpa/_selftest --out-file raw/rpa/_selftest/collected.ini
 """
 
+# >>> utf8-guard >>>
+# Windows 上往管道/重定向的 stdout 打中文会 UnicodeEncodeError 崩掉
+# （Python 默认用系统 ANSI 代码页而不是 UTF-8）。不指望调用方设
+# PYTHONIOENCODING —— 脚本自己保证输出编码。
+# 自带 import 是刻意的：位置无关，也不依赖文件里其他 import 的先后。
+import sys as _sys
+
+for _stream in (_sys.stdout, _sys.stderr):
+    if hasattr(_stream, "reconfigure"):
+        try:
+            _stream.reconfigure(encoding="utf-8", errors="replace")
+        except Exception:
+            pass
+# <<< utf8-guard <<<
+
 import json
 import os
 import re

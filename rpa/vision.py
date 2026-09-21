@@ -37,19 +37,22 @@ vision.py —— 截图 + 模板匹配（判断游戏里「有没有那个东西
     python rpa/vision.py --save shot.png --region 700,380,320,200
 """
 
-# Windows 控制台默认用 ANSI 代码页（cp1252 / cp936），直接 print 中文会
-# UnicodeEncodeError 崩掉。不指望调用方设 PYTHONIOENCODING —— 脚本自己保证输出编码。
-# 这个缺陷在 CI 上才暴露：本地一直设着 PYTHONIOENCODING=utf-8，正好把它盖住了，
-# 而任何非 UTF-8 控制台的 Windows 用户都会撞上。
-if hasattr(sys.stdout, "reconfigure"):
-    try:
-        sys.stdout.reconfigure(encoding="utf-8", errors="replace")
-        sys.stderr.reconfigure(encoding="utf-8", errors="replace")
-    except (AttributeError, ValueError):
-        pass
-
-
 from __future__ import annotations
+
+# >>> utf8-guard >>>
+# Windows 上往管道/重定向的 stdout 打中文会 UnicodeEncodeError 崩掉
+# （Python 默认用系统 ANSI 代码页而不是 UTF-8）。不指望调用方设
+# PYTHONIOENCODING —— 脚本自己保证输出编码。
+# 自带 import 是刻意的：位置无关，也不依赖文件里其他 import 的先后。
+import sys as _sys
+
+for _stream in (_sys.stdout, _sys.stderr):
+    if hasattr(_stream, "reconfigure"):
+        try:
+            _stream.reconfigure(encoding="utf-8", errors="replace")
+        except Exception:
+            pass
+# <<< utf8-guard <<<
 
 import argparse
 import ctypes
@@ -191,7 +194,12 @@ class _Grabber:
         w, h = int(w), int(h)
         self._ensure(w, h)
         if not _gdi32.BitBlt(self._mem, 0, 0, w, h, self._hdc, int(x), int(y), SRCCOPY):
-            raise OSError(f"BitBlt 失败：{ctypes.get_last_error()}")
+            err = ctypes.get_last_error()
+            # 错误码 6 = ERROR_INVALID_HANDLE。实测最常见的原因不是代码问题，
+            # 而是**会话被锁屏/断开**——此时 GetDC 拿回来的句柄用不了。
+            # 明确写出来，否则只有一个数字，排查时容易往错的方向找。
+            hint = "（错误码 6 = 无效句柄：通常是会话被锁屏/断开，读不到桌面）" if err == 6 else ""
+            raise OSError(f"BitBlt 失败：{err}{hint}")
         # 直接把那块 DIB 内存当 numpy 读，零拷贝；copy 一次是因为下一帧会覆盖它
         buf = (ctypes.c_ubyte * (w * h * 4)).from_address(self._bits)
         arr = np.frombuffer(buf, dtype=np.uint8).reshape(h, w, 4)[:, :, :3]
