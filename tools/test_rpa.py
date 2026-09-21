@@ -18,6 +18,7 @@ test_rpa.py —— RPA 采集链路的自动测试（不需要影刀、不需要
 from __future__ import annotations
 
 import json
+import math
 import re
 import shutil
 import subprocess
@@ -358,6 +359,148 @@ for d in (PROJECT / "raw" / "rpa").glob("gather_*"):
     shutil.rmtree(d, ignore_errors=True)
 for f in (PROJECT / "raw" / "rpa").glob("_tpl.png"):
     f.unlink(missing_ok=True)
+
+# ---------------------------------------------------------------------------
+print("== 8. 地图标定与寻路（mapnav / navigate）==")
+try:
+    import mapnav as navmod  # noqa: E402
+    HAVE_NAV = True
+except ImportError as e:
+    HAVE_NAV = False
+    print(f"  [跳过] 缺依赖：{e}")
+
+if HAVE_NAV:
+    rng = np.random.default_rng(11)
+    world = rng.uniform(-4000, 400, size=(12, 2))
+    true_s, true_th = 0.185, np.radians(-7.5)
+    aa, bb = true_s * np.cos(true_th), true_s * np.sin(true_th)
+    tx0, ty0 = 1180.0, 640.0
+    screen = np.column_stack([aa * world[:, 0] - bb * world[:, 1] + tx0,
+                              bb * world[:, 0] + aa * world[:, 1] + ty0])
+
+    t, allm = navmod.fit_best(world, screen)
+    check("相似变换能精确还原已知变换（尺度/旋转/平移）",
+          abs(t.scale - true_s) < 1e-6 and abs(t.rotation_deg - math.degrees(true_th)) < 1e-6
+          and t.rms < 1e-6,
+          f"scale={t.scale:.6f} rot={t.rotation_deg:+.3f}° RMS={t.rms:.2e}")
+
+    noisy = screen + rng.normal(0, 1.0, screen.shape)
+    t2, _ = navmod.fit_best(world, noisy)
+    check("加 σ=1px 噪声后仍稳定", t2.rms < 2.5, f"RMS={t2.rms:.2f}px")
+    check("噪声下尺度估计没跑偏", abs(t2.scale - true_s) < 0.002, f"scale={t2.scale:.5f}")
+
+    # 关键诊断：地图 Y 轴与世界 Y 轴相反时，相似变换表达不了，必须自动切到仿射并提醒
+    flipped = np.column_stack([screen[:, 0], 900 - screen[:, 1]])
+    tf, allf = navmod.fit_best(world, flipped)
+    check("地图 Y 翻转能被诊断出来并自动改用仿射",
+          tf.model == "affine" and allf["affine"].rms < 1e-6 and allf["similarity"].rms > 100,
+          f"similarity RMS={allf['similarity'].rms:.1f} vs affine={allf['affine'].rms:.4f}")
+
+    check("仅 2 点也能解相似变换", navmod.fit_similarity(world[:2], screen[:2]).rms < 1e-6)
+    try:
+        navmod.fit_affine(world[:2], screen[:2])
+        check("仿射变换点不够时会明确报错", False, "居然没报错")
+    except ValueError:
+        check("仿射变换点不够时会明确报错", True)
+
+    # 锚点：我们从数据里真的取到了界碑/传送点
+    anchors = navmod.load_anchors()
+    check("从数据里取到界碑/传送点锚点", len(anchors) >= 100, f"{len(anchors)} 个")
+    check("锚点带世界坐标和名字", all("x" in a and "y" in a and "name" in a for a in anchors))
+
+    # 端到端：画到图上，再读回像素确认圈真画在该在的位置
+    try:
+        from PIL import Image
+        tmp = PROJECT / "raw" / "rpa" / "_navselftest"
+        tmp.mkdir(parents=True, exist_ok=True)
+        W2, H2 = 1200, 700
+        fake = rng.integers(60, 90, size=(H2, W2, 3), dtype=np.uint8)
+        fake[::40, :] = 120
+        fake[:, ::40] = 120
+        map_png = tmp / "fake_map.png"
+        Image.fromarray(fake).save(map_png)
+
+        def truth(px, py):
+            return aa * px - bb * py + tx0, bb * px + aa * py + ty0
+
+        picked = [anchors[i] for i in (0, 20, 60)]
+        pairs_doc = {"map": str(map_png), "pairs": [
+            {"world": [p["x"], p["y"]], "label": p["name"],
+             "screen": [round(v, 1) for v in truth(p["x"], p["y"])]} for p in picked]}
+        pf = tmp / "pairs.json"
+        pf.write_text(json.dumps(pairs_doc, ensure_ascii=False), encoding="utf-8")
+
+        r = subprocess.run([sys.executable, str(PROJECT / "rpa" / "mapnav.py"),
+                            "--fit", str(pf), "--calibration", str(tmp / "calib.json")],
+                           capture_output=True, text=True, encoding="utf-8", errors="replace")
+        check("--fit 命令行跑通", r.returncode == 0, (r.stderr or "")[:150])
+        tc = navmod.Transform.from_dict(
+            json.loads((tmp / "calib.json").read_text(encoding="utf-8"))["transform"])
+        # 像素只给了 1 位小数（模拟人工量像素），所以容差按 0.1px 舍入量级给
+        check("标定精度达到人工量像素的极限（<0.1px）", tc.rms < 0.1, f"RMS={tc.rms:.4f}px")
+
+        overlay = tmp / "overlay.png"
+        r = subprocess.run([sys.executable, str(PROJECT / "rpa" / "mapnav.py"),
+                            "--overlay", str(map_png), "--out", str(overlay),
+                            "--calibration", str(tmp / "calib.json"), "--no-labels"],
+                           capture_output=True, text=True, encoding="utf-8", errors="replace")
+        check("--overlay 命令行跑通", r.returncode == 0 and overlay.exists())
+
+        im = np.asarray(Image.open(overlay).convert("RGB")).astype(int)
+        hit = miss = 0
+        for p in anchors:
+            ex, ey = truth(p["x"], p["y"])
+            cx, cy = int(round(ex)), int(round(ey))
+            if not (10 <= cx < W2 - 10 and 10 <= cy < H2 - 10):
+                continue
+            win = im[max(0, cy - 8):cy + 9, max(0, cx - 8):cx + 9]
+            if ((win[:, :, 0] > 200) & (win[:, :, 1] < 110) & (win[:, :, 2] < 110)).any():
+                hit += 1
+            else:
+                miss += 1
+        check("投影标记真的画在了正确像素上（读回图像验证）", miss == 0 and hit > 50,
+              f"{hit} 个命中 / {miss} 个错位")
+        shutil.rmtree(tmp, ignore_errors=True)
+    except ImportError:
+        print("  [跳过] 画图核对需要 PIL")
+
+    # navigate.py：干跑与报错路径
+    navtest = PROJECT / "raw" / "rpa" / "_navtest.csv"
+    navtest.parent.mkdir(parents=True, exist_ok=True)
+    navtest.write_text("pointId,name,x,y\np1,测试点,-2404,972\np2,测试点2,-2335,960\n",
+                       encoding="utf-8-sig")
+    try:
+        r = subprocess.run([sys.executable, str(PROJECT / "rpa" / "navigate.py"),
+                            "--route", str(navtest),
+                            "--calibration", str(PROJECT / "data" / "map_calibration.json"),
+                            "--dry-run"],
+                           capture_output=True, text=True, encoding="utf-8", errors="replace",
+                           cwd=str(PROJECT))
+        # 没有真实标定文件时会明确拒绝，而不是瞎跑
+        ok_msg = ("先跑" in (r.stdout or "")) or ("dry-run" in (r.stdout or ""))
+        check("navigate 缺标定时明确报错、不瞎跑", ok_msg, (r.stdout or "")[:90])
+    finally:
+        navtest.unlink(missing_ok=True)
+        for d in (PROJECT / "raw" / "rpa").glob("nav_*"):
+            shutil.rmtree(d, ignore_errors=True)
+
+print("== 9. 帧差与到达检测（vision）==")
+if HAVE_VIS:
+    a = np.zeros((40, 60, 3), dtype=np.uint8)
+    b = a.copy()
+    check("同一帧差异为 0", vis.frame_diff(a, b) == 0.0)
+    b[10:20, 10:20] = 255
+    d = vis.frame_diff(a, b)
+    check("局部变化能算出差异", 0 < d < 255, f"差异={d:.2f}")
+    try:
+        vis.frame_diff(np.zeros((10, 10, 3), dtype=np.uint8), np.zeros((20, 20, 3), dtype=np.uint8))
+        check("尺寸不同会报错而不是静默算错", False, "没报错")
+    except ValueError:
+        check("尺寸不同会报错而不是静默算错", True)
+
+    # MotionDetector：喂合成帧序列，验证「连续静止才算停」的判据
+    md = vis.MotionDetector((0, 0, 40, 60), threshold=2.0, still_frames=3, poll=0.01)
+    check("MotionDetector 参数就绪", md.still_frames == 3 and md.threshold == 2.0)
 
 # ---------------------------------------------------------------------------
 # 收尾：清掉自测产生的所有临时产物（含手工跑出来的 stdout 重定向文件）

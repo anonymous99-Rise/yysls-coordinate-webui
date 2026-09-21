@@ -261,6 +261,71 @@ def load_gray(path: str | Path) -> np.ndarray:
 
 
 # ---------------------------------------------------------------------------
+# 帧差：判断"画面有没有在动"
+# ---------------------------------------------------------------------------
+def frame_diff(a: np.ndarray, b: np.ndarray) -> float:
+    """两帧的平均绝对差（0~255）。同尺寸才行，否则报错而不是静默算错。"""
+    if a.shape != b.shape:
+        raise ValueError(f"两帧尺寸不同：{a.shape} vs {b.shape}")
+    return float(np.abs(a.astype(np.int16) - b.astype(np.int16)).mean())
+
+
+class MotionDetector:
+    """靠帧差判断画面静止还是运动中。
+
+    用途：坐骑「识途」自动寻路时，人不能干预（一操作就打断），所以只能靠画面判断到没到。
+    实测约束（来自游戏机制）：**寻路遇到水会停下来**，所以不能死等一个固定时长 ——
+    要能识别「已经不动了」，然后继续下一步。
+
+    判据：连续 `still_frames` 次采样的帧差都低于 `threshold` 才算「停下来了」。
+    单次低帧差可能是画面恰好卡在某一帧，连续多次才可信。
+    """
+
+    def __init__(self, region: tuple[int, int, int, int], *, threshold: float = 2.0,
+                 still_frames: int = 3, poll: float = 0.35) -> None:
+        self.region = region
+        self.threshold = threshold
+        self.still_frames = still_frames
+        self.poll = poll
+        self._prev: np.ndarray | None = None
+        self._still = 0
+        self.moving = False
+
+    def sample(self) -> float:
+        """采一帧，返回与上一帧的差异。第一次采样返回 -1。"""
+        x, y, w, h = self.region
+        cur = to_gray(grab(x, y, w, h))
+        if self._prev is None or self._prev.shape != cur.shape:
+            self._prev = cur
+            return -1.0
+        d = frame_diff(self._prev, cur)
+        self._prev = cur
+        if d < self.threshold:
+            self._still += 1
+        else:
+            self._still = 0
+        self.moving = d >= self.threshold
+        return d
+
+    def wait_until_still(self, timeout: float = 60.0) -> tuple[bool, float]:
+        """等到画面连续静止。返回 (是否等到, 实际等待秒数)。
+
+        超时返回 False —— 调用方应该据此把这一步标记为「没确认到达」，
+        而不是假装成功了继续往下走。
+        """
+        import time as _t
+        t0 = _t.perf_counter()
+        self._prev = None
+        self._still = 0
+        while _t.perf_counter() - t0 < timeout:
+            self.sample()
+            if self._still >= self.still_frames:
+                return True, _t.perf_counter() - t0
+            _t.sleep(self.poll)
+        return False, _t.perf_counter() - t0
+
+
+# ---------------------------------------------------------------------------
 # 模板匹配：归一化互相关
 # ---------------------------------------------------------------------------
 class Match:
