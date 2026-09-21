@@ -221,6 +221,50 @@ def load_pairs(path: str | Path) -> tuple[np.ndarray, np.ndarray, dict]:
     return world, screen, doc
 
 
+def suggest_anchors(n: int = 4, region: str = "") -> list[dict]:
+    """挑 n 个铺得最开的锚点给人去地图上找。
+
+    为什么不能随便挑：变换的稳定性取决于锚点在空间上的分布。
+    三个几乎在一条直线上的点会让旋转/尺度误差被放大几十倍 ——
+    你量像素时手抖 2 个像素，投影到地图另一端可能就偏出半屏。
+    所以用**最远点采样**（farthest point sampling）挑一组凸包级别的分布。
+    """
+    anchors = load_anchors(region)
+    if len(anchors) < n:
+        return anchors
+    pts = np.array([[a["x"], a["y"]] for a in anchors], dtype=float)
+    # 从离质心最远的点起手，然后每次挑离已选集合最远的
+    centroid = pts.mean(axis=0)
+    first = int(np.argmax(((pts - centroid) ** 2).sum(axis=1)))
+    chosen = [first]
+    for _ in range(n - 1):
+        d = np.min(((pts[:, None, :] - pts[chosen][None, :, :]) ** 2).sum(axis=2), axis=1)
+        chosen.append(int(np.argmax(d)))
+    return [anchors[i] for i in chosen]
+
+
+def spread_quality(world: np.ndarray) -> tuple[float, str]:
+    """评价一组锚点的空间分布质量。
+
+    返回 (条件数, 提示)。条件数就是设计矩阵的 2-范数条件数：
+      * < 30   → 分布很好，像素量到 ±1px 也没问题
+      * 30~100 → 还行
+      * > 100  → 挤在一起或接近共线，量像素的误差会被显著放大，建议换几个更散的点
+    """
+    if len(world) < 2:
+        return float("inf"), "点太少"
+    A = np.column_stack([world[:, 0], world[:, 1], np.ones(len(world))])
+    try:
+        cn = float(np.linalg.cond(A))
+    except np.linalg.LinAlgError:
+        return float("inf"), "无法计算"
+    if cn < 30:
+        return cn, "分布很好"
+    if cn < 100:
+        return cn, "分布还行（量像素时尽量准一点）"
+    return cn, "分布差（挤在一起或接近共线）—— 建议换几个更散的点，否则误差会被放大"
+
+
 # ---------------------------------------------------------------------------
 # 可视化核对：把锚点投影到地图截图上
 # ---------------------------------------------------------------------------
@@ -270,9 +314,34 @@ def main() -> int:
     ap.add_argument("--tasklist", default="", help="批量换算任务清单 CSV")
     ap.add_argument("--calibration", default=str(DEFAULT_CALIB), help="标定文件路径")
     ap.add_argument("--region", default="", help="只用这个区域的锚点")
+    ap.add_argument("--suggest", type=int, default=0,
+                    help="挑 N 个分布最好的锚点给你去地图上找（强烈建议先用这个）")
     ap.add_argument("--no-labels", action="store_true")
     ap.add_argument("--json", action="store_true", help="输出 JSON 而不是人话")
     args = ap.parse_args()
+
+    # ---- 推荐锚点 -------------------------------------------------------
+    if args.suggest:
+        picks = suggest_anchors(args.suggest, args.region)
+        print(f"建议用这 {len(picks)} 个锚点标定（已按「铺得最开」挑过）：\n")
+        print(f"{'名字':<20}{'世界 X':>12}{'世界 Y':>12}   区域")
+        for a in picks:
+            print(f"{a['name'][:18]:<20}{a['x']:>12.2f}{a['y']:>12.2f}   {a['region']}")
+        cn, hint = spread_quality(np.array([[a["x"], a["y"]] for a in picks], dtype=float))
+        print(f"\n分布条件数 {cn:.1f} —— {hint}")
+        print("""
+接下来这么用：
+  1. 游戏里打开地图，截一张整屏图存好（比如 map.png）
+  2. 在上面找到这几个界碑图标，用画图 / Snipaste 量出它们在图上的像素坐标
+     （屏幕左上角为原点，往右是 x，往下是 y）
+  3. 写成 pairs.json（格式见 mapnav.py 头部注释），然后：
+
+     python rpa/mapnav.py --fit pairs.json
+     python rpa/mapnav.py --overlay map.png --out check.png
+
+  4. **打开 check.png 看一眼**：红圈应该刚好套在界碑图标上。
+     套准了才算标定成功；偏了就把量错的像素改掉重来。""")
+        return 0
 
     # ---- 拟合 ----------------------------------------------------------
     if args.fit:
@@ -285,10 +354,15 @@ def main() -> int:
                   f"  →  像素 ({p['screen'][0]:>6.0f},{p['screen'][1]:>6.0f})"
                   f"   {p.get('label', '')}")
         print()
+        cn, hint = spread_quality(world)
+        print(f"  锚点分布条件数 {cn:.1f} —— {hint}")
         for name, t in allm.items():
             print(f"  [{name:10}] RMS={t.rms:7.2f} px  最大误差={t.max_err:7.2f} px"
                   f"  缩放={t.scale:.5f}  旋转={t.rotation_deg:+.2f}°")
         print(f"\n  采用：{best.model}（理由见代码注释：残差改善不足 1.5px 时优先用参数更少的 similarity）")
+        if cn > 100:
+            print("  [!] 锚点分布不佳。就算 RMS 看着很小，把变换用到远处时误差也可能很大 ——")
+            print("      建议 python rpa/mapnav.py --suggest 4 重新挑一组更散的锚点。")
 
         # 用一个没参与拟合的锚点做留出验证（如果锚点够多）
         anchors = load_anchors(args.region)
