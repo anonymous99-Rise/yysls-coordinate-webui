@@ -1,0 +1,1130 @@
+{
+  "source": "D:\\blog\\yysls_coordinate",
+  "raw_dir": "D:\\blog\\yysls-coordinate-webui\\raw",
+  "imported_count": 112,
+  "skipped_count": 10,
+  "empty_count": 1,
+  "imported": [
+    {
+      "rel": "杂项坐标\\黄鼠狼，记得开v.ini",
+      "sha256": "00358be5b6c19e9fb9c74fc317f0cc4fa08201eb7c863a5c570a8ddb1c322f3a",
+      "size": 1300,
+      "encoding": "gb18030",
+      "n_rows": 32,
+      "name_content_score": 0,
+      "aliases": []
+    },
+    {
+      "rel": "小狼整合\\1.小狼每日材料整合（算法优化）.txt",
+      "sha256": "009b40ded8ee4e0f18c00f81cf39b6302504580424d5f98ad535a4ffe7d62a49",
+      "size": 23222,
+      "encoding": "gb18030",
+      "n_rows": 555,
+      "name_content_score": 0,
+      "aliases": []
+    },
+    {
+      "rel": "杂项坐标\\牛背筋.txt",
+      "sha256": "0246d4ad1c5f3eb13c6efa2fffd03ce1ea7847ce0c40b4ddde0ae32b5085e141",
+      "size": 31002,
+      "encoding": "gb18030",
+      "n_rows": 984,
+      "name_content_score": 0,
+      "aliases": []
+    },
+    {
+      "rel": "分区域\\角门里百分百\\角门里3 见闻.ini",
+      "sha256": "0a719000dec515263ff2b2601afd551ee8bdda79615329d5e2be67f15ca6a455",
+      "size": 485,
+      "encoding": "gb18030",
+      "n_rows": 13,
+      "name_content_score": 18,
+      "aliases": []
+    },
+    {
+      "rel": "奇术坐标（如果不齐全，请查看杂项坐标文件）\\魏紫.ini",
+      "sha256": "0c4b723e028279c239b325696342842d1f58a6f1def545679b2a614fb1ba8bcf",
+      "size": 2131,
+      "encoding": "gb18030",
+      "n_rows": 50,
+      "name_content_score": 294,
+      "aliases": [
+        "杂项坐标\\十奇伞药品制作.ini"
+      ]
+    },
+    {
+      "rel": "分区域\\71级金装材料坐标\\耶悉茗.txt",
+      "sha256": "10481a705ca582b884750870be2efcd1cd5b9dee2f2e8e4571106bcb96e02e75",
+      "size": 1457,
+      "encoding": "utf-8",
+      "n_rows": 37,
+      "name_content_score": 10,
+      "aliases": []
+    },
+    {
+      "rel": "分区域\\寿昌坊百分百\\寿昌坊5 宝箱 蹊跷 猫戏 妙妙喵.ini",
+      "sha256": "117c3550df3356d2ff176afee17b2f8199d0dc0c72c3296d16fd9be80c68e02c",
+      "size": 1236,
+      "encoding": "gb18030",
+      "n_rows": 35,
+      "name_content_score": 28,
+      "aliases": []
+    },
+    {
+      "rel": "分区域\\开封府百分百\\开封府 总.ini",
+      "sha256": "1353536072d104fbc76f10408c6ebfcbe3c98f3fdcee9aca2268d600db67d69c",
+      "size": 2736,
+      "encoding": "gb18030",
+      "n_rows": 71,
+      "name_content_score": 0,
+      "aliases": []
+    },
+    {
+      "rel": "杂项坐标\\据点挑战.ini",
+      "sha256": "1420b8364704c9f4b05e800f5bb48dba834643f298933eb435ac19e68fbe6f49",
+      "size": 688,
+      "encoding": "gb18030",
+      "n_rows": 17,
+      "name_content_score": 0,
+      "aliases": []
+    },
+    {
+      "rel": "宝箱坐标\\清河宝箱坐标.ini",
+      "sha256": "1655bda85ca062aecb00a3a66aff595f94e2c3e63f3984f62349fb35b6be5af0",
+      "size": 18945,
+      "encoding": "utf-8",
+      "n_rows": 369,
+      "name_content_score": 8,
+      "aliases": [
+        "宝箱坐标\\清河宝箱坐标 (1).ini"
+      ]
+    },
+    {
+      "rel": "杂项坐标\\青礞石.ini",
+      "sha256": "1873cba36b1cb739e83e3fa22d753ef3d44b95a5fedf4195a30d0929aec34413",
+      "size": 518,
+      "encoding": "gb18030",
+      "n_rows": 14,
+      "name_content_score": 10,
+      "aliases": []
+    },
+    {
+      "rel": "分区域\\醉花阴百分百\\注意事项.txt",
+      "sha256": "1cc5d960bee5753355afad06db7344fcdfe73e3e1fa8fff85e52a018d3e271ec",
+      "size": 1089,
+      "encoding": "utf-8",
+      "n_rows": 0,
+      "name_content_score": 0,
+      "aliases": []
+    },
+    {
+      "rel": "杂项坐标\\粗矿石240条.ini",
+      "sha256": "1dc51568ab5f2ffe8ac30cbcb0ce211daac8bbc0fcb757dfd0143d41768fdcab",
+      "size": 8053,
+      "encoding": "gb18030",
+      "n_rows": 240,
+      "name_content_score": 6,
+      "aliases": []
+    },
+    {
+      "rel": "分区域\\开封府百分百\\开封府1 宝箱 蹊跷 不平事 妙妙喵.ini",
+      "sha256": "203d115634475d6c9a8cf54a457a141ebe37dea8f876856e25d88ce092346bed",
+      "size": 627,
+      "encoding": "gb18030",
+      "n_rows": 17,
+      "name_content_score": 32,
+      "aliases": []
+    },
+    {
+      "rel": "界碑坐标\\开封界碑坐标.ini",
+      "sha256": "2bc00a275fad1ec596fa44c3fffd583428ceb6b360dd77a364360c9f913b5b36",
+      "size": 2614,
+      "encoding": "utf-8",
+      "n_rows": 70,
+      "name_content_score": 14,
+      "aliases": []
+    },
+    {
+      "rel": "分区域\\角门里百分百\\角门里4 万事知.ini",
+      "sha256": "31b17eedbcd3491364bd6cdbf86bebbdd53c11f53629d679fc3ca1272012a57b",
+      "size": 638,
+      "encoding": "gb18030",
+      "n_rows": 12,
+      "name_content_score": 32,
+      "aliases": []
+    },
+    {
+      "rel": "杂项坐标\\合集(手动要交互).ini",
+      "sha256": "324207ed98e42aaa0910a07dc55efea78a9cc388a7a60297d3740b4ca8281980",
+      "size": 76325,
+      "encoding": "utf-8",
+      "n_rows": 1785,
+      "name_content_score": 0,
+      "aliases": []
+    },
+    {
+      "rel": "分区域\\角门里百分百\\角门里 总.ini",
+      "sha256": "32ba7c7d11204304041867bf67fe9797d6ff467556cc97b44e3fe23b60269747",
+      "size": 2108,
+      "encoding": "gb18030",
+      "n_rows": 51,
+      "name_content_score": 0,
+      "aliases": []
+    },
+    {
+      "rel": "蹊跷坐标\\清河蹊跷全坐标.ini",
+      "sha256": "35fbe26497e48b199e1a9853f982f7c367282f0cce26e154acfce3e80c36b1ff",
+      "size": 6198,
+      "encoding": "gb18030",
+      "n_rows": 149,
+      "name_content_score": 0,
+      "aliases": []
+    },
+    {
+      "rel": "奇术坐标（如果不齐全，请查看杂项坐标文件）\\奇术全套.ini",
+      "sha256": "36a813501dfd4f8259d0a84411a0d7d978368ff8c6e111b9b2ba86e3e1393dc6",
+      "size": 14288,
+      "encoding": "gb18030",
+      "n_rows": 299,
+      "name_content_score": 0,
+      "aliases": [
+        "杂项坐标\\奇术全套.ini"
+      ]
+    },
+    {
+      "rel": "奇术坐标（如果不齐全，请查看杂项坐标文件）\\奇术.txt",
+      "sha256": "373c25f233452f0edc9ab22dbd173cb4f053ca9d0497eb5cf26fa2ee89b4e7a9",
+      "size": 17066,
+      "encoding": "utf-8",
+      "n_rows": 430,
+      "name_content_score": 0,
+      "aliases": []
+    },
+    {
+      "rel": "杂项坐标\\换骨酒，佛爷寨传送.ini",
+      "sha256": "37435dcb5d664ada96e4cabc7338b728618cf562a29a09bcf2a905e7dcda77ce",
+      "size": 42238,
+      "encoding": "gb18030",
+      "n_rows": 1056,
+      "name_content_score": 6,
+      "aliases": []
+    },
+    {
+      "rel": "杂项坐标\\寒铁叠音(1).ini",
+      "sha256": "399f29621e89bd81f12842624faf662f53a66496365cb55645115747c8b1b4e7",
+      "size": 728,
+      "encoding": "utf-8",
+      "n_rows": 20,
+      "name_content_score": 6,
+      "aliases": []
+    },
+    {
+      "rel": "分区域\\71级金装材料坐标\\寒菌幼株.txt",
+      "sha256": "3d1a3b50ea05bba288a327b0a2b0d95e01c4c124e1dffd0d6750450840babfce",
+      "size": 2099,
+      "encoding": "utf-8",
+      "n_rows": 40,
+      "name_content_score": 10,
+      "aliases": []
+    },
+    {
+      "rel": "奇术坐标（如果不齐全，请查看杂项坐标文件）\\佛泪参-唐宫-恶相花.ini",
+      "sha256": "3e9a4c57396d83cb8743ff001359b3e79e90dced754a2eefa724349eaca8ed4f",
+      "size": 7674,
+      "encoding": "utf-8",
+      "n_rows": 145,
+      "name_content_score": 0,
+      "aliases": []
+    },
+    {
+      "rel": "24小时合版.ini",
+      "sha256": "3ebd24cf719bac5d4c7244cb08cdb5230561f824a62eee522fa08633a55466d4",
+      "size": 109366,
+      "encoding": "gb18030",
+      "n_rows": 2970,
+      "name_content_score": 0,
+      "aliases": []
+    },
+    {
+      "rel": "杂项坐标\\合集.ini",
+      "sha256": "3f9a047f39da09651d9ffc78f065cb43d47806c9859a54c3589175b36c581199",
+      "size": 53977,
+      "encoding": "gb18030",
+      "n_rows": 1591,
+      "name_content_score": 0,
+      "aliases": []
+    },
+    {
+      "rel": "杂项坐标\\龙骨.ini",
+      "sha256": "4021efb0396720197a661bfb6c7268527294e2a4d13a956626370dab4af0e59c",
+      "size": 1169,
+      "encoding": "gb18030",
+      "n_rows": 34,
+      "name_content_score": 10,
+      "aliases": []
+    },
+    {
+      "rel": "分区域\\开封府百分百\\开封府3 见闻.ini",
+      "sha256": "40b2b7603b9a7073c4992f445cb262ba4c3e2c94707b5b5e441fc97a26a729c1",
+      "size": 755,
+      "encoding": "gb18030",
+      "n_rows": 22,
+      "name_content_score": 6,
+      "aliases": []
+    },
+    {
+      "rel": "分区域\\百工坊百分百\\百工坊2 见闻.ini",
+      "sha256": "4bef02f33a3b902a4c55dbd8926705754b8bcae167b42f69670f2b259d90e098",
+      "size": 594,
+      "encoding": "gb18030",
+      "n_rows": 17,
+      "name_content_score": 14,
+      "aliases": []
+    },
+    {
+      "rel": "奇术坐标（如果不齐全，请查看杂项坐标文件）\\佛泪参-唐宫-恶相-3合一.ini",
+      "sha256": "4d152f415af435d1e73bf310a8556e548ee21e6ac60db2aba54615984ba69ea4",
+      "size": 6263,
+      "encoding": "gb18030",
+      "n_rows": 135,
+      "name_content_score": 0,
+      "aliases": []
+    },
+    {
+      "rel": "蹊跷坐标\\清河蹊跷坐标.ini",
+      "sha256": "4f58814e69a1ead8b8e8681e4a9f99abf6470a56d1e7c983a8ebe7abf933350b",
+      "size": 5112,
+      "encoding": "gb18030",
+      "n_rows": 143,
+      "name_content_score": 0,
+      "aliases": []
+    },
+    {
+      "rel": "分区域\\71级金装材料坐标\\独山蓝玉.txt",
+      "sha256": "50236900d626bc2b720f80c26615ac9b968ff4f889180c7322cf3fa29f7b9b61",
+      "size": 2237,
+      "encoding": "utf-8",
+      "n_rows": 47,
+      "name_content_score": 10,
+      "aliases": []
+    },
+    {
+      "rel": "杂项坐标\\酒香、独山蓝最全无遗漏2.16.ini",
+      "sha256": "5132512a31a4d82060bb4ec5458d9c69f1e46e31e238503cfbb48faaae3c4076",
+      "size": 5498,
+      "encoding": "gb18030",
+      "n_rows": 129,
+      "name_content_score": 6,
+      "aliases": []
+    },
+    {
+      "rel": "杂项坐标\\面向南整合坐标.ini",
+      "sha256": "52e58ae81cff19cfd93790a1673b531bc2d31f1320e7039f0b05aacb1e080933",
+      "size": 47345,
+      "encoding": "gb18030",
+      "n_rows": 1281,
+      "name_content_score": 0,
+      "aliases": []
+    },
+    {
+      "rel": "杂项坐标\\长尾山雉.ini",
+      "sha256": "5aa0e8787f33f260e6a83431e696de4745ea71e2c35d3aa0d5b7445b24f275c9",
+      "size": 1449,
+      "encoding": "gb18030",
+      "n_rows": 37,
+      "name_content_score": 60,
+      "aliases": []
+    },
+    {
+      "rel": "杂项坐标\\偷师武学点位.ini",
+      "sha256": "5d2f31d328771d903f24d1b9fda5e107474ff03b8d0bae81a30ef0a2cc67b12f",
+      "size": 359,
+      "encoding": "utf-8",
+      "n_rows": 7,
+      "name_content_score": 28,
+      "aliases": []
+    },
+    {
+      "rel": "分区域\\寿昌坊百分百\\寿昌坊 总.ini",
+      "sha256": "5e0554fd8c4a4617009189fe08b1f3c1470b0d008515263b1f10d3faebc91c90",
+      "size": 7041,
+      "encoding": "gb18030",
+      "n_rows": 173,
+      "name_content_score": 0,
+      "aliases": []
+    },
+    {
+      "rel": "奇术坐标（如果不齐全，请查看杂项坐标文件）\\奇术.ini",
+      "sha256": "5ea1eb37dbe006a75def656a2f6351e08ebdbcb1aa9aef17a48b4e7a3eb7aade",
+      "size": 34637,
+      "encoding": "gb18030",
+      "n_rows": 784,
+      "name_content_score": 0,
+      "aliases": []
+    },
+    {
+      "rel": "杂项坐标\\料理摊主.txt",
+      "sha256": "5eab85a1678ff4869777eecbede54a5730bc5096ad73a5a9dccb84250520e816",
+      "size": 618,
+      "encoding": "gb18030",
+      "n_rows": 19,
+      "name_content_score": 0,
+      "aliases": []
+    },
+    {
+      "rel": "分区域\\开封府百分百\\开封府2 宝箱 蹊跷 猫戏.ini",
+      "sha256": "5f2c005b0862e4befa7e9bbc927ce11b6abecec0cb39387784618e62585d3750",
+      "size": 624,
+      "encoding": "gb18030",
+      "n_rows": 18,
+      "name_content_score": 18,
+      "aliases": []
+    },
+    {
+      "rel": "分区域\\醉花阴百分百\\醉花阴2 宝箱 蹊跷 不平事 猫戏 妙妙喵.ini",
+      "sha256": "6155a0f9e1d7e7c52ee6e2687c787508861ec531c5717b7ff54f9353f7f3d5a6",
+      "size": 1088,
+      "encoding": "gb18030",
+      "n_rows": 29,
+      "name_content_score": 32,
+      "aliases": []
+    },
+    {
+      "rel": "杂项坐标\\射覆答案+红卢雅集 CRRL+F 快速查阅.txt",
+      "sha256": "61697c8664ef739cf102325ca35859b8be76a4de46664350844f26544a98cb9a",
+      "size": 54,
+      "encoding": "utf-8",
+      "n_rows": 0,
+      "name_content_score": 0,
+      "aliases": []
+    },
+    {
+      "rel": "奇术坐标（如果不齐全，请查看杂项坐标文件）\\佛泪参.ini",
+      "sha256": "67825ee1c84f2552c9b64cde4bc435f4acbbd9fa8d9f86b8206800a3f9790a1e",
+      "size": 3218,
+      "encoding": "gb18030",
+      "n_rows": 68,
+      "name_content_score": 348,
+      "aliases": []
+    },
+    {
+      "rel": "宝箱坐标\\开封-解密宝箱.txt",
+      "sha256": "69abcaef11e5e0fd4d18bccfaa3e4071abd4bd57acfcc6fb63e507a1ac4282e4",
+      "size": 5811,
+      "encoding": "utf-8",
+      "n_rows": 117,
+      "name_content_score": 14,
+      "aliases": []
+    },
+    {
+      "rel": "分区域\\寿昌坊百分百\\寿昌坊6 宝箱 蹊跷 猫戏 妙妙喵.ini",
+      "sha256": "6d06eb42c85b1dcb46957fdce16dbd149a9c7e818660ac1e88a7aaecc01b08c9",
+      "size": 1160,
+      "encoding": "gb18030",
+      "n_rows": 32,
+      "name_content_score": 32,
+      "aliases": []
+    },
+    {
+      "rel": "小狼整合\\3.小狼整合每日+非必要材料（算法优化）.txt",
+      "sha256": "730779aef30cecafa5b0ac362a6042ec8d888b0422e54df862a356a40aeba9a8",
+      "size": 75821,
+      "encoding": "gb18030",
+      "n_rows": 2013,
+      "name_content_score": 0,
+      "aliases": []
+    },
+    {
+      "rel": "杂项坐标\\金疮药材料.ini",
+      "sha256": "73d61c8345c1dfd744a657739f5ae788d2fcc0e4eccf4b8592f8a81ee4f66998",
+      "size": 2775,
+      "encoding": "gb18030",
+      "n_rows": 62,
+      "name_content_score": 0,
+      "aliases": []
+    },
+    {
+      "rel": "杂项坐标\\火盆,角色面向南.ini",
+      "sha256": "819577c82527efb301124c7c1c1f8b758510755f634e9a1535f9e38eb1e24362",
+      "size": 7990,
+      "encoding": "gb18030",
+      "n_rows": 213,
+      "name_content_score": 6,
+      "aliases": []
+    },
+    {
+      "rel": "分区域\\角门里百分百\\角门里1 不平事.ini",
+      "sha256": "81b03b93d02f691cc83af26b2a1d842e555c37becb87a2abc845573d842cc3d9",
+      "size": 204,
+      "encoding": "gb18030",
+      "n_rows": 5,
+      "name_content_score": 10,
+      "aliases": []
+    },
+    {
+      "rel": "分区域\\寿昌坊百分百\\寿昌坊7 见闻.ini",
+      "sha256": "83c75b0d9df896f0ee52b37c0d026483a8624f26cdb5c018593069a8b9535319",
+      "size": 438,
+      "encoding": "utf-8",
+      "n_rows": 12,
+      "name_content_score": 6,
+      "aliases": []
+    },
+    {
+      "rel": "分区域\\71级金装材料坐标\\长尾山雉.txt",
+      "sha256": "84c4466a786b63f4bebee84b5189b4bba300da0376f8db1037116161c49499bf",
+      "size": 1326,
+      "encoding": "gb18030",
+      "n_rows": 37,
+      "name_content_score": 10,
+      "aliases": []
+    },
+    {
+      "rel": "杂项坐标\\新黄铜寒铁.ini",
+      "sha256": "85a5c67a81ee8243cf40125e753fed22519e48f080fed27ed351066b257464f0",
+      "size": 4893,
+      "encoding": "gb18030",
+      "n_rows": 129,
+      "name_content_score": 12,
+      "aliases": []
+    },
+    {
+      "rel": "杂项坐标\\白术.ini",
+      "sha256": "87510550175df8beeb4dea1cb16fccaf496897b0ee2695a98fdd06691af7269d",
+      "size": 2368,
+      "encoding": "gb18030",
+      "n_rows": 74,
+      "name_content_score": 10,
+      "aliases": []
+    },
+    {
+      "rel": "杂项坐标\\坐标配置.cfg",
+      "sha256": "8788c8821b0d19b199f863e12b49398c70e3754ff82bf4b801beaebca3cbe84a",
+      "size": 190,
+      "encoding": "utf-8",
+      "n_rows": 4,
+      "name_content_score": 0,
+      "aliases": []
+    },
+    {
+      "rel": "杂项坐标\\黑乌石锁，青石锁.ini",
+      "sha256": "8d99d22c8b5ff7f14c87027f5d2045fc70615de5171d3e693c36d3b954a6feaa",
+      "size": 46740,
+      "encoding": "gb18030",
+      "n_rows": 1140,
+      "name_content_score": 0,
+      "aliases": []
+    },
+    {
+      "rel": "杂项坐标\\悬赏目标.ini",
+      "sha256": "903c98ee486d68678442dc1e9ce6e4d192982320f0b1f7ca4be721d99e75e2b9",
+      "size": 631,
+      "encoding": "gb18030",
+      "n_rows": 15,
+      "name_content_score": 0,
+      "aliases": []
+    },
+    {
+      "rel": "杂项坐标\\重要商人.ini",
+      "sha256": "9172fe59ada6ea6fd8a33cb8078b2c5718976819aa5dbd59c13bc08d317e7fa7",
+      "size": 383,
+      "encoding": "gb18030",
+      "n_rows": 8,
+      "name_content_score": 0,
+      "aliases": [
+        "重要商人.ini"
+      ]
+    },
+    {
+      "rel": "README.md",
+      "sha256": "95dac62efa576a436e05c8aa904531cb25d50459703c7dacc9d2f820aea90cca",
+      "size": 143,
+      "encoding": "utf-8",
+      "n_rows": 0,
+      "name_content_score": 0,
+      "aliases": []
+    },
+    {
+      "rel": "宝箱坐标\\清河宝箱坐标 (2).ini",
+      "sha256": "960842c279375dde303228b17864444538252ac46c03889c6b84e40380964504",
+      "size": 6774,
+      "encoding": "gb18030",
+      "n_rows": 178,
+      "name_content_score": 6,
+      "aliases": []
+    },
+    {
+      "rel": "杂项坐标\\清河撸猫.txt",
+      "sha256": "967699108a417df14609de7bed2206a42d45a913d53d4a3c201c4510112cd45a",
+      "size": 4286,
+      "encoding": "utf-8",
+      "n_rows": 81,
+      "name_content_score": 0,
+      "aliases": []
+    },
+    {
+      "rel": "奇术坐标（如果不齐全，请查看杂项坐标文件）\\芍药坐标.txt",
+      "sha256": "9784c8480aea70e0e36fb573e8cf257bcc3b9816f961e6c97275ead9c83b111c",
+      "size": 7020,
+      "encoding": "utf-8",
+      "n_rows": 189,
+      "name_content_score": 6,
+      "aliases": [
+        "宝箱坐标\\宝箱坐标.txt"
+      ]
+    },
+    {
+      "rel": "杂项坐标\\采矿.ini",
+      "sha256": "98c31e22cbc634fcda0f3ff077078f4d12a586e157a4845e9c7ef259f7366284",
+      "size": 5603,
+      "encoding": "gb18030",
+      "n_rows": 131,
+      "name_content_score": 0,
+      "aliases": []
+    },
+    {
+      "rel": "小狼整合\\0.整合说明（别导入）.txt",
+      "sha256": "9b9e3efb70f985ea6f86528b7d69e2f5e5eeee2bbe352796cc76aa82da37d551",
+      "size": 1122,
+      "encoding": "utf-8",
+      "n_rows": 0,
+      "name_content_score": 0,
+      "aliases": []
+    },
+    {
+      "rel": "杂项坐标\\下棋手.txt",
+      "sha256": "9e261aa54b266d2fd357dc90e24873ef83e4f72a24d389a33c517bbf3f7ad7ec",
+      "size": 364,
+      "encoding": "gb18030",
+      "n_rows": 11,
+      "name_content_score": 0,
+      "aliases": []
+    },
+    {
+      "rel": "分区域\\角门里百分百\\角门里2 宝箱 蹊跷 猫戏 妙妙喵.ini",
+      "sha256": "9ed5da01bbef0602c68aa41bb77786cc4eb80967c1f4c4f038e1cf7f87cfc201",
+      "size": 745,
+      "encoding": "gb18030",
+      "n_rows": 20,
+      "name_content_score": 40,
+      "aliases": []
+    },
+    {
+      "rel": "杂项坐标\\脂尾羊皮叠音材料.ini",
+      "sha256": "a01db02dd2aa96b3c04ce46db2201623ae78a14595f585be074b7005665fb874",
+      "size": 691,
+      "encoding": "utf-8",
+      "n_rows": 15,
+      "name_content_score": 6,
+      "aliases": []
+    },
+    {
+      "rel": "杂项坐标\\独山蓝玉.ini",
+      "sha256": "a02ac1d34df00cd7ae3992cd031a45e0fc576042eb7135d8fac79ea745bf0c1f",
+      "size": 2552,
+      "encoding": "gb18030",
+      "n_rows": 67,
+      "name_content_score": 10,
+      "aliases": []
+    },
+    {
+      "rel": "小狼整合\\4.小狼整合手动传送材料.txt",
+      "sha256": "a082ab60fd7e563401bf61713fcb1bbc63a529a944f6a586e9082a11c5684ccd",
+      "size": 8414,
+      "encoding": "utf-8",
+      "n_rows": 236,
+      "name_content_score": 0,
+      "aliases": []
+    },
+    {
+      "rel": "杂项坐标\\黄铜、寒铁最全2.16.ini",
+      "sha256": "a109323a6f89e1816cef85f5349582b011a9549431981da3ddb472e25d46ef97",
+      "size": 2746,
+      "encoding": "gb18030",
+      "n_rows": 64,
+      "name_content_score": 12,
+      "aliases": []
+    },
+    {
+      "rel": "杂项坐标\\刷怪（膏和锁，开始后调一下面向后背）.ini",
+      "sha256": "a42e0a93880aa436b0cbc69ea96462801c6bddc8d6efe6d3f34e0664d850de47",
+      "size": 54142,
+      "encoding": "gb18030",
+      "n_rows": 1518,
+      "name_content_score": 16,
+      "aliases": []
+    },
+    {
+      "rel": "杂项坐标\\火烬.ini",
+      "sha256": "a6a8c93c5c218e3b68edb213b3f208cea40f211da7e04af5fcb23ebf339ef028",
+      "size": 5445,
+      "encoding": "gb18030",
+      "n_rows": 159,
+      "name_content_score": 10,
+      "aliases": [
+        "杂项坐标\\天工 “火” 火盆收集.ini"
+      ]
+    },
+    {
+      "rel": "分区域\\开封府百分百\\开封府4 万事知（有严重bug）.ini",
+      "sha256": "aa3df19cdff3737a7ee7aa75f0e196cf0b2a6bd817987881fdd63187ca02799e",
+      "size": 559,
+      "encoding": "gb18030",
+      "n_rows": 9,
+      "name_content_score": 28,
+      "aliases": []
+    },
+    {
+      "rel": "分区域\\寿昌坊百分百\\寿昌坊2 万事知  +  寿昌坊3 宝箱 蹊跷 猫戏（卷4雕栏剑影）.ini",
+      "sha256": "aaa5d7534d77c801decef5cb12b9cf874d41455b259fbd3aadaa6ae71f4d807d",
+      "size": 2287,
+      "encoding": "utf-8",
+      "n_rows": 38,
+      "name_content_score": 46,
+      "aliases": []
+    },
+    {
+      "rel": "蹊跷坐标\\开封蹊跷坐标.ini",
+      "sha256": "aad95b9afba87b924e9b9652cc33bca06266a1033a2385594eb370ed99bd0c58",
+      "size": 9397,
+      "encoding": "gb18030",
+      "n_rows": 263,
+      "name_content_score": 0,
+      "aliases": []
+    },
+    {
+      "rel": "杂项坐标\\粗矿石240条.txt",
+      "sha256": "ab4be0217edd36478f8830c9a4fe025d6d215e5a27b655fbfc20e59de1423dff",
+      "size": 9491,
+      "encoding": "utf-8",
+      "n_rows": 240,
+      "name_content_score": 6,
+      "aliases": []
+    },
+    {
+      "rel": "分区域\\醉花阴百分百\\醉花阴4  见闻.ini",
+      "sha256": "afcdf00b386e978c157aca1b2bcb4df5a7cb101ffdd40c6f1d5b4d94466d9deb",
+      "size": 1370,
+      "encoding": "utf-8",
+      "n_rows": 36,
+      "name_content_score": 22,
+      "aliases": []
+    },
+    {
+      "rel": "奇术坐标（如果不齐全，请查看杂项坐标文件）\\丹崖百分百.ini",
+      "sha256": "b0a70a56152324053132c3cc232a55aeb16cbd880c31d83e8165bf2ad5b42b1f",
+      "size": 2090,
+      "encoding": "gb18030",
+      "n_rows": 53,
+      "name_content_score": 0,
+      "aliases": [
+        "杂项坐标\\丹崖百分百.ini"
+      ]
+    },
+    {
+      "rel": "分区域\\清河万事知.ini",
+      "sha256": "b0a79bb25c3912ce17edd3f0b6109c8cfa80c6eb161de11db76988d05405270f",
+      "size": 2249,
+      "encoding": "gb18030",
+      "n_rows": 54,
+      "name_content_score": 0,
+      "aliases": []
+    },
+    {
+      "rel": "分区域\\醉花阴百分百\\醉花阴 总.ini",
+      "sha256": "b257f0fd6b9872145a3742642dbc41d09c6c02c7fb1c6e6113b487850f8261c6",
+      "size": 4420,
+      "encoding": "gb18030",
+      "n_rows": 117,
+      "name_content_score": 0,
+      "aliases": []
+    },
+    {
+      "rel": "小狼整合\\2.小狼整合非必要材料 （算法优化）.txt",
+      "sha256": "b34758052c2efb92a21b5e98e9a41d450b300748027994c89659370da5f911c3",
+      "size": 55602,
+      "encoding": "utf-8",
+      "n_rows": 1458,
+      "name_content_score": 0,
+      "aliases": []
+    },
+    {
+      "rel": "杂项坐标\\菌子.ini",
+      "sha256": "b3b87c570cb61d26d51c5b51a616d97bb78adaa02c058097f29d4b26dac95b2a",
+      "size": 1194,
+      "encoding": "gb18030",
+      "n_rows": 32,
+      "name_content_score": 10,
+      "aliases": []
+    },
+    {
+      "rel": "杂项坐标\\黄铜-寒铁.ini",
+      "sha256": "b511304bdf11a12020362ab3c8919d9db7de404edcc41ee1e40c7c702781487a",
+      "size": 2250,
+      "encoding": "gb18030",
+      "n_rows": 55,
+      "name_content_score": 12,
+      "aliases": []
+    },
+    {
+      "rel": "杂项坐标\\清河撸猫.ini",
+      "sha256": "b8fb03c7f3ab2fd2213070ab69abbfa2016744bbf5903961130b2b7286921dc3",
+      "size": 3802,
+      "encoding": "gb18030",
+      "n_rows": 81,
+      "name_content_score": 0,
+      "aliases": []
+    },
+    {
+      "rel": "界碑坐标\\清河界碑全（不含镇守点）.ini",
+      "sha256": "b9382ef15b02adf623ba25f6d09f13e536147135f12f3cbfaf176ac1358bcf47",
+      "size": 1958,
+      "encoding": "gb18030",
+      "n_rows": 47,
+      "name_content_score": 0,
+      "aliases": []
+    },
+    {
+      "rel": "分区域\\醉花阴百分百\\醉花阴5 万事知.ini",
+      "sha256": "b9d4eb2ff882a9ce9af0775573c4757a8af627bd16728a913a44f263e5cc61b3",
+      "size": 783,
+      "encoding": "gb18030",
+      "n_rows": 16,
+      "name_content_score": 32,
+      "aliases": []
+    },
+    {
+      "rel": "杂项坐标\\枯茱萸.ini",
+      "sha256": "bb9c4c98846fa562a30085ebc17515fea97da5450780ba36baf844dc3faf3141",
+      "size": 2289,
+      "encoding": "gb18030",
+      "n_rows": 56,
+      "name_content_score": 0,
+      "aliases": []
+    },
+    {
+      "rel": "杂项坐标\\蘑菇.txt",
+      "sha256": "bc6302a4886d9025b8706cc10c4924c7acc3b5b94b74b1d23839aab4dd73007c",
+      "size": 3184,
+      "encoding": "gb18030",
+      "n_rows": 101,
+      "name_content_score": 0,
+      "aliases": []
+    },
+    {
+      "rel": "分区域\\71级金装材料坐标\\枯茱萸.txt",
+      "sha256": "c23273511be6988a17c21e0be928edcc405ed7c6b0cf632e38dfcb16816a2153",
+      "size": 2256,
+      "encoding": "gb18030",
+      "n_rows": 67,
+      "name_content_score": 10,
+      "aliases": []
+    },
+    {
+      "rel": "宝箱坐标\\开封露天宝箱坐标.ini",
+      "sha256": "c896bc38abe015c3270d878671c42267b74e7066a31d03e2bbcc88479daeafd6",
+      "size": 22801,
+      "encoding": "utf-8",
+      "n_rows": 413,
+      "name_content_score": 4,
+      "aliases": []
+    },
+    {
+      "rel": "杂项坐标\\整和了一些按F采集的东西.ini",
+      "sha256": "c8b3cbd29b66ceb440c6435f920bf966ad64017e815aab87959a71fcbe85e7d3",
+      "size": 39407,
+      "encoding": "gb18030",
+      "n_rows": 908,
+      "name_content_score": 0,
+      "aliases": []
+    },
+    {
+      "rel": "杂项坐标\\动物叠音材料.ini",
+      "sha256": "ca1c632514baa86b832c0aba1fa4b82949e705d0d8301e6f5b8527013b71ec3b",
+      "size": 2409,
+      "encoding": "utf-8",
+      "n_rows": 64,
+      "name_content_score": 0,
+      "aliases": []
+    },
+    {
+      "rel": "分区域\\71级金装材料坐标\\黄鼠狼.txt",
+      "sha256": "cbd14e7a1b7206cf143993843e5e287edda5a3e31f83c3cbb51171843149759e",
+      "size": 1203,
+      "encoding": "gb18030",
+      "n_rows": 36,
+      "name_content_score": 10,
+      "aliases": []
+    },
+    {
+      "rel": "分区域\\寿昌坊百分百\\注意事项.txt",
+      "sha256": "ce5c33d46abfbd7d950d0352a3e589d98d36df84669836a95852b53518f76763",
+      "size": 1270,
+      "encoding": "utf-8",
+      "n_rows": 0,
+      "name_content_score": 0,
+      "aliases": [
+        "分区域\\百工坊百分百\\注意事项.txt",
+        "分区域\\角门里百分百\\注意事项.txt"
+      ]
+    },
+    {
+      "rel": "分区域\\寿昌坊百分百\\寿昌坊1 不平事.ini",
+      "sha256": "ceedf14f273dba81006a95d201bb58cda5295525cb7689dc5795c83a70b0a431",
+      "size": 151,
+      "encoding": "gb18030",
+      "n_rows": 4,
+      "name_content_score": 6,
+      "aliases": []
+    },
+    {
+      "rel": "分区域\\醉花阴百分百\\醉花阴3 宝箱 蹊跷 猫戏 妙妙喵.ini",
+      "sha256": "d37c806c82f868c8cb7543f90ddea2a2f8c8098de8234fc8986bb769c8a0cbc6",
+      "size": 1234,
+      "encoding": "gb18030",
+      "n_rows": 35,
+      "name_content_score": 24,
+      "aliases": []
+    },
+    {
+      "rel": "奇术坐标（如果不齐全，请查看杂项坐标文件）\\草药 菌子 白术一丈红 魏紫 唐宫羽衣 恶相花 玉楼春寒菌幼株 耶悉茗 矿石 草药 独山蓝玉 火盆 龙骨 毒晶芍药 黄铜 酒香玉.ini",
+      "sha256": "d5a3bb7655ab566b5100081ad2d4c47c996cefdb72646f18085adc3f08267aee",
+      "size": 56950,
+      "encoding": "gb18030",
+      "n_rows": 1613,
+      "name_content_score": 78,
+      "aliases": []
+    },
+    {
+      "rel": "杂项坐标\\聚集地旁无限黄铜.ini",
+      "sha256": "d6f5120fa30faaea3c561b62e9f68762611091d39297eb09633b8d8ab03d6fed",
+      "size": 47,
+      "encoding": "gb18030",
+      "n_rows": 1,
+      "name_content_score": 10,
+      "aliases": []
+    },
+    {
+      "rel": "杂项坐标\\艳湖七美位置（撸七只猫）.ini",
+      "sha256": "d7915148570b9db0a52e01f2a8d7e1523b10fd7cfda6a73a99e6ce1d9e4613dd",
+      "size": 252,
+      "encoding": "gb18030",
+      "n_rows": 6,
+      "name_content_score": 0,
+      "aliases": []
+    },
+    {
+      "rel": "奇术坐标（如果不齐全，请查看杂项坐标文件）\\恶相花佛泪参唐宫羽衣玉楼春.ini",
+      "sha256": "da3d5bbd3331291c763396e7b049c97f857f45ad3dd71866c57f161760907e05",
+      "size": 5190,
+      "encoding": "gb18030",
+      "n_rows": 138,
+      "name_content_score": 24,
+      "aliases": []
+    },
+    {
+      "rel": "分区域\\寿昌坊百分百\\寿昌坊4 宝箱 蹊跷 猫戏 妙妙喵.ini",
+      "sha256": "dc2ff53ae06300cdaa14691ba4b8d33756c693093ce180e6c5ce17a0d91507bf",
+      "size": 1422,
+      "encoding": "gb18030",
+      "n_rows": 36,
+      "name_content_score": 36,
+      "aliases": []
+    },
+    {
+      "rel": "杂项坐标\\两仪膏材料.ini",
+      "sha256": "dde97513db7fee5b6f5d2c89a17df682a15e323ac42616acb1e86a368b7a0944",
+      "size": 2743,
+      "encoding": "gb18030",
+      "n_rows": 60,
+      "name_content_score": 0,
+      "aliases": []
+    },
+    {
+      "rel": "杂项坐标\\开封-28个厕所坐标.txt",
+      "sha256": "de12885888fb6aef73522ba59ca88ed76aba73ef05aa251962f84c87a93352f9",
+      "size": 1217,
+      "encoding": "utf-8",
+      "n_rows": 28,
+      "name_content_score": 4,
+      "aliases": []
+    },
+    {
+      "rel": "奇术坐标（如果不齐全，请查看杂项坐标文件）\\一丈红全图.ini",
+      "sha256": "dea792c5f2caf7a43c975a8527ab1ac6884390d0b3209c39a7dd39d4fe633436",
+      "size": 2690,
+      "encoding": "gb18030",
+      "n_rows": 73,
+      "name_content_score": 6,
+      "aliases": []
+    },
+    {
+      "rel": "杂项坐标\\批量txt改ini.bat",
+      "sha256": "dfb7ef985a39f24c28067b7c143f61ecb1650457cfe10b7fb7e74c80a83c407c",
+      "size": 15,
+      "encoding": "utf-8",
+      "n_rows": 0,
+      "name_content_score": 0,
+      "aliases": []
+    },
+    {
+      "rel": "奇术坐标（如果不齐全，请查看杂项坐标文件）\\多人奇术(避开聚集点).ini",
+      "sha256": "e17033a6685151f3670b392b9ccf61fbee21b861ada5ee8bc08a4e0c53d958e1",
+      "size": 6934,
+      "encoding": "gb18030",
+      "n_rows": 148,
+      "name_content_score": 0,
+      "aliases": []
+    },
+    {
+      "rel": "杂项坐标\\打猎.ini",
+      "sha256": "e1c88f5bf6146851cba59da78c9fa63f64937ab194a48698a996d5204103adf4",
+      "size": 6791,
+      "encoding": "gb18030",
+      "n_rows": 172,
+      "name_content_score": 0,
+      "aliases": []
+    },
+    {
+      "rel": "杂项坐标\\开封天地万籁.ini",
+      "sha256": "e7269b34bba87629b9e636d2394ec7ce6a1c92ee7b90827a6a75b187c6e00b0a",
+      "size": 935,
+      "encoding": "gb18030",
+      "n_rows": 21,
+      "name_content_score": 0,
+      "aliases": []
+    },
+    {
+      "rel": "杂项坐标\\天工地窟箱子.txt",
+      "sha256": "e9783b344da0a26d26c5f017199764c8019057b273d8b2159dcbc4a1fb20aef0",
+      "size": 238,
+      "encoding": "gb18030",
+      "n_rows": 5,
+      "name_content_score": 0,
+      "aliases": []
+    },
+    {
+      "rel": "分区域\\开封府百分百\\注意事项.txt",
+      "sha256": "f474c26eab36541f290a88038112903a5759d6ee22b0a2aaf1786dbad30f2f3a",
+      "size": 422,
+      "encoding": "utf-8",
+      "n_rows": 0,
+      "name_content_score": 0,
+      "aliases": []
+    },
+    {
+      "rel": "分区域\\百工坊百分百\\百工坊1 宝箱 蹊跷 不平事 猫戏 妙妙喵.ini",
+      "sha256": "f8b1a7515b8df10230c7cb21f53f90c50acf4d2e043a9c9321c26e654b4419a7",
+      "size": 1396,
+      "encoding": "gb18030",
+      "n_rows": 40,
+      "name_content_score": 34,
+      "aliases": []
+    },
+    {
+      "rel": "杂项坐标\\唐宫羽衣.ini",
+      "sha256": "fac7ce5c9e4fd6ec2e7dd107e6a27a71e152862234b8b8f3fdfb383ab1aa7e13",
+      "size": 2250,
+      "encoding": "gb18030",
+      "n_rows": 45,
+      "name_content_score": 264,
+      "aliases": []
+    }
+  ],
+  "skipped": [
+    {
+      "rel": "分区域\\百工坊百分百\\注意事项.txt",
+      "reason": "duplicate_content",
+      "dup_of": "分区域\\寿昌坊百分百\\注意事项.txt",
+      "sha256": "ce5c33d46abfbd7d950d0352a3e589d98d36df84669836a95852b53518f76763",
+      "name_content_score": 0
+    },
+    {
+      "rel": "分区域\\角门里百分百\\注意事项.txt",
+      "reason": "duplicate_content",
+      "dup_of": "分区域\\寿昌坊百分百\\注意事项.txt",
+      "sha256": "ce5c33d46abfbd7d950d0352a3e589d98d36df84669836a95852b53518f76763",
+      "name_content_score": 0
+    },
+    {
+      "rel": "分区域\\醉花阴百分百\\1.txt",
+      "reason": "empty_file"
+    },
+    {
+      "rel": "宝箱坐标\\宝箱坐标.txt",
+      "reason": "duplicate_content",
+      "dup_of": "奇术坐标（如果不齐全，请查看杂项坐标文件）\\芍药坐标.txt",
+      "sha256": "9784c8480aea70e0e36fb573e8cf257bcc3b9816f961e6c97275ead9c83b111c",
+      "name_content_score": 0
+    },
+    {
+      "rel": "宝箱坐标\\清河宝箱坐标 (1).ini",
+      "reason": "duplicate_content",
+      "dup_of": "宝箱坐标\\清河宝箱坐标.ini",
+      "sha256": "1655bda85ca062aecb00a3a66aff595f94e2c3e63f3984f62349fb35b6be5af0",
+      "name_content_score": 8
+    },
+    {
+      "rel": "杂项坐标\\丹崖百分百.ini",
+      "reason": "duplicate_content",
+      "dup_of": "奇术坐标（如果不齐全，请查看杂项坐标文件）\\丹崖百分百.ini",
+      "sha256": "b0a70a56152324053132c3cc232a55aeb16cbd880c31d83e8165bf2ad5b42b1f",
+      "name_content_score": 0
+    },
+    {
+      "rel": "杂项坐标\\十奇伞药品制作.ini",
+      "reason": "duplicate_content",
+      "dup_of": "奇术坐标（如果不齐全，请查看杂项坐标文件）\\魏紫.ini",
+      "sha256": "0c4b723e028279c239b325696342842d1f58a6f1def545679b2a614fb1ba8bcf",
+      "name_content_score": 0
+    },
+    {
+      "rel": "杂项坐标\\天工 “火” 火盆收集.ini",
+      "reason": "duplicate_content",
+      "dup_of": "杂项坐标\\火烬.ini",
+      "sha256": "a6a8c93c5c218e3b68edb213b3f208cea40f211da7e04af5fcb23ebf339ef028",
+      "name_content_score": 0
+    },
+    {
+      "rel": "杂项坐标\\奇术全套.ini",
+      "reason": "duplicate_content",
+      "dup_of": "奇术坐标（如果不齐全，请查看杂项坐标文件）\\奇术全套.ini",
+      "sha256": "36a813501dfd4f8259d0a84411a0d7d978368ff8c6e111b9b2ba86e3e1393dc6",
+      "name_content_score": 0
+    },
+    {
+      "rel": "重要商人.ini",
+      "reason": "duplicate_content",
+      "dup_of": "杂项坐标\\重要商人.ini",
+      "sha256": "9172fe59ada6ea6fd8a33cb8078b2c5718976819aa5dbd59c13bc08d317e7fa7",
+      "name_content_score": 0
+    }
+  ],
+  "alias_map": {
+    "奇术坐标（如果不齐全，请查看杂项坐标文件）\\魏紫.ini": [
+      "杂项坐标\\十奇伞药品制作.ini"
+    ],
+    "宝箱坐标\\清河宝箱坐标.ini": [
+      "宝箱坐标\\清河宝箱坐标 (1).ini"
+    ],
+    "奇术坐标（如果不齐全，请查看杂项坐标文件）\\奇术全套.ini": [
+      "杂项坐标\\奇术全套.ini"
+    ],
+    "杂项坐标\\重要商人.ini": [
+      "重要商人.ini"
+    ],
+    "奇术坐标（如果不齐全，请查看杂项坐标文件）\\芍药坐标.txt": [
+      "宝箱坐标\\宝箱坐标.txt"
+    ],
+    "杂项坐标\\火烬.ini": [
+      "杂项坐标\\天工 “火” 火盆收集.ini"
+    ],
+    "奇术坐标（如果不齐全，请查看杂项坐标文件）\\丹崖百分百.ini": [
+      "杂项坐标\\丹崖百分百.ini"
+    ],
+    "分区域\\寿昌坊百分百\\注意事项.txt": [
+      "分区域\\百工坊百分百\\注意事项.txt",
+      "分区域\\角门里百分百\\注意事项.txt"
+    ]
+  }
+}

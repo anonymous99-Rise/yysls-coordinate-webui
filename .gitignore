@@ -1,0 +1,36 @@
+# ---- Node / 前端构建 ----
+node_modules/
+web/node_modules/
+.vite/
+*.tsbuildinfo
+
+# web/public/data/ 是 data/ 的同步目标（由 tools/sync_web_data.mjs 生成），
+# 不提交 —— 否则同一份 points.min.json 会在仓库里存三遍。
+# npm run dev / build 之前会自动同步（package.json 里挂了 predev / prebuild）。
+web/public/data/
+
+# dist/ 特意**不**忽略：这是个可直接部署的静态站，
+# 提交上去就能直接挂博客 / GitHub Pages，不用对方再跑一次构建。
+# 如果你走 CI 构建，再把下面这行取消注释。
+# dist/
+
+# ---- Python ----
+__pycache__/
+*.pyc
+*.pyo
+.pytest_cache/
+
+# ---- RPA 临时产物 ----
+# raw/rpa/ 下的正式采集结果是资产，要提交；
+# 但自测产生的临时目录不提交。
+raw/rpa/_selftest/
+raw/rpa/_selftest_stdout.txt
+rpa/tasks/*.csv
+rpa/tasks/index.json
+
+# ---- 编辑器 / 系统 ----
+.vscode/
+.idea/
+*.swp
+Thumbs.db
+desktop.ini

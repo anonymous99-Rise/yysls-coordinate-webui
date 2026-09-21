@@ -1,0 +1,1452 @@
+{
+  "version": 1,
+  "generatedBy": "tools/etl.py",
+  "stats": {
+    "rawFiles": 111,
+    "rawRows": 27099,
+    "points": 6071,
+    "redundantRows": 21028,
+    "issues": 5,
+    "noteFiles": 6,
+    "crossFilePoints": 4986,
+    "coLocatedPoints": 693,
+    "regionUnknown": 0,
+    "regionFilledByNearest": 697
+  },
+  "categoryMeta": {
+    "材料": {
+      "color": "#4ade80",
+      "icon": "🌿",
+      "order": 10,
+      "hint": "采集材料 / 奇术升级用料"
+    },
+    "宝箱": {
+      "color": "#fbbf24",
+      "icon": "🎁",
+      "order": 20,
+      "hint": "露天宝箱 / 解密宝箱"
+    },
+    "蹊跷": {
+      "color": "#f472b6",
+      "icon": "🌀",
+      "order": 30,
+      "hint": "蹊跷"
+    },
+    "玩法收集": {
+      "color": "#60a5fa",
+      "icon": "📖",
+      "order": 40,
+      "hint": "万事知 / 见闻 / 猫戏 / 妙妙喵…"
+    },
+    "动物": {
+      "color": "#a78bfa",
+      "icon": "🐾",
+      "order": 50,
+      "hint": "打猎 / 叠音材料来源"
+    },
+    "战斗": {
+      "color": "#ef4444",
+      "icon": "⚔️",
+      "order": 60,
+      "hint": "BOSS / 据点 / 悬赏 / 刷怪循环"
+    },
+    "交互": {
+      "color": "#22d3ee",
+      "icon": "👆",
+      "order": 70,
+      "hint": "偷师 / 触摸 / 对话触发点"
+    },
+    "设施与NPC": {
+      "color": "#38bdf8",
+      "icon": "🏛️",
+      "order": 80,
+      "hint": "传送点 / 界碑 / 商人"
+    },
+    "地点标记": {
+      "color": "#94a3b8",
+      "icon": "📍",
+      "order": 90,
+      "hint": "只有地名、没有具体描述的标记"
+    },
+    "NPC": {
+      "color": "#c084fc",
+      "icon": "🧑",
+      "order": 100,
+      "hint": "识别出的人名"
+    },
+    "未标注": {
+      "color": "#64748b",
+      "icon": "❓",
+      "order": 110,
+      "hint": "原始数据就没给名字"
+    },
+    "其他": {
+      "color": "#475569",
+      "icon": "•",
+      "order": 120,
+      "hint": "暂时没归类的"
+    }
+  },
+  "categories": [
+    {
+      "key": "材料",
+      "count": 3173
+    },
+    {
+      "key": "宝箱",
+      "count": 1284
+    },
+    {
+      "key": "蹊跷",
+      "count": 58
+    },
+    {
+      "key": "玩法收集",
+      "count": 364
+    },
+    {
+      "key": "动物",
+      "count": 626
+    },
+    {
+      "key": "战斗",
+      "count": 53
+    },
+    {
+      "key": "交互",
+      "count": 52
+    },
+    {
+      "key": "设施与NPC",
+      "count": 106
+    },
+    {
+      "key": "地点标记",
+      "count": 83
+    },
+    {
+      "key": "NPC",
+      "count": 33
+    },
+    {
+      "key": "未标注",
+      "count": 224
+    },
+    {
+      "key": "其他",
+      "count": 15
+    }
+  ],
+  "regions": [
+    {
+      "key": "开封",
+      "count": 3941
+    },
+    {
+      "key": "清河",
+      "count": 2130
+    }
+  ],
+  "materials": [
+    {
+      "key": "唐宫羽衣",
+      "count": 329
+    },
+    {
+      "key": "覆盆子",
+      "count": 247
+    },
+    {
+      "key": "粗矿石",
+      "count": 240
+    },
+    {
+      "key": "蘑菇",
+      "count": 230
+    },
+    {
+      "key": "火盆",
+      "count": 212
+    },
+    {
+      "key": "白术",
+      "count": 196
+    },
+    {
+      "key": "紫钟",
+      "count": 190
+    },
+    {
+      "key": "芍药",
+      "count": 189
+    },
+    {
+      "key": "玉楼春",
+      "count": 180
+    },
+    {
+      "key": "火烬",
+      "count": 159
+    },
+    {
+      "key": "枯茱萸",
+      "count": 125
+    },
+    {
+      "key": "佛泪参",
+      "count": 113
+    },
+    {
+      "key": "耶悉茗",
+      "count": 112
+    },
+    {
+      "key": "一丈红",
+      "count": 101
+    },
+    {
+      "key": "独山蓝玉",
+      "count": 100
+    },
+    {
+      "key": "恶相花",
+      "count": 87
+    },
+    {
+      "key": "魏紫",
+      "count": 87
+    },
+    {
+      "key": "黄铜",
+      "count": 76
+    },
+    {
+      "key": "山雀卵",
+      "count": 60
+    },
+    {
+      "key": "风巢燕盏",
+      "count": 56
+    },
+    {
+      "key": "毒晶",
+      "count": 52
+    },
+    {
+      "key": "酒香玉",
+      "count": 51
+    },
+    {
+      "key": "青礞石",
+      "count": 42
+    },
+    {
+      "key": "寒铁",
+      "count": 41
+    },
+    {
+      "key": "寒菌幼株",
+      "count": 40
+    },
+    {
+      "key": "山雀巢",
+      "count": 39
+    },
+    {
+      "key": "龙骨",
+      "count": 34
+    },
+    {
+      "key": "菌子",
+      "count": 32
+    },
+    {
+      "key": "蜂窝",
+      "count": 31
+    },
+    {
+      "key": "蓝色花",
+      "count": 30
+    },
+    {
+      "key": "百目莲",
+      "count": 28
+    },
+    {
+      "key": "野山参",
+      "count": 18
+    },
+    {
+      "key": "射覆",
+      "count": 3
+    },
+    {
+      "key": "牛背筋",
+      "count": 2
+    }
+  ],
+  "places": [
+    {
+      "key": "独山",
+      "count": 100
+    },
+    {
+      "key": "佛光顶",
+      "count": 37
+    },
+    {
+      "key": "荒蚀林",
+      "count": 35
+    },
+    {
+      "key": "丹崖",
+      "count": 28
+    },
+    {
+      "key": "醉花阴",
+      "count": 22
+    },
+    {
+      "key": "太平钟楼",
+      "count": 15
+    },
+    {
+      "key": "千佛村",
+      "count": 14
+    },
+    {
+      "key": "慈心山院",
+      "count": 13
+    },
+    {
+      "key": "百草野",
+      "count": 13
+    },
+    {
+      "key": "璧泉山",
+      "count": 11
+    },
+    {
+      "key": "百工坊",
+      "count": 10
+    },
+    {
+      "key": "来生岸",
+      "count": 6
+    },
+    {
+      "key": "鬼市",
+      "count": 6
+    },
+    {
+      "key": "天工地窟",
+      "count": 5
+    },
+    {
+      "key": "神仙渡",
+      "count": 5
+    },
+    {
+      "key": "菩提苦海",
+      "count": 5
+    },
+    {
+      "key": "伏马庄",
+      "count": 4
+    },
+    {
+      "key": "荒魂村",
+      "count": 4
+    },
+    {
+      "key": "藏贤岗",
+      "count": 4
+    },
+    {
+      "key": "酒肉山林",
+      "count": 3
+    },
+    {
+      "key": "龙虎寨",
+      "count": 3
+    },
+    {
+      "key": "丰禾村",
+      "count": 2
+    },
+    {
+      "key": "临江驿",
+      "count": 2
+    },
+    {
+      "key": "佛爷寨",
+      "count": 2
+    },
+    {
+      "key": "怜花禅院",
+      "count": 2
+    },
+    {
+      "key": "聆杏村",
+      "count": 2
+    },
+    {
+      "key": "大相国寺",
+      "count": 1
+    },
+    {
+      "key": "太一宫",
+      "count": 1
+    },
+    {
+      "key": "寿昌坊",
+      "count": 1
+    },
+    {
+      "key": "开封府",
+      "count": 1
+    },
+    {
+      "key": "张家旧宅",
+      "count": 1
+    },
+    {
+      "key": "旧村遗址",
+      "count": 1
+    },
+    {
+      "key": "汤谷",
+      "count": 1
+    },
+    {
+      "key": "汴河渡口",
+      "count": 1
+    },
+    {
+      "key": "石面",
+      "count": 1
+    },
+    {
+      "key": "破虏舟冢",
+      "count": 1
+    },
+    {
+      "key": "神秘驻地",
+      "count": 1
+    },
+    {
+      "key": "秀金所",
+      "count": 1
+    },
+    {
+      "key": "角门里",
+      "count": 1
+    },
+    {
+      "key": "贺刀寨",
+      "count": 1
+    },
+    {
+      "key": "赤岗",
+      "count": 1
+    }
+  ],
+  "layers": [
+    {
+      "key": "地表",
+      "count": 5905
+    },
+    {
+      "key": "高台",
+      "count": 75
+    },
+    {
+      "key": "地下",
+      "count": 50
+    },
+    {
+      "key": "深层地下",
+      "count": 41
+    }
+  ],
+  "regionSources": [
+    {
+      "key": "coord",
+      "count": 2781
+    },
+    {
+      "key": "path",
+      "count": 1225
+    },
+    {
+      "key": "name",
+      "count": 1018
+    },
+    {
+      "key": "nearest",
+      "count": 697
+    },
+    {
+      "key": "place",
+      "count": 350
+    }
+  ],
+  "categorySources": [
+    {
+      "key": "dict",
+      "count": 5413
+    },
+    {
+      "key": "placeholder",
+      "count": 224
+    },
+    {
+      "key": "path",
+      "count": 210
+    },
+    {
+      "key": "pattern",
+      "count": 176
+    },
+    {
+      "key": "person",
+      "count": 33
+    },
+    {
+      "key": "fallback",
+      "count": 15
+    }
+  ],
+  "flags": [
+    {
+      "key": "duplicated",
+      "count": 5056
+    },
+    {
+      "key": "cross_file",
+      "count": 4986
+    },
+    {
+      "key": "region_inferred",
+      "count": 2781
+    },
+    {
+      "key": "region_nearest",
+      "count": 697
+    },
+    {
+      "key": "co_located_with_other",
+      "count": 693
+    },
+    {
+      "key": "placeholder_name",
+      "count": 412
+    },
+    {
+      "key": "glued_split",
+      "count": 6
+    },
+    {
+      "key": "missing_name",
+      "count": 1
+    },
+    {
+      "key": "name_missing",
+      "count": 1
+    },
+    {
+      "key": "stray_prefix",
+      "count": 1
+    }
+  ],
+  "sourceFiles": [
+    {
+      "file": "24小时合版.ini",
+      "codec": "gb18030",
+      "bytes": 109366,
+      "rows": 2974,
+      "isRpa": false,
+      "points": 1974
+    },
+    {
+      "file": "README.md",
+      "codec": "utf-8",
+      "bytes": 143,
+      "rows": 0,
+      "isRpa": false,
+      "points": 0
+    },
+    {
+      "file": "分区域/71级金装材料坐标/寒菌幼株.txt",
+      "codec": "utf-8",
+      "bytes": 2099,
+      "rows": 40,
+      "isRpa": false,
+      "points": 40
+    },
+    {
+      "file": "分区域/71级金装材料坐标/枯茱萸.txt",
+      "codec": "gb18030",
+      "bytes": 2256,
+      "rows": 67,
+      "isRpa": false,
+      "points": 67
+    },
+    {
+      "file": "分区域/71级金装材料坐标/独山蓝玉.txt",
+      "codec": "utf-8",
+      "bytes": 2237,
+      "rows": 47,
+      "isRpa": false,
+      "points": 47
+    },
+    {
+      "file": "分区域/71级金装材料坐标/耶悉茗.txt",
+      "codec": "utf-8",
+      "bytes": 1457,
+      "rows": 37,
+      "isRpa": false,
+      "points": 37
+    },
+    {
+      "file": "分区域/71级金装材料坐标/长尾山雉.txt",
+      "codec": "gb18030",
+      "bytes": 1326,
+      "rows": 37,
+      "isRpa": false,
+      "points": 37
+    },
+    {
+      "file": "分区域/71级金装材料坐标/黄鼠狼.txt",
+      "codec": "gb18030",
+      "bytes": 1203,
+      "rows": 36,
+      "isRpa": false,
+      "points": 35
+    },
+    {
+      "file": "分区域/寿昌坊百分百/寿昌坊 总.ini",
+      "codec": "gb18030",
+      "bytes": 7041,
+      "rows": 173,
+      "isRpa": false,
+      "points": 160
+    },
+    {
+      "file": "分区域/寿昌坊百分百/寿昌坊1 不平事.ini",
+      "codec": "gb18030",
+      "bytes": 151,
+      "rows": 4,
+      "isRpa": false,
+      "points": 4
+    },
+    {
+      "file": "分区域/寿昌坊百分百/寿昌坊2 万事知  +  寿昌坊3 宝箱 蹊跷 猫戏（卷4雕栏剑影）.ini",
+      "codec": "utf-8",
+      "bytes": 2287,
+      "rows": 38,
+      "isRpa": false,
+      "points": 30
+    },
+    {
+      "file": "分区域/寿昌坊百分百/寿昌坊4 宝箱 蹊跷 猫戏 妙妙喵.ini",
+      "codec": "gb18030",
+      "bytes": 1422,
+      "rows": 36,
+      "isRpa": false,
+      "points": 31
+    },
+    {
+      "file": "分区域/寿昌坊百分百/寿昌坊5 宝箱 蹊跷 猫戏 妙妙喵.ini",
+      "codec": "gb18030",
+      "bytes": 1236,
+      "rows": 35,
+      "isRpa": false,
+      "points": 35
+    },
+    {
+      "file": "分区域/寿昌坊百分百/寿昌坊6 宝箱 蹊跷 猫戏 妙妙喵.ini",
+      "codec": "gb18030",
+      "bytes": 1160,
+      "rows": 32,
+      "isRpa": false,
+      "points": 32
+    },
+    {
+      "file": "分区域/寿昌坊百分百/寿昌坊7 见闻.ini",
+      "codec": "utf-8",
+      "bytes": 438,
+      "rows": 12,
+      "isRpa": false,
+      "points": 12
+    },
+    {
+      "file": "分区域/寿昌坊百分百/注意事项.txt",
+      "codec": "utf-8",
+      "bytes": 1270,
+      "rows": 0,
+      "isRpa": false,
+      "points": 0
+    },
+    {
+      "file": "分区域/开封府百分百/开封府 总.ini",
+      "codec": "gb18030",
+      "bytes": 2736,
+      "rows": 71,
+      "isRpa": false,
+      "points": 71
+    },
+    {
+      "file": "分区域/开封府百分百/开封府1 宝箱 蹊跷 不平事 妙妙喵.ini",
+      "codec": "gb18030",
+      "bytes": 627,
+      "rows": 17,
+      "isRpa": false,
+      "points": 17
+    },
+    {
+      "file": "分区域/开封府百分百/开封府2 宝箱 蹊跷 猫戏.ini",
+      "codec": "gb18030",
+      "bytes": 624,
+      "rows": 18,
+      "isRpa": false,
+      "points": 18
+    },
+    {
+      "file": "分区域/开封府百分百/开封府3 见闻.ini",
+      "codec": "gb18030",
+      "bytes": 755,
+      "rows": 22,
+      "isRpa": false,
+      "points": 22
+    },
+    {
+      "file": "分区域/开封府百分百/开封府4 万事知（有严重bug）.ini",
+      "codec": "gb18030",
+      "bytes": 559,
+      "rows": 9,
+      "isRpa": false,
+      "points": 9
+    },
+    {
+      "file": "分区域/开封府百分百/注意事项.txt",
+      "codec": "utf-8",
+      "bytes": 422,
+      "rows": 0,
+      "isRpa": false,
+      "points": 0
+    },
+    {
+      "file": "分区域/清河万事知.ini",
+      "codec": "gb18030",
+      "bytes": 2249,
+      "rows": 55,
+      "isRpa": false,
+      "points": 55
+    },
+    {
+      "file": "分区域/百工坊百分百/百工坊1 宝箱 蹊跷 不平事 猫戏 妙妙喵.ini",
+      "codec": "gb18030",
+      "bytes": 1396,
+      "rows": 40,
+      "isRpa": false,
+      "points": 40
+    },
+    {
+      "file": "分区域/百工坊百分百/百工坊2 见闻.ini",
+      "codec": "gb18030",
+      "bytes": 594,
+      "rows": 17,
+      "isRpa": false,
+      "points": 17
+    },
+    {
+      "file": "分区域/角门里百分百/角门里 总.ini",
+      "codec": "gb18030",
+      "bytes": 2108,
+      "rows": 51,
+      "isRpa": false,
+      "points": 51
+    },
+    {
+      "file": "分区域/角门里百分百/角门里1 不平事.ini",
+      "codec": "gb18030",
+      "bytes": 204,
+      "rows": 5,
+      "isRpa": false,
+      "points": 5
+    },
+    {
+      "file": "分区域/角门里百分百/角门里2 宝箱 蹊跷 猫戏 妙妙喵.ini",
+      "codec": "gb18030",
+      "bytes": 745,
+      "rows": 20,
+      "isRpa": false,
+      "points": 20
+    },
+    {
+      "file": "分区域/角门里百分百/角门里3 见闻.ini",
+      "codec": "gb18030",
+      "bytes": 485,
+      "rows": 13,
+      "isRpa": false,
+      "points": 13
+    },
+    {
+      "file": "分区域/角门里百分百/角门里4 万事知.ini",
+      "codec": "gb18030",
+      "bytes": 638,
+      "rows": 12,
+      "isRpa": false,
+      "points": 12
+    },
+    {
+      "file": "分区域/醉花阴百分百/注意事项.txt",
+      "codec": "utf-8",
+      "bytes": 1089,
+      "rows": 0,
+      "isRpa": false,
+      "points": 0
+    },
+    {
+      "file": "分区域/醉花阴百分百/醉花阴 总.ini",
+      "codec": "gb18030",
+      "bytes": 4420,
+      "rows": 117,
+      "isRpa": false,
+      "points": 114
+    },
+    {
+      "file": "分区域/醉花阴百分百/醉花阴2 宝箱 蹊跷 不平事 猫戏 妙妙喵.ini",
+      "codec": "gb18030",
+      "bytes": 1088,
+      "rows": 29,
+      "isRpa": false,
+      "points": 29
+    },
+    {
+      "file": "分区域/醉花阴百分百/醉花阴3 宝箱 蹊跷 猫戏 妙妙喵.ini",
+      "codec": "gb18030",
+      "bytes": 1234,
+      "rows": 35,
+      "isRpa": false,
+      "points": 35
+    },
+    {
+      "file": "分区域/醉花阴百分百/醉花阴4  见闻.ini",
+      "codec": "utf-8",
+      "bytes": 1370,
+      "rows": 36,
+      "isRpa": false,
+      "points": 33
+    },
+    {
+      "file": "分区域/醉花阴百分百/醉花阴5 万事知.ini",
+      "codec": "gb18030",
+      "bytes": 783,
+      "rows": 16,
+      "isRpa": false,
+      "points": 16
+    },
+    {
+      "file": "奇术坐标（如果不齐全，请查看杂项坐标文件）/一丈红全图.ini",
+      "codec": "gb18030",
+      "bytes": 2690,
+      "rows": 73,
+      "isRpa": false,
+      "points": 73
+    },
+    {
+      "file": "奇术坐标（如果不齐全，请查看杂项坐标文件）/丹崖百分百.ini",
+      "codec": "gb18030",
+      "bytes": 2090,
+      "rows": 53,
+      "isRpa": false,
+      "points": 53
+    },
+    {
+      "file": "奇术坐标（如果不齐全，请查看杂项坐标文件）/佛泪参-唐宫-恶相-3合一.ini",
+      "codec": "gb18030",
+      "bytes": 6263,
+      "rows": 135,
+      "isRpa": false,
+      "points": 135
+    },
+    {
+      "file": "奇术坐标（如果不齐全，请查看杂项坐标文件）/佛泪参-唐宫-恶相花.ini",
+      "codec": "utf-8",
+      "bytes": 7674,
+      "rows": 145,
+      "isRpa": false,
+      "points": 136
+    },
+    {
+      "file": "奇术坐标（如果不齐全，请查看杂项坐标文件）/佛泪参.ini",
+      "codec": "gb18030",
+      "bytes": 3218,
+      "rows": 68,
+      "isRpa": false,
+      "points": 68
+    },
+    {
+      "file": "奇术坐标（如果不齐全，请查看杂项坐标文件）/多人奇术(避开聚集点).ini",
+      "codec": "gb18030",
+      "bytes": 6934,
+      "rows": 148,
+      "isRpa": false,
+      "points": 148
+    },
+    {
+      "file": "奇术坐标（如果不齐全，请查看杂项坐标文件）/奇术.ini",
+      "codec": "gb18030",
+      "bytes": 34637,
+      "rows": 784,
+      "isRpa": false,
+      "points": 784
+    },
+    {
+      "file": "奇术坐标（如果不齐全，请查看杂项坐标文件）/奇术.txt",
+      "codec": "utf-8",
+      "bytes": 17066,
+      "rows": 430,
+      "isRpa": false,
+      "points": 430
+    },
+    {
+      "file": "奇术坐标（如果不齐全，请查看杂项坐标文件）/奇术全套.ini",
+      "codec": "gb18030",
+      "bytes": 14288,
+      "rows": 299,
+      "isRpa": false,
+      "points": 278
+    },
+    {
+      "file": "奇术坐标（如果不齐全，请查看杂项坐标文件）/恶相花佛泪参唐宫羽衣玉楼春.ini",
+      "codec": "gb18030",
+      "bytes": 5190,
+      "rows": 138,
+      "isRpa": false,
+      "points": 138
+    },
+    {
+      "file": "奇术坐标（如果不齐全，请查看杂项坐标文件）/芍药坐标.txt",
+      "codec": "utf-8",
+      "bytes": 7020,
+      "rows": 189,
+      "isRpa": false,
+      "points": 189
+    },
+    {
+      "file": "奇术坐标（如果不齐全，请查看杂项坐标文件）/草药 菌子 白术一丈红 魏紫 唐宫羽衣 恶相花 玉楼春寒菌幼株 耶悉茗 矿石 草药 独山蓝玉 火盆 龙骨 毒晶芍药 黄铜 酒香玉.ini",
+      "codec": "gb18030",
+      "bytes": 56950,
+      "rows": 1613,
+      "isRpa": false,
+      "points": 1540
+    },
+    {
+      "file": "奇术坐标（如果不齐全，请查看杂项坐标文件）/魏紫.ini",
+      "codec": "gb18030",
+      "bytes": 2131,
+      "rows": 50,
+      "isRpa": false,
+      "points": 50
+    },
+    {
+      "file": "宝箱坐标/开封-解密宝箱.txt",
+      "codec": "utf-8",
+      "bytes": 5811,
+      "rows": 117,
+      "isRpa": false,
+      "points": 117
+    },
+    {
+      "file": "宝箱坐标/开封露天宝箱坐标.ini",
+      "codec": "utf-8",
+      "bytes": 22801,
+      "rows": 413,
+      "isRpa": false,
+      "points": 410
+    },
+    {
+      "file": "宝箱坐标/清河宝箱坐标 (2).ini",
+      "codec": "gb18030",
+      "bytes": 6774,
+      "rows": 178,
+      "isRpa": false,
+      "points": 178
+    },
+    {
+      "file": "宝箱坐标/清河宝箱坐标.ini",
+      "codec": "utf-8",
+      "bytes": 18945,
+      "rows": 369,
+      "isRpa": false,
+      "points": 368
+    },
+    {
+      "file": "小狼整合/0.整合说明（别导入）.txt",
+      "codec": "utf-8",
+      "bytes": 1122,
+      "rows": 0,
+      "isRpa": false,
+      "points": 0
+    },
+    {
+      "file": "小狼整合/1.小狼每日材料整合（算法优化）.txt",
+      "codec": "gb18030",
+      "bytes": 23222,
+      "rows": 555,
+      "isRpa": false,
+      "points": 555
+    },
+    {
+      "file": "小狼整合/2.小狼整合非必要材料 （算法优化）.txt",
+      "codec": "utf-8",
+      "bytes": 55602,
+      "rows": 1458,
+      "isRpa": false,
+      "points": 1454
+    },
+    {
+      "file": "小狼整合/3.小狼整合每日+非必要材料（算法优化）.txt",
+      "codec": "gb18030",
+      "bytes": 75821,
+      "rows": 2013,
+      "isRpa": false,
+      "points": 2009
+    },
+    {
+      "file": "小狼整合/4.小狼整合手动传送材料.txt",
+      "codec": "utf-8",
+      "bytes": 8414,
+      "rows": 236,
+      "isRpa": false,
+      "points": 235
+    },
+    {
+      "file": "杂项坐标/下棋手.txt",
+      "codec": "gb18030",
+      "bytes": 364,
+      "rows": 11,
+      "isRpa": false,
+      "points": 11
+    },
+    {
+      "file": "杂项坐标/两仪膏材料.ini",
+      "codec": "gb18030",
+      "bytes": 2743,
+      "rows": 60,
+      "isRpa": false,
+      "points": 60
+    },
+    {
+      "file": "杂项坐标/偷师武学点位.ini",
+      "codec": "utf-8",
+      "bytes": 359,
+      "rows": 7,
+      "isRpa": false,
+      "points": 7
+    },
+    {
+      "file": "杂项坐标/刷怪（膏和锁，开始后调一下面向后背）.ini",
+      "codec": "gb18030",
+      "bytes": 54142,
+      "rows": 1518,
+      "isRpa": false,
+      "points": 3
+    },
+    {
+      "file": "杂项坐标/动物叠音材料.ini",
+      "codec": "utf-8",
+      "bytes": 2409,
+      "rows": 64,
+      "isRpa": false,
+      "points": 64
+    },
+    {
+      "file": "杂项坐标/合集(手动要交互).ini",
+      "codec": "utf-8",
+      "bytes": 76325,
+      "rows": 1785,
+      "isRpa": false,
+      "points": 1781
+    },
+    {
+      "file": "杂项坐标/合集.ini",
+      "codec": "gb18030",
+      "bytes": 53977,
+      "rows": 1591,
+      "isRpa": false,
+      "points": 1591
+    },
+    {
+      "file": "杂项坐标/唐宫羽衣.ini",
+      "codec": "gb18030",
+      "bytes": 2250,
+      "rows": 45,
+      "isRpa": false,
+      "points": 45
+    },
+    {
+      "file": "杂项坐标/坐标配置.cfg",
+      "codec": "utf-8",
+      "bytes": 190,
+      "rows": 4,
+      "isRpa": false,
+      "points": 4
+    },
+    {
+      "file": "杂项坐标/天工地窟箱子.txt",
+      "codec": "gb18030",
+      "bytes": 238,
+      "rows": 5,
+      "isRpa": false,
+      "points": 5
+    },
+    {
+      "file": "杂项坐标/寒铁叠音(1).ini",
+      "codec": "utf-8",
+      "bytes": 728,
+      "rows": 20,
+      "isRpa": false,
+      "points": 20
+    },
+    {
+      "file": "杂项坐标/射覆答案+红卢雅集 CRRL+F 快速查阅.txt",
+      "codec": "utf-8",
+      "bytes": 54,
+      "rows": 0,
+      "isRpa": false,
+      "points": 0
+    },
+    {
+      "file": "杂项坐标/开封-28个厕所坐标.txt",
+      "codec": "utf-8",
+      "bytes": 1217,
+      "rows": 28,
+      "isRpa": false,
+      "points": 28
+    },
+    {
+      "file": "杂项坐标/开封天地万籁.ini",
+      "codec": "gb18030",
+      "bytes": 935,
+      "rows": 21,
+      "isRpa": false,
+      "points": 21
+    },
+    {
+      "file": "杂项坐标/悬赏目标.ini",
+      "codec": "gb18030",
+      "bytes": 631,
+      "rows": 15,
+      "isRpa": false,
+      "points": 15
+    },
+    {
+      "file": "杂项坐标/打猎.ini",
+      "codec": "gb18030",
+      "bytes": 6791,
+      "rows": 172,
+      "isRpa": false,
+      "points": 93
+    },
+    {
+      "file": "杂项坐标/换骨酒，佛爷寨传送.ini",
+      "codec": "gb18030",
+      "bytes": 42238,
+      "rows": 1056,
+      "isRpa": false,
+      "points": 2
+    },
+    {
+      "file": "杂项坐标/据点挑战.ini",
+      "codec": "gb18030",
+      "bytes": 688,
+      "rows": 17,
+      "isRpa": false,
+      "points": 17
+    },
+    {
+      "file": "杂项坐标/整和了一些按F采集的东西.ini",
+      "codec": "gb18030",
+      "bytes": 39407,
+      "rows": 908,
+      "isRpa": false,
+      "points": 899
+    },
+    {
+      "file": "杂项坐标/料理摊主.txt",
+      "codec": "gb18030",
+      "bytes": 618,
+      "rows": 19,
+      "isRpa": false,
+      "points": 19
+    },
+    {
+      "file": "杂项坐标/新黄铜寒铁.ini",
+      "codec": "gb18030",
+      "bytes": 4893,
+      "rows": 129,
+      "isRpa": false,
+      "points": 65
+    },
+    {
+      "file": "杂项坐标/枯茱萸.ini",
+      "codec": "gb18030",
+      "bytes": 2289,
+      "rows": 56,
+      "isRpa": false,
+      "points": 56
+    },
+    {
+      "file": "杂项坐标/清河撸猫.ini",
+      "codec": "gb18030",
+      "bytes": 3802,
+      "rows": 81,
+      "isRpa": false,
+      "points": 81
+    },
+    {
+      "file": "杂项坐标/清河撸猫.txt",
+      "codec": "utf-8",
+      "bytes": 4286,
+      "rows": 81,
+      "isRpa": false,
+      "points": 81
+    },
+    {
+      "file": "杂项坐标/火烬.ini",
+      "codec": "gb18030",
+      "bytes": 5445,
+      "rows": 159,
+      "isRpa": false,
+      "points": 159
+    },
+    {
+      "file": "杂项坐标/火盆,角色面向南.ini",
+      "codec": "gb18030",
+      "bytes": 7990,
+      "rows": 213,
+      "isRpa": false,
+      "points": 212
+    },
+    {
+      "file": "杂项坐标/牛背筋.txt",
+      "codec": "gb18030",
+      "bytes": 31002,
+      "rows": 984,
+      "isRpa": false,
+      "points": 2
+    },
+    {
+      "file": "杂项坐标/独山蓝玉.ini",
+      "codec": "gb18030",
+      "bytes": 2552,
+      "rows": 67,
+      "isRpa": false,
+      "points": 67
+    },
+    {
+      "file": "杂项坐标/白术.ini",
+      "codec": "gb18030",
+      "bytes": 2368,
+      "rows": 74,
+      "isRpa": false,
+      "points": 73
+    },
+    {
+      "file": "杂项坐标/粗矿石240条.ini",
+      "codec": "gb18030",
+      "bytes": 8053,
+      "rows": 240,
+      "isRpa": false,
+      "points": 240
+    },
+    {
+      "file": "杂项坐标/粗矿石240条.txt",
+      "codec": "utf-8",
+      "bytes": 9491,
+      "rows": 240,
+      "isRpa": false,
+      "points": 240
+    },
+    {
+      "file": "杂项坐标/聚集地旁无限黄铜.ini",
+      "codec": "gb18030",
+      "bytes": 47,
+      "rows": 1,
+      "isRpa": false,
+      "points": 1
+    },
+    {
+      "file": "杂项坐标/脂尾羊皮叠音材料.ini",
+      "codec": "utf-8",
+      "bytes": 691,
+      "rows": 15,
+      "isRpa": false,
+      "points": 15
+    },
+    {
+      "file": "杂项坐标/艳湖七美位置（撸七只猫）.ini",
+      "codec": "gb18030",
+      "bytes": 252,
+      "rows": 6,
+      "isRpa": false,
+      "points": 6
+    },
+    {
+      "file": "杂项坐标/菌子.ini",
+      "codec": "gb18030",
+      "bytes": 1194,
+      "rows": 32,
+      "isRpa": false,
+      "points": 32
+    },
+    {
+      "file": "杂项坐标/蘑菇.txt",
+      "codec": "gb18030",
+      "bytes": 3184,
+      "rows": 101,
+      "isRpa": false,
+      "points": 100
+    },
+    {
+      "file": "杂项坐标/酒香、独山蓝最全无遗漏2.16.ini",
+      "codec": "gb18030",
+      "bytes": 5498,
+      "rows": 129,
+      "isRpa": false,
+      "points": 129
+    },
+    {
+      "file": "杂项坐标/采矿.ini",
+      "codec": "gb18030",
+      "bytes": 5603,
+      "rows": 131,
+      "isRpa": false,
+      "points": 131
+    },
+    {
+      "file": "杂项坐标/重要商人.ini",
+      "codec": "gb18030",
+      "bytes": 383,
+      "rows": 8,
+      "isRpa": false,
+      "points": 8
+    },
+    {
+      "file": "杂项坐标/金疮药材料.ini",
+      "codec": "gb18030",
+      "bytes": 2775,
+      "rows": 62,
+      "isRpa": false,
+      "points": 59
+    },
+    {
+      "file": "杂项坐标/长尾山雉.ini",
+      "codec": "gb18030",
+      "bytes": 1449,
+      "rows": 37,
+      "isRpa": false,
+      "points": 37
+    },
+    {
+      "file": "杂项坐标/青礞石.ini",
+      "codec": "gb18030",
+      "bytes": 518,
+      "rows": 14,
+      "isRpa": false,
+      "points": 14
+    },
+    {
+      "file": "杂项坐标/面向南整合坐标.ini",
+      "codec": "gb18030",
+      "bytes": 47345,
+      "rows": 1281,
+      "isRpa": false,
+      "points": 1262
+    },
+    {
+      "file": "杂项坐标/黄铜-寒铁.ini",
+      "codec": "gb18030",
+      "bytes": 2250,
+      "rows": 55,
+      "isRpa": false,
+      "points": 55
+    },
+    {
+      "file": "杂项坐标/黄铜、寒铁最全2.16.ini",
+      "codec": "gb18030",
+      "bytes": 2746,
+      "rows": 64,
+      "isRpa": false,
+      "points": 64
+    },
+    {
+      "file": "杂项坐标/黄鼠狼，记得开v.ini",
+      "codec": "gb18030",
+      "bytes": 1300,
+      "rows": 32,
+      "isRpa": false,
+      "points": 32
+    },
+    {
+      "file": "杂项坐标/黑乌石锁，青石锁.ini",
+      "codec": "gb18030",
+      "bytes": 46740,
+      "rows": 1140,
+      "isRpa": false,
+      "points": 2
+    },
+    {
+      "file": "杂项坐标/龙骨.ini",
+      "codec": "gb18030",
+      "bytes": 1169,
+      "rows": 34,
+      "isRpa": false,
+      "points": 34
+    },
+    {
+      "file": "界碑坐标/开封界碑坐标.ini",
+      "codec": "utf-8",
+      "bytes": 2614,
+      "rows": 70,
+      "isRpa": false,
+      "points": 70
+    },
+    {
+      "file": "界碑坐标/清河界碑全（不含镇守点）.ini",
+      "codec": "gb18030",
+      "bytes": 1958,
+      "rows": 47,
+      "isRpa": false,
+      "points": 47
+    },
+    {
+      "file": "蹊跷坐标/开封蹊跷坐标.ini",
+      "codec": "gb18030",
+      "bytes": 9397,
+      "rows": 263,
+      "isRpa": false,
+      "points": 263
+    },
+    {
+      "file": "蹊跷坐标/清河蹊跷全坐标.ini",
+      "codec": "gb18030",
+      "bytes": 6198,
+      "rows": 149,
+      "isRpa": false,
+      "points": 149
+    },
+    {
+      "file": "蹊跷坐标/清河蹊跷坐标.ini",
+      "codec": "gb18030",
+      "bytes": 5112,
+      "rows": 143,
+      "isRpa": false,
+      "points": 143
+    }
+  ]
+}
