@@ -18,6 +18,18 @@ git commit 的消息、现在这个），所以规矩定下来：**workflow 只�
     python tools/make_release_notes.py --version 0.1.0 --print
 """
 
+# Windows 控制台默认用 ANSI 代码页（cp1252 / cp936），直接 print 中文会
+# UnicodeEncodeError 崩掉。不指望调用方设 PYTHONIOENCODING —— 脚本自己保证输出编码。
+# 这个缺陷在 CI 上才暴露：本地一直设着 PYTHONIOENCODING=utf-8，正好把它盖住了，
+# 而任何非 UTF-8 控制台的 Windows 用户都会撞上。
+if hasattr(sys.stdout, "reconfigure"):
+    try:
+        sys.stdout.reconfigure(encoding="utf-8", errors="replace")
+        sys.stderr.reconfigure(encoding="utf-8", errors="replace")
+    except (AttributeError, ValueError):
+        pass
+
+
 from __future__ import annotations
 
 import argparse
