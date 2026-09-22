@@ -39,3 +39,6 @@ desktop.ini
 yysls-*.zip
 release-notes.md
 pack/
+
+# 实测截图（跑探测脚本时产出，含游戏画面，不入库）
+rpa/shots/

@@ -9,6 +9,13 @@
 #       Pillow          —— 读模板 PNG、把标定结果画到地图截图上核对
 #       keyboard        —— 全局热键走事件钩子（不装会退回 GetAsyncKeyState 轮询）
 #       pydirectinput   —— 仅作为对照后端（injector.py 用 ctypes 自己实现了扫描码发键）
+#       rapidocr-onnxruntime —— rpa/ocr.py 读屏上的文字。
+#                              装它会顺带装上 opencv-python，而 cv2 一旦可用，
+#                              vision.ncc_map 会走 cv2.matchTemplate 分支
+#                              （实测快 6 倍：20 ms vs 127 ms），
+#                              并且视觉自检里那条「对照实现」才会真正跑起来 ——
+#                              两套独立实现给出同一结果，是匹配正确性的有力证据。
+#                              不装也能跑：ocr.available() 返回 False，调用方跳过。
 #
 # 核心管线（tools/ 与 rpa/collector.py）**不依赖任何第三方包**，只用标准库。
 # 这样设计的理由：数据整编部分要能在任何 Python 3.10+ 环境里跑起来，
@@ -18,3 +25,4 @@ numpy>=1.24
 Pillow>=10.0
 keyboard>=0.13
 pydirectinput>=1.0.4
+rapidocr-onnxruntime>=1.2

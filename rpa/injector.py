@@ -159,6 +159,33 @@ WM_RBUTTONDOWN, WM_RBUTTONUP = 0x0204, 0x0205
 MK_LBUTTON, MK_RBUTTON = 0x0001, 0x0002
 
 _user32 = ctypes.WinDLL("user32", use_last_error=True)
+_kernel32 = ctypes.WinDLL("kernel32", use_last_error=True)
+
+# ShowWindow 的命令码
+SW_RESTORE = 9
+SW_SHOW = 5
+
+# 句柄/线程 id 在 64 位下是指针宽度 —— ctypes 的默认返回类型是 c_int，
+# 会把 HWND 截断成 32 位，得到看似正常却是错的句柄。这几个必须显式声明。
+_user32.GetForegroundWindow.argtypes = []
+_user32.GetForegroundWindow.restype = wintypes.HWND
+_user32.SetForegroundWindow.argtypes = [wintypes.HWND]
+_user32.SetForegroundWindow.restype = wintypes.BOOL
+_user32.ShowWindow.argtypes = [wintypes.HWND, ctypes.c_int]
+_user32.ShowWindow.restype = wintypes.BOOL
+_user32.BringWindowToTop.argtypes = [wintypes.HWND]
+_user32.BringWindowToTop.restype = wintypes.BOOL
+_user32.SetActiveWindow.argtypes = [wintypes.HWND]
+_user32.SetActiveWindow.restype = wintypes.HWND
+_user32.SetFocus.argtypes = [wintypes.HWND]
+_user32.SetFocus.restype = wintypes.HWND
+_user32.GetWindowThreadProcessId.argtypes = [wintypes.HWND, ctypes.POINTER(wintypes.DWORD)]
+_user32.GetWindowThreadProcessId.restype = wintypes.DWORD
+_user32.AttachThreadInput.argtypes = [wintypes.DWORD, wintypes.DWORD, wintypes.BOOL]
+_user32.AttachThreadInput.restype = wintypes.BOOL
+_kernel32.GetCurrentThreadId.argtypes = []
+_kernel32.GetCurrentThreadId.restype = wintypes.DWORD
+
 _user32.SendInput.argtypes = [wintypes.UINT, ctypes.POINTER(INPUT), ctypes.c_int]
 _user32.SendInput.restype = wintypes.UINT
 _user32.GetAsyncKeyState.argtypes = [ctypes.c_int]
@@ -331,27 +358,118 @@ def _pid_of_process(process: str) -> int:
 
 
 def find_window(title: str | None = None, *, process: str | None = None,
-                timeout: float = 10.0) -> int:
+                timeout: float = 10.0, exclude: str | None = None) -> int:
     """按窗口标题片段 / 进程名找主窗口句柄。找到返回 hwnd，超时返回 0。
 
-    标题匹配是**大小写不敏感的子串**匹配。注意 Windows 11 记事本的标题是
+    标题匹配是**大小写不敏感的子串**匹配。Windows 11 记事本的标题是
     「无标题 - Notepad」而不是「记事本」—— 找不到目标时先跑 `--list-windows` 看一眼，
     别硬猜标题。
+
+    ⚠ 子串匹配会被「标题里含目标名」的第三方工具骗到。实测踩过：
+    游戏窗口标题是「燕云十六声」，而**律匠的窗口标题是
+    「律匠 - 燕云十六声装备调律工具 v0.12.2 [只读实例]」—— 同样含这四个字**。
+    于是 find_window("燕云十六声") 返回了律匠的窗口，后续发键全打在律匠上
+    （它不报错、只是没反应，极难排查）。
+
+    所以现在：
+      * 多个命中时**优先完全相等**，其次**标题更短**的
+        （目标进程的标题通常就是游戏名本身；加了一堆前后缀的是别的工具）；
+      * 支持 `exclude` 排除干扰窗口；
+      * 最稳的做法仍是**同时给进程名**，见 `process=` 参数。
     """
     if not title and not process:
         return 0
     title_l = (title or "").lower()
+    exclude_l = (exclude or "").lower()
     deadline = time.time() + timeout
     while time.time() < deadline:
         target_pid = _pid_of_process(process) if process else None
+        hits: list[tuple[int, str]] = []
         for hwnd, pid, t in _enum_visible_windows():
             if title_l and title_l not in t.lower():
                 continue
+            if exclude_l and exclude_l in t.lower():
+                continue
             if target_pid is not None and pid != target_pid:
                 continue
-            return hwnd
+            hits.append((hwnd, t))
+        if hits:
+            # 完全相等的排最前；否则标题最短的排最前（最少装饰的那个最可能是目标本体）
+            hits.sort(key=lambda h: (0 if title and h[1] == title else 1, len(h[1])))
+            return hits[0][0]
         time.sleep(0.3)
     return 0
+
+
+def find_game_window(title: str = "燕云十六声", process: str = "yysls",
+                     timeout: float = 10.0) -> int:
+    """找燕云十六声游戏窗口。**进程名 + 标题双重限定**，避开同名第三方工具。"""
+    hwnd = find_window(title=title, process=process, timeout=timeout)
+    if hwnd:
+        return hwnd
+    # 进程名可能不叫 yysls（国际服/不同启动器）—— 退回只按标题找，但排掉已知干扰项
+    return find_window(title=title, timeout=timeout,
+                       exclude="律匠")
+
+
+def focus_window(hwnd: int, *, settle: float = 0.45) -> bool:
+    """把窗口调到前台并给它键盘焦点。**发键之前必须先做这一步。**
+
+    为什么不能只调 `SetForegroundWindow`
+    ------------------------------------
+    Windows 有个「前台锁」：只有当前拥有前台窗口的进程、或满足一堆豁免条件的进程，
+    才能调用 `SetForegroundWindow` —— 否则**静默失败**（返回 0，不抛异常）。
+    表现就是：脚本以为切过去了，实际键全打在上一个窗口上，且看不出哪里错了。
+
+    所以这里走三级兜底：
+      1. 已经在前台 → 直接返回，不动任何东西（最省事，也最不打扰用户）；
+      2. 最小化了就 `ShowWindow(SW_RESTORE)`，然后试 `SetForegroundWindow`；
+      3. 还不行就 `AttachThreadInput` 把自己的线程挂到前台窗口的输入队列上
+         —— 挂上之后本线程就「有资格」改前台窗口了；改完立刻解挂，
+         避免把两个线程的输入队列长期绑在一起（会互相卡顿）。
+         顺带补一次 `BringWindowToTop`，处理被别的置顶窗口压住的情况。
+    """
+    if not hwnd:
+        return False
+    if _user32.GetForegroundWindow() == hwnd:
+        return True
+
+    _user32.ShowWindow(hwnd, SW_RESTORE)
+    _user32.BringWindowToTop(hwnd)
+    if _user32.SetForegroundWindow(hwnd):
+        time.sleep(settle)
+        return _user32.GetForegroundWindow() == hwnd
+
+    # 前台锁兜底：临时挂到当前前台窗口的输入队列上
+    fg = _user32.GetForegroundWindow()
+    fg_thread = _user32.GetWindowThreadProcessId(fg, None) if fg else 0
+    my_thread = _kernel32.GetCurrentThreadId()
+    attached = False
+    if fg_thread and fg_thread != my_thread:
+        attached = bool(_user32.AttachThreadInput(fg_thread, my_thread, True))
+    try:
+        _user32.BringWindowToTop(hwnd)
+        _user32.SetForegroundWindow(hwnd)
+        _user32.SetFocus(hwnd)
+    finally:
+        if attached:
+            _user32.AttachThreadInput(fg_thread, my_thread, False)
+
+    time.sleep(settle)
+    return _user32.GetForegroundWindow() == hwnd
+
+
+def ensure_foreground(hwnd: int, *, tries: int = 3, settle: float = 0.45) -> bool:
+    """调前台并**确认**；失败就重试。发键流程里用它当守门员。
+
+    宁可在这里多试两次，也不要带着「可能没有前台」的状态去发键 ——
+    那种失败不会报错，只会让键打到别的程序上，事后很难查。
+    """
+    for _ in range(max(1, tries)):
+        if focus_window(hwnd, settle=settle):
+            return True
+        time.sleep(0.3)
+    return _user32.GetForegroundWindow() == hwnd
 
 
 def get_cursor() -> tuple[int, int]:
